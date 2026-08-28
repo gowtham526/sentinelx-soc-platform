@@ -13,9 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run Bandit (Python SAST)
-        run: bandit -r . -f json -o sast-report.json || true
+        run: pip install bandit && bandit -r . -f json -o sast-report.json || true
       - name: Run Trivy (Dependencies)
-        run: trivy fs . --format table -o trivy-report.txt || true
+        run: curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.49.1 && trivy fs . --format table -o trivy-report.txt || true
       - name: Upload Security Artifacts
         uses: actions/upload-artifact@v4
         with:
