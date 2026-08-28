@@ -1,5 +1,31 @@
 [
   {
+    "run_id": "RUN-1787939759989223",
+    "timestamp": "2026-08-28 23:25:59",
+    "playbook_id": "PB-1787843200226",
+    "playbook_name": "alert",
+    "alert_id": "ALT-15862914",
+    "alert_event": "Suspicious Execution Detected",
+    "matched": false,
+    "trigger_ok": false,
+    "conditions_ok": false,
+    "actions_fired": [],
+    "actions_queued": []
+  },
+  {
+    "run_id": "RUN-1787939029840530",
+    "timestamp": "2026-08-28 23:13:49",
+    "playbook_id": "PB-1787843200226",
+    "playbook_name": "alert",
+    "alert_id": "ALT-29270702",
+    "alert_event": "Canary File Triggered",
+    "matched": false,
+    "trigger_ok": false,
+    "conditions_ok": false,
+    "actions_fired": [],
+    "actions_queued": []
+  },
+  {
     "run_id": "RUN-1787939018306142",
     "timestamp": "2026-08-28 23:13:38",
     "playbook_id": "PB-1787843200226",

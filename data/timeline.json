@@ -1,5 +1,32 @@
 [
   {
+    "timestamp": "2026-08-28 23:25:59",
+    "event": "Suspicious Execution Detected",
+    "severity": "LOW",
+    "mitre": "T0000",
+    "tactic": "Unknown",
+    "alert_id": "ALT-15862914",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 23:14:01",
+    "event": "⚡ Multi-Stage Attack Chain (5 events, score 150)",
+    "severity": "MEDIUM",
+    "mitre": "TA0001",
+    "tactic": "Attack Chain",
+    "alert_id": "CHAIN-322265",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 23:13:49",
+    "event": "Canary File Triggered",
+    "severity": "CRITICAL",
+    "mitre": "T0000",
+    "tactic": "Unknown",
+    "alert_id": "ALT-29270702",
+    "host": "nani123"
+  },
+  {
     "timestamp": "2026-08-28 23:13:38",
     "event": "Canary File Triggered",
     "severity": "CRITICAL",
@@ -243,4 +270,12 @@
     "host": "SOC-ENDPOINT-01"
   },
   {
-    "timest
+    "timestamp": "2026-08-28 16:18:23",
+    "event": "Registry Persistence Detected",
+    "severity": "CRITICAL",
+    "mitre": "T1547.001",
+    "tactic": "Persistence",
+    "alert_id": "ALT-30765848",
+    "host": "nani123"
+  }
+]

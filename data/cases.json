@@ -8,13 +8,15 @@
     "user": "katre",
     "tactic": "Unknown",
     "created": "2026-08-28 23:13:04",
-    "last_alert_at": "2026-08-28 23:13:30",
+    "last_alert_at": "2026-08-28 23:13:56",
     "closed": "",
     "notes": [],
     "related_alerts": [
       "ALT-55351960",
       "ALT-97924921",
-      "ALT-27637184"
+      "ALT-27637184",
+      "ALT-59268476",
+      "ALT-29270702"
     ],
     "source_alert": "ALT-55351960"
   },

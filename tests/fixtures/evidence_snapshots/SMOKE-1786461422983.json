@@ -1,0 +1,3920 @@
+{
+  "alert_id": "SMOKE-1786461422983",
+  "captured_at": "2026-08-11 20:47:03",
+  "host": "SMOKE-HOST-01",
+  "trigger_event": "Mimikatz Credential Dumping Detected",
+  "severity": "CRITICAL",
+  "processes": [
+    {
+      "pid": 0,
+      "name": "System Idle Process",
+      "username": "NT AUTHORITY\\SYSTEM",
+      "cmdline": "",
+      "created": "-"
+    },
+    {
+      "pid": 4,
+      "name": "System",
+      "username": "NT AUTHORITY\\SYSTEM",
+      "cmdline": "",
+      "created": "-"
+    },
+    {
+      "pid": 188,
+      "name": "-",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:27"
+    },
+    {
+      "pid": 228,
+      "name": "backgroundTaskHost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\system32\\backgroundTaskHost.exe -ServerName:Spotify.AppXtdk8mnjd568eshy3qjgb1wew6q74vv2f.mca",
+      "created": "2026-08-11 20:43:02"
+    },
+    {
+      "pid": 232,
+      "name": "Registry",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:27"
+    },
+    {
+      "pid": 764,
+      "name": "SystemOptimizer.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\HP\\SystemOptimizer\\SystemOptimizer.exe",
+      "created": "2026-08-11 12:54:14"
+    },
+    {
+      "pid": 940,
+      "name": "smss.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:31"
+    },
+    {
+      "pid": 1008,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:29:44"
+    },
+    {
+      "pid": 1232,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 1256,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 1284,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 1288,
+      "name": "csrss.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:41"
+    },
+    {
+      "pid": 1376,
+      "name": "wininit.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 1532,
+      "name": "services.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 1552,
+      "name": "LsaIso.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 1564,
+      "name": "lsass.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 1612,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 1708,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 1736,
+      "name": "fontdrvhost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 1772,
+      "name": "WUDFHost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 1868,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 1920,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 1960,
+      "name": "WUDFHost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 1976,
+      "name": "agent-manager.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:25:45"
+    },
+    {
+      "pid": 1980,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --type=crashpad-handler --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\MSTeams_8wekyb3d8bbwe\\LocalCache\\Microsoft\\MSTeams\\EBWebView /prefetch:4 /pfhostedapp:4c4be88d896362dfd479bc5a9d275e9b4bd242a9 --mon",
+      "created": "2026-08-11 12:54:35"
+    },
+    {
+      "pid": 2132,
+      "name": "WUDFHost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 2160,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 2168,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 2176,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 2256,
+      "name": "Spotify.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\WindowsApps\\SpotifyAB.SpotifyMusic_1.295.453.0_x64__zpdnekdrzrea0\\Spotify.exe --type=crashpad-handler /prefetch:4 --max-uploads=5 --max-db-size=20 --max-db-age=5 --monitor-self-annotation=ptype=crashpad-handler --database=C:\\Users\\katre\\AppData\\Local\\Spotify\\User Data\\Crashpad --url",
+      "created": "2026-08-11 20:43:00"
+    },
+    {
+      "pid": 2300,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 2352,
+      "name": "IntelCpHDCPSvc.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 2360,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 2376,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 2388,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 2476,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 2500,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 2508,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:49"
+    },
+    {
+      "pid": 2516,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 2636,
+      "name": "Antigravity.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Users\\katre\\AppData\\Local\\Programs\\Antigravity\\Antigravity.exe --type=utility --utility-sub-type=video_capture.mojom.VideoCaptureService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir=C:\\Users\\katre\\AppData\\Roaming\\Antigravity --standard-schemes=plu",
+      "created": "2026-08-11 12:58:55"
+    },
+    {
+      "pid": 2860,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 2872,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 2880,
+      "name": "ms-teams.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\WindowsApps\\MSTeams_26183.1903.4892.4448_x64__8wekyb3d8bbwe\\ms-teams.exe --process_type=native_module --cloud_type=tfl --module_name=SlimCore --native_msg_channel=41270896-1ba7-47c4-894d-a2548be18d23_nm_SlimCore_c --session_id=8acd6bb8-ea04-467e-a3dd-3c67fad5f354    /prefetch:1",
+      "created": "2026-08-11 12:54:41"
+    },
+    {
+      "pid": 2996,
+      "name": "SynTPEnhService.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 3076,
+      "name": "python.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Users\\katre\\AppData\\Local\\Programs\\Python\\Python313\\python.exe C:\\SOC_AUTOMATION_PROJECT_FINAL\\main_engine.py",
+      "created": "2026-08-11 19:51:36"
+    },
+    {
+      "pid": 3144,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 3188,
+      "name": "svchost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\system32\\svchost.exe -k ClipboardSvcGroup -p -s cbdhsvc",
+      "created": "2026-08-11 12:54:15"
+    },
+    {
+      "pid": 3208,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 3212,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 3352,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 3364,
+      "name": "dasHost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:32:49"
+    },
+    {
+      "pid": 3368,
+      "name": "backgroundTaskHost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\system32\\backgroundTaskHost.exe -ServerName:App.AppXe9cvj1thv1hmcw0cs98xm3r97tyzy2xs.mca",
+      "created": "2026-08-11 20:42:57"
+    },
+    {
+      "pid": 3432,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 3452,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 3480,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 3492,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 20:43:04"
+    },
+    {
+      "pid": 3528,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:42"
+    },
+    {
+      "pid": 3556,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 3640,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 3712,
+      "name": "TouchpointAnalyticsClientService.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 3756,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 3816,
+      "name": "identity.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:25:45"
+    },
+    {
+      "pid": 3844,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 3996,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-10 09:39:34"
+    },
+    {
+      "pid": 4020,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 4056,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 4068,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 4072,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 4100,
+      "name": "AppHelperCap.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 4108,
+      "name": "SysInfoCap.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 4116,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 4124,
+      "name": "MemCompression",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 4212,
+      "name": "SystemSettings.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe -ServerName:microsoft.windows.immersivecontrolpanel",
+      "created": "2026-08-11 12:56:38"
+    },
+    {
+      "pid": 4396,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 4452,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 4608,
+      "name": "Spotify.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\WindowsApps\\SpotifyAB.SpotifyMusic_1.295.453.0_x64__zpdnekdrzrea0\\Spotify.exe --type=renderer --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\SpotifyAB.SpotifyMusic_zpdnekdrzrea0\\",
+      "created": "2026-08-11 20:43:03"
+    },
+    {
+      "pid": 4632,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:48"
+    },
+    {
+      "pid": 4640,
+      "name": "WmiPrvSE.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:43"
+    },
+    {
+      "pid": 4652,
+      "name": "hpqwmiex.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:32:34"
+    },
+    {
+      "pid": 4892,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:48"
+    },
+    {
+      "pid": 5004,
+      "name": "chrome.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe --type=renderer --extension-process --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-ma",
+      "created": "2026-08-11 12:54:55"
+    },
+    {
+      "pid": 5196,
+      "name": "unsecapp.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5248,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5256,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:26:50"
+    },
+    {
+      "pid": 5340,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:56"
+    },
+    {
+      "pid": 5416,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5464,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5536,
+      "name": "spoolsv.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5616,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5644,
+      "name": "chrome.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe --no-startup-window /prefetch:5",
+      "created": "2026-08-11 12:54:54"
+    },
+    {
+      "pid": 5692,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5704,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5724,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5728,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5748,
+      "name": "HPCommRecovery.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5768,
+      "name": "HPPrintScanDoctorService.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5780,
+      "name": "ipfsvc.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5800,
+      "name": "chrome.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe --type=renderer --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-acti",
+      "created": "2026-08-11 20:18:27"
+    },
+    {
+      "pid": 5808,
+      "name": "ipf_uf.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5820,
+      "name": "IntelAudioService.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5832,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5840,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5852,
+      "name": "jhi_service.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5904,
+      "name": "RtkAudUService64.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5920,
+      "name": "servicehost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5928,
+      "name": "pg_ctl.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5936,
+      "name": "RtkBtManServ.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 5976,
+      "name": "SECOMN64.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 6008,
+      "name": "MpDefenderCoreService.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 6020,
+      "name": "splunkd.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 6040,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 6080,
+      "name": "vmware-authd.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 6092,
+      "name": "vmnetdhcp.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 6104,
+      "name": "vmnat.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 6112,
+      "name": "vmware-usbarbitrator64.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 6120,
+      "name": "wazuh-agent.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 6136,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 6148,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 6160,
+      "name": "Sysmon64.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 6200,
+      "name": "Spotify.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\WindowsApps\\SpotifyAB.SpotifyMusic_1.295.453.0_x64__zpdnekdrzrea0\\Spotify.exe --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-US --service-sandbox-type=service --no-pre-read-main-dll --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\SpotifyAB.SpotifyMusi",
+      "created": "2026-08-11 20:43:01"
+    },
+    {
+      "pid": 6204,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 6212,
+      "name": "WMIRegistrationService.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 6228,
+      "name": "MsMpEng.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 6260,
+      "name": "wslservice.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 6552,
+      "name": "conhost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:45"
+    },
+    {
+      "pid": 6728,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 17:30:27"
+    },
+    {
+      "pid": 6760,
+      "name": "splunkd.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 6992,
+      "name": "svchost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p -s NPSMSvc",
+      "created": "2026-08-11 12:54:35"
+    },
+    {
+      "pid": 7024,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-US --service-sandbox-type=service --noerrdialogs --user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26",
+      "created": "2026-08-11 12:54:18"
+    },
+    {
+      "pid": 7264,
+      "name": "postgres.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:45"
+    },
+    {
+      "pid": 7652,
+      "name": "NgcIso.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:44"
+    },
+    {
+      "pid": 7688,
+      "name": "ctfmon.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "/QuitInfo:00000000000003C0;0000000000000310;",
+      "created": "2026-08-11 12:54:21"
+    },
+    {
+      "pid": 7952,
+      "name": "postgres.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:45"
+    },
+    {
+      "pid": 8240,
+      "name": "compsup.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:25:33"
+    },
+    {
+      "pid": 8620,
+      "name": "conhost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:45"
+    },
+    {
+      "pid": 8640,
+      "name": "conhost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:45"
+    },
+    {
+      "pid": 8832,
+      "name": "powershell.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "powershell -Command python -m pytest -v",
+      "created": "2026-08-11 20:46:58"
+    },
+    {
+      "pid": 8840,
+      "name": "StartMenuExperienceHost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\SystemApps\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\StartMenuExperienceHost.exe -ServerName:FullTrustApp.AppXykjsye98af63ez2annt9djke8trg8stn.mca",
+      "created": "2026-08-11 12:54:16"
+    },
+    {
+      "pid": 8848,
+      "name": "chrome.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe --type=utility --utility-sub-type=video_capture.mojom.VideoCaptureService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --no-pre-read-main-dll --metrics-shmem-handle=7900,i,5179447678514529294,14585159335846778693",
+      "created": "2026-08-11 14:11:26"
+    },
+    {
+      "pid": 8868,
+      "name": "IntelGraphicsSoftware.Service.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:48"
+    },
+    {
+      "pid": 8904,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --type=utility --utility-sub-type=audio.mojom.AudioService --lang=en-US --service-sandbox-type=audio --video-capture-use-gpu-memory-buffer --noerrdialogs --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\53",
+      "created": "2026-08-11 14:19:48"
+    },
+    {
+      "pid": 8916,
+      "name": "postgres.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:45"
+    },
+    {
+      "pid": 8992,
+      "name": "postgres.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:45"
+    },
+    {
+      "pid": 9016,
+      "name": "postgres.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:45"
+    },
+    {
+      "pid": 9080,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:48"
+    },
+    {
+      "pid": 9088,
+      "name": "language_server.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Users\\katre\\AppData\\Local\\Programs\\Antigravity\\resources\\bin\\language_server.exe --standalone --override_ide_name antigravity --subclient_type hub --override_ide_version 2.6.0 --override_user_agent_name antigravity --https_server_port 0 --csrf_token 6ac511a2-2253-416e-a0e8-dbfad1c53caf --app_data",
+      "created": "2026-08-11 12:58:41"
+    },
+    {
+      "pid": 9140,
+      "name": "OverlayHelper.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\HP\\Overlay\\OverlayHelper.exe",
+      "created": "2026-08-11 12:54:14"
+    },
+    {
+      "pid": 9188,
+      "name": "postgres.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:45"
+    },
+    {
+      "pid": 9200,
+      "name": "postgres.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:45"
+    },
+    {
+      "pid": 9660,
+      "name": "DiagsCap.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:49"
+    },
+    {
+      "pid": 9724,
+      "name": "NetworkCap.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:49"
+    },
+    {
+      "pid": 9768,
+      "name": "AggregatorHost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:48"
+    },
+    {
+      "pid": 9840,
+      "name": "RuntimeBroker.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding",
+      "created": "2026-08-11 12:55:07"
+    },
+    {
+      "pid": 10040,
+      "name": "HPMediaNetwork.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\HP\\HP Media Network\\HPMediaNetwork.exe",
+      "created": "2026-08-11 12:54:53"
+    },
+    {
+      "pid": 10088,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:29:44"
+    },
+    {
+      "pid": 10128,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-10 10:27:53"
+    },
+    {
+      "pid": 10136,
+      "name": "PresentMonService.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:48"
+    },
+    {
+      "pid": 10144,
+      "name": "conhost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:48"
+    },
+    {
+      "pid": 10380,
+      "name": "chrome.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe --type=renderer --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-acti",
+      "created": "2026-08-11 20:10:39"
+    },
+    {
+      "pid": 10384,
+      "name": "DesktopExtension.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\WindowsApps\\AD2F1837.myHP_58.52629.10977.0_x64__v10z8vjag6ke6\\win32\\DesktopExtension.exe",
+      "created": "2026-08-11 12:56:05"
+    },
+    {
+      "pid": 10680,
+      "name": "NisSrv.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:25:06"
+    },
+    {
+      "pid": 10832,
+      "name": "hp-one-agent-service.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 20:00:21"
+    },
+    {
+      "pid": 10936,
+      "name": "OmenInstallMonitor.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\HP\\OmenInstallMonitor\\OmenInstallMonitor.exe",
+      "created": "2026-08-11 12:54:14"
+    },
+    {
+      "pid": 11108,
+      "name": "conhost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4",
+      "created": "2026-08-11 12:54:14"
+    },
+    {
+      "pid": 11116,
+      "name": "svchost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\system32\\svchost.exe -k DevicesFlow -s DevicesFlowUserSvc",
+      "created": "2026-08-11 12:54:36"
+    },
+    {
+      "pid": 11180,
+      "name": "mscopilot.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\Copilot\\Application\\mscopilot.exe --type=gpu-process --gpu-preferences=UAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAOAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAABgAAAAAAAAAGAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --startup-read-main-dll --metrics-shmem-handle=2568,i,7",
+      "created": "2026-08-11 16:55:01"
+    },
+    {
+      "pid": 11184,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-GB --service-sandbox-type=none --noerrdialogs --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\MSTeams_8wekyb3d8bbwe\\LocalCache\\Micr",
+      "created": "2026-08-11 12:54:35"
+    },
+    {
+      "pid": 11268,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --type=gpu-process --noerrdialogs --user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8973) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge",
+      "created": "2026-08-11 12:54:18"
+    },
+    {
+      "pid": 11348,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 20:43:01"
+    },
+    {
+      "pid": 11412,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:56"
+    },
+    {
+      "pid": 11964,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:24:56"
+    },
+    {
+      "pid": 12088,
+      "name": "dllhost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\SysWOW64\\DllHost.exe /Processid:{1C6DF0C0-192A-4451-BE36-6A59A86A692E}",
+      "created": "2026-08-11 13:44:19"
+    },
+    {
+      "pid": 12120,
+      "name": "FileSyncHelper.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 12:19:49"
+    },
+    {
+      "pid": 12508,
+      "name": "OfficeClickToRun.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:33:11"
+    },
+    {
+      "pid": 12796,
+      "name": "SecurityHealthService.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:25:18"
+    },
+    {
+      "pid": 12800,
+      "name": "SearchHost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\SearchHost.exe -ServerName:CortanaUI.AppXstmwaab17q5s3y22tp6apqz7a45vwv65.mca",
+      "created": "2026-08-11 12:54:16"
+    },
+    {
+      "pid": 12980,
+      "name": "dwm.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 12:36:22"
+    },
+    {
+      "pid": 13148,
+      "name": "mscopilot.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\Copilot\\Application\\mscopilot.exe --flag-switches-begin --flag-switches-end --no-startup-window",
+      "created": "2026-08-11 16:55:00"
+    },
+    {
+      "pid": 13388,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --type=utility --utility-sub-type=audio.mojom.AudioService --lang=en-GB --service-sandbox-type=audio --video-capture-use-gpu-memory-buffer --noerrdialogs --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\MS",
+      "created": "2026-08-11 12:54:45"
+    },
+    {
+      "pid": 13396,
+      "name": "RuntimeBroker.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding",
+      "created": "2026-08-11 12:54:34"
+    },
+    {
+      "pid": 13564,
+      "name": "msedge.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --startup-read-main-dll --metrics-shmem-handle=2564,i,10223200642955332282,16046442602480062168,524288 --field-trial-handle=2452,i,1694",
+      "created": "2026-08-11 19:51:51"
+    },
+    {
+      "pid": 13660,
+      "name": "Spotify.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "Spotify.exe",
+      "created": "2026-08-11 20:43:00"
+    },
+    {
+      "pid": 13696,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-08 18:15:56"
+    },
+    {
+      "pid": 13908,
+      "name": "Antigravity.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Users\\katre\\AppData\\Local\\Programs\\Antigravity\\Antigravity.exe --type=utility --utility-sub-type=audio.mojom.AudioService --lang=en-US --service-sandbox-type=audio --video-capture-use-gpu-memory-buffer --user-data-dir=C:\\Users\\katre\\AppData\\Roaming\\Antigravity --standard-schemes=plugin --secure-s",
+      "created": "2026-08-11 12:58:54"
+    },
+    {
+      "pid": 13944,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:29:45"
+    },
+    {
+      "pid": 14208,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-US --service-sandbox-type=service --noerrdialogs --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\5319275A.WhatsAppDesktop_cv1g1gvan",
+      "created": "2026-08-11 12:55:08"
+    },
+    {
+      "pid": 14292,
+      "name": "py.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\py.exe C:\\SOC_AUTOMATION_PROJECT_FINAL\\main_engine.py",
+      "created": "2026-08-11 19:51:36"
+    },
+    {
+      "pid": 14524,
+      "name": "RuntimeBroker.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding",
+      "created": "2026-08-11 13:06:48"
+    },
+    {
+      "pid": 14752,
+      "name": "msedge.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --type=renderer --extension-process --renderer-sub-type=extension --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=en-US --js-flags=--ms-user-locale=en_IN --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-fra",
+      "created": "2026-08-11 19:51:51"
+    },
+    {
+      "pid": 14808,
+      "name": "UserOOBEBroker.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Windows\\System32\\oobe\\UserOOBEBroker.exe -Embedding",
+      "created": "2026-08-11 12:56:40"
+    },
+    {
+      "pid": 15172,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-10 09:26:55"
+    },
+    {
+      "pid": 15200,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 20:43:04"
+    },
+    {
+      "pid": 15324,
+      "name": "elevation_service.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 16:55:01"
+    },
+    {
+      "pid": 15672,
+      "name": "audiodg.exe",
+      "username": "-",
+      "cmdline": "C:\\WINDOWS\\system32\\AUDIODG.EXE 0x00000000000004C8",
+      "created": "2026-08-11 20:43:13"
+    },
+    {
+      "pid": 15820,
+      "name": "dasHost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:32:48"
+    },
+    {
+      "pid": 15856,
+      "name": "chrome.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --no-pre-read-main-dll --metrics-shmem-handle=2088,i,16399551479565743062,15186296717670424606,524288 --field-trial-handle=1944,i,318147003456",
+      "created": "2026-08-11 12:54:55"
+    },
+    {
+      "pid": 15956,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --noerrdialogs --user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200",
+      "created": "2026-08-11 12:54:18"
+    },
+    {
+      "pid": 16052,
+      "name": "svchost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\system32\\svchost.exe -k UdkSvcGroup -s UdkUserSvc",
+      "created": "2026-08-11 12:54:16"
+    },
+    {
+      "pid": 16168,
+      "name": "dllhost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\system32\\DllHost.exe /Processid:{5250E46F-BB09-D602-5891-F476DC89B700}",
+      "created": "2026-08-11 13:44:19"
+    },
+    {
+      "pid": 16368,
+      "name": "OmenCommandCenterBackground.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\WindowsApps\\AD2F1837.OMENCommandCenter_1101.2607.3.0_x64__v10z8vjag6ke6\\OmenCommandCenterApp\\OmenCommandCenterBackground.exe",
+      "created": "2026-08-11 12:55:22"
+    },
+    {
+      "pid": 16544,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --noerrdialogs --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\5319275A.WhatsAppDesktop_cv1g1gvanyjg",
+      "created": "2026-08-11 12:55:08"
+    },
+    {
+      "pid": 16688,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:26:49"
+    },
+    {
+      "pid": 16696,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:25:06"
+    },
+    {
+      "pid": 16780,
+      "name": "ONENOTEM.EXE",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Microsoft Office\\root\\Office16\\ONENOTEM.EXE /tsr",
+      "created": "2026-08-11 12:55:10"
+    },
+    {
+      "pid": 16792,
+      "name": "mscopilot_proxy.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\Copilot\\Application\\mscopilot_proxy.exe -Embedding",
+      "created": "2026-08-11 13:44:19"
+    },
+    {
+      "pid": 16916,
+      "name": "python3.9.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:25:43"
+    },
+    {
+      "pid": 17036,
+      "name": "HPSystemEventUtilityHost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\WindowsApps\\AD2F1837.HPSystemEventUtility_3.2.24.0_x64__v10z8vjag6ke6\\SystemEventUtility\\HPSystemEventUtilityHost.exe",
+      "created": "2026-08-11 19:30:57"
+    },
+    {
+      "pid": 17092,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --type=crashpad-handler --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\EBWebView /prefetch:4 /pfhostedapp:2985ba44461498569f9551b8088b64f9bfc6e67d --m",
+      "created": "2026-08-11 12:54:18"
+    },
+    {
+      "pid": 17340,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:26:49"
+    },
+    {
+      "pid": 17364,
+      "name": "SecurityHealthSystray.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Windows\\System32\\SecurityHealthSystray.exe",
+      "created": "2026-08-11 12:54:28"
+    },
+    {
+      "pid": 17472,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --type=crashpad-handler --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\\LocalCache\\EBWebView /prefetch:4 /pfhostedapp:1e9e772de12803a4d1e25f2c7a50d0141b3dca1e --moni",
+      "created": "2026-08-11 12:55:08"
+    },
+    {
+      "pid": 17488,
+      "name": "svchost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup -s WpnUserService",
+      "created": "2026-08-11 12:54:14"
+    },
+    {
+      "pid": 17784,
+      "name": "svchost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p -s webthreatdefusersvc",
+      "created": "2026-08-11 12:54:14"
+    },
+    {
+      "pid": 17896,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:25:22"
+    },
+    {
+      "pid": 17912,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-09 17:42:04"
+    },
+    {
+      "pid": 18088,
+      "name": "ipf_helper.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\ipf_cpu.inf_amd64_09022c71eac15532\\ipf_helper.exe",
+      "created": "2026-08-11 12:54:13"
+    },
+    {
+      "pid": 18552,
+      "name": "Antigravity.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Users\\katre\\AppData\\Local\\Programs\\Antigravity\\Antigravity.exe --type=gpu-process --user-data-dir=C:\\Users\\katre\\AppData\\Roaming\\Antigravity --gpu-preferences=SAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --field-trial-han",
+      "created": "2026-08-11 12:58:40"
+    },
+    {
+      "pid": 18728,
+      "name": "msedge.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-US --service-sandbox-type=service --startup-read-main-dll --metrics-shmem-handle=2852,i,9949348129566187343,4297711064612711667,524288 --field-trial-handle=2452,i,169",
+      "created": "2026-08-11 19:51:51"
+    },
+    {
+      "pid": 18800,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:26:50"
+    },
+    {
+      "pid": 18860,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:26:48"
+    },
+    {
+      "pid": 18936,
+      "name": "SpotifyLauncher.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\WindowsApps\\SpotifyAB.SpotifyMusic_1.295.453.0_x64__zpdnekdrzrea0\\SpotifyLauncher.exe /InvokerPRAID: Spotify --session-connected-task",
+      "created": "2026-08-11 12:54:20"
+    },
+    {
+      "pid": 19008,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --type=gpu-process --noerrdialogs --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\\LocalCache\\EBWebView --webview-exe-name=WhatsApp.Root.exe --webview-exe-version=1.0",
+      "created": "2026-08-11 12:55:08"
+    },
+    {
+      "pid": 19116,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --type=gpu-process --gpu-watchdog-timeout-seconds=60 --noerrdialogs --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\MSTeams_8wekyb3d8bbwe\\LocalCache\\Microsoft\\MSTeams\\EBWebView --webview-exe-name=ms-teams",
+      "created": "2026-08-11 12:54:35"
+    },
+    {
+      "pid": 19216,
+      "name": "chrome.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe --type=crashpad-handler --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Google\\Chrome\\User Data /prefetch:4 --monitor-self-annotation=ptype=crashpad-handler --database=C:\\Users\\katre\\AppData\\Local\\Google\\Chrome\\User Data\\Crashpad --metrics-dir=C:\\Us",
+      "created": "2026-08-11 12:54:54"
+    },
+    {
+      "pid": 19312,
+      "name": "svchost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\System32\\svchost.exe -k UnistackSvcGroup",
+      "created": "2026-08-11 12:57:07"
+    },
+    {
+      "pid": 19500,
+      "name": "msedge.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --type=crashpad-handler --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Microsoft\\Edge\\User Data /prefetch:4 --monitor-self-annotation=ptype=crashpad-handler --database=C:\\Users\\katre\\AppData\\Local\\Microsoft\\Edge\\User Data\\Crashpad --metrics-",
+      "created": "2026-08-11 19:51:51"
+    },
+    {
+      "pid": 19588,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --embedded-browser-webview=1 --webview-exe-name=ms-teams.exe --webview-exe-version=26183.1903.4892.4448 --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\MSTeams_8wekyb3d8bbwe\\LocalCache\\Microsoft\\MSTeams\\E",
+      "created": "2026-08-11 12:54:34"
+    },
+    {
+      "pid": 19712,
+      "name": "csrss.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 12:36:22"
+    },
+    {
+      "pid": 19748,
+      "name": "explorer.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\Explorer.EXE",
+      "created": "2026-08-11 12:54:14"
+    },
+    {
+      "pid": 19888,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --type=renderer --noerrdialogs --user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; Cortana 1.18.9.23723; 10.0.0.0.26200.8973) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18",
+      "created": "2026-08-11 12:54:19"
+    },
+    {
+      "pid": 19980,
+      "name": "ShellHost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Windows\\System32\\ShellHost.exe",
+      "created": "2026-08-11 13:04:47"
+    },
+    {
+      "pid": 19996,
+      "name": "msedge.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --type=gpu-process --gpu-preferences=WAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAQAAAAAAAAAADAAAAAAAAADgAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAoAAAAAAAAAAgAAAAAAAAAEAAAAAIAAAABAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --startup-read-main-dll --met",
+      "created": "2026-08-11 19:51:51"
+    },
+    {
+      "pid": 20152,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:26:50"
+    },
+    {
+      "pid": 20388,
+      "name": "mongod.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:25:34"
+    },
+    {
+      "pid": 20532,
+      "name": "RuntimeBroker.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding",
+      "created": "2026-08-11 19:36:17"
+    },
+    {
+      "pid": 20596,
+      "name": "dllhost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\system32\\DllHost.exe /Processid:{CA6CC9F1-867A-481E-951E-A28C5E4F01EA}",
+      "created": "2026-08-11 13:44:19"
+    },
+    {
+      "pid": 20636,
+      "name": "chrome.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe --type=utility --utility-sub-type=audio.mojom.AudioService --lang=en-US --service-sandbox-type=audio --video-capture-use-gpu-memory-buffer --no-pre-read-main-dll --metrics-shmem-handle=5460,i,1377489864701372689,275498644903631398,524288 --field-",
+      "created": "2026-08-11 12:54:56"
+    },
+    {
+      "pid": 20696,
+      "name": "Widgets.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\WindowsApps\\MicrosoftWindows.Client.WebExperience_526.17301.80.0_x64__cw5n1h2txyewy\\Dashboard\\Widgets.exe -ServerName:Microsoft.Windows.DashboardServer",
+      "created": "2026-08-11 12:54:16"
+    },
+    {
+      "pid": 20796,
+      "name": "msedge.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --type=renderer --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=en-US --js-flags=--ms-user-locale=en_IN --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=15 --tim",
+      "created": "2026-08-11 19:51:54"
+    },
+    {
+      "pid": 21148,
+      "name": "mscopilot.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\Copilot\\Application\\mscopilot.exe --type=crashpad-handler --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Microsoft\\Copilot\\User Data /prefetch:4 --monitor-self-annotation=ptype=crashpad-handler --database=C:\\Users\\katre\\AppData\\Local\\Microsoft\\Copilot\\User Data\\Crashpa",
+      "created": "2026-08-11 16:55:00"
+    },
+    {
+      "pid": 21220,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:26:06"
+    },
+    {
+      "pid": 21264,
+      "name": "crashpad_handler.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\WindowsApps\\SpotifyAB.SpotifyMusic_1.295.453.0_x64__zpdnekdrzrea0\\crashpad_handler.exe --database=C:\\Users\\katre\\AppData\\Local\\Packages\\SpotifyAB.SpotifyMusic_zpdnekdrzrea0\\LocalCache\\Spotify\\Launcher\\Crashpad --metrics-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\SpotifyAB.SpotifyMusi",
+      "created": "2026-08-11 12:54:20"
+    },
+    {
+      "pid": 21296,
+      "name": "spotlight-collector.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:25:49"
+    },
+    {
+      "pid": 21376,
+      "name": "RtkAudUService64.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 12:54:16"
+    },
+    {
+      "pid": 21552,
+      "name": "ipc_broker.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:25:44"
+    },
+    {
+      "pid": 21596,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:26:50"
+    },
+    {
+      "pid": 21604,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:27:40"
+    },
+    {
+      "pid": 21724,
+      "name": "chrome.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe --type=gpu-process --no-pre-read-main-dll --gpu-preferences=WAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAQAAAAAAAAAADAAAAAAAAADgAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAoAAAAAAAAAAgAAAAAAAAAEAAAAAIAAAABAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --metrics-shm",
+      "created": "2026-08-11 12:54:55"
+    },
+    {
+      "pid": 21812,
+      "name": "TextInputHost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\TextInputHost.exe -ServerName:InputApp.AppXk0k6mrh4r2q0ct33a9wgbez0x7v9cz5y.mca",
+      "created": "2026-08-11 12:54:26"
+    },
+    {
+      "pid": 21856,
+      "name": "splunkd.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:25:46"
+    },
+    {
+      "pid": 22268,
+      "name": "vmware-tray.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\VMware\\VMware Workstation\\vmware-tray.exe",
+      "created": "2026-08-11 12:55:10"
+    },
+    {
+      "pid": 22412,
+      "name": "splunk-winevtlog.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:25:45"
+    },
+    {
+      "pid": 22604,
+      "name": "SearchIndexer.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-07 16:35:24"
+    },
+    {
+      "pid": 22620,
+      "name": "RuntimeBroker.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding",
+      "created": "2026-08-11 12:54:16"
+    },
+    {
+      "pid": 22788,
+      "name": "ApplicationFrameHost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\system32\\ApplicationFrameHost.exe -Embedding",
+      "created": "2026-08-11 12:56:38"
+    },
+    {
+      "pid": 22956,
+      "name": "SECOCL64.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "/exit-mutex-guid={456E1139-F0E9-46B8-B62A-0A56FC227344} /host-pipe-name=\\\\.\\pipe\\{A771955B-CC63-4E1D-B86E-86DC4573D071} /endpoint-id=",
+      "created": "2026-08-11 12:54:14"
+    },
+    {
+      "pid": 23116,
+      "name": "WidgetService.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\WindowsApps\\Microsoft.WidgetsPlatformRuntime_1.6.19.0_x64__8wekyb3d8bbwe\\WidgetService\\WidgetService.exe -RegisterProcessAsComServer -Embedding",
+      "created": "2026-08-11 13:06:48"
+    },
+    {
+      "pid": 23256,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --type=renderer --noerrdialogs --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\\LocalCache\\EBWebView --webview-exe-name=WhatsApp.Root.exe --webview-exe-version=1.0.0 ",
+      "created": "2026-08-11 12:55:58"
+    },
+    {
+      "pid": 23544,
+      "name": "cmd.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\system32\\cmd.exe",
+      "created": "2026-08-11 13:44:22"
+    },
+    {
+      "pid": 23664,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --embedded-browser-webview=1 --webview-exe-name=WhatsApp.Root.exe --webview-exe-version=1.0.0 --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\\LocalCache\\EBWebView --",
+      "created": "2026-08-11 12:55:08"
+    },
+    {
+      "pid": 23800,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 20:39:24"
+    },
+    {
+      "pid": 23820,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --embedded-browser-webview=1 --webview-exe-name=SearchHost.exe --webview-exe-version=2606.30004.100.0 --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\LocalState\\E",
+      "created": "2026-08-11 12:54:18"
+    },
+    {
+      "pid": 23864,
+      "name": "Spotify.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\WindowsApps\\SpotifyAB.SpotifyMusic_1.295.453.0_x64__zpdnekdrzrea0\\Spotify.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --no-pre-read-main-dll --start-stack-profiler --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\S",
+      "created": "2026-08-11 20:43:01"
+    },
+    {
+      "pid": 23876,
+      "name": "SynTPEnh.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\System32\\SynTPEnh.exe",
+      "created": "2026-08-11 12:54:13"
+    },
+    {
+      "pid": 24240,
+      "name": "chrome.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-US --service-sandbox-type=service --no-pre-read-main-dll --metrics-shmem-handle=2492,i,11345651386403718811,6405737652146735202,524288 --field-trial-handle=1944,i,3181470034",
+      "created": "2026-08-11 12:54:55"
+    },
+    {
+      "pid": 24248,
+      "name": "softinfo.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Software Informer\\softinfo.exe -autorun",
+      "created": "2026-08-11 12:54:57"
+    },
+    {
+      "pid": 24680,
+      "name": "cmp-orchestrator.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 11:23:26"
+    },
+    {
+      "pid": 24796,
+      "name": "chrome.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe --type=renderer --top-chrome-webui --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-mai",
+      "created": "2026-08-11 16:10:12"
+    },
+    {
+      "pid": 24900,
+      "name": "chrome.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe --type=renderer --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-acti",
+      "created": "2026-08-11 20:40:05"
+    },
+    {
+      "pid": 25100,
+      "name": "taskhostw.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "taskhostw.exe {222A245B-E637-4AE9-A93F-A59CA119A75E}",
+      "created": "2026-08-11 12:54:14"
+    },
+    {
+      "pid": 25108,
+      "name": "chrome.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe --type=renderer --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-acti",
+      "created": "2026-08-11 12:54:56"
+    },
+    {
+      "pid": 25308,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 08:38:44"
+    },
+    {
+      "pid": 25520,
+      "name": "ms-teams.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Users\\katre\\AppData\\Local\\Microsoft\\WindowsApps\\MSTeams_8wekyb3d8bbwe\\ms-teams.exe msteams:system-initiated",
+      "created": "2026-08-11 12:54:34"
+    },
+    {
+      "pid": 26144,
+      "name": "LockApp.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\SystemApps\\Microsoft.LockApp_cw5n1h2txyewy\\LockApp.exe -ServerName:WindowsDefaultLockScreen.AppX7y4nbzq37zn4ks9k7amqjywdat7d3j2z.mca",
+      "created": "2026-08-11 13:06:48"
+    },
+    {
+      "pid": 26564,
+      "name": "winlogon.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 12:36:22"
+    },
+    {
+      "pid": 26736,
+      "name": "Antigravity.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Users\\katre\\AppData\\Local\\Programs\\Antigravity\\Antigravity.exe --type=renderer --user-data-dir=C:\\Users\\katre\\AppData\\Roaming\\Antigravity --standard-schemes=plugin --secure-schemes=plugin --cors-schemes=plugin --fetch-schemes=plugin --service-worker-schemes=plugin --code-cache-schemes=plugin --ap",
+      "created": "2026-08-11 12:58:41"
+    },
+    {
+      "pid": 26896,
+      "name": "sihost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "sihost.exe",
+      "created": "2026-08-11 12:54:13"
+    },
+    {
+      "pid": 26912,
+      "name": "conhost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4",
+      "created": "2026-08-11 13:44:22"
+    },
+    {
+      "pid": 26944,
+      "name": "HPSystemEventUtilityBackground.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\WindowsApps\\AD2F1837.HPSystemEventUtility_3.2.24.0_x64__v10z8vjag6ke6\\SystemEventUtility\\HPSystemEventUtilityBackground.exe LaunchedByBgLauncher",
+      "created": "2026-08-11 12:54:52"
+    },
+    {
+      "pid": 27256,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 12:54:42"
+    },
+    {
+      "pid": 27400,
+      "name": "WhatsApp.Root.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\WindowsApps\\5319275A.WhatsAppDesktop_2.2630.102.0_x64__cv1g1gvanyjgm\\WhatsApp.Root.exe",
+      "created": "2026-08-11 12:55:06"
+    },
+    {
+      "pid": 27640,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 08:44:58"
+    },
+    {
+      "pid": 28268,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --type=renderer --noerrdialogs --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\MSTeams_8wekyb3d8bbwe\\LocalCache\\Microsoft\\MSTeams\\EBWebView --webview-exe-name=ms-teams.exe --webview-exe-version=26183.1903",
+      "created": "2026-08-11 12:54:35"
+    },
+    {
+      "pid": 28364,
+      "name": "taskhostw.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "taskhostw.exe",
+      "created": "2026-08-11 12:54:15"
+    },
+    {
+      "pid": 28576,
+      "name": "chrome.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe --type=renderer --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-acti",
+      "created": "2026-08-11 20:10:36"
+    },
+    {
+      "pid": 28636,
+      "name": "OneDrive.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Microsoft OneDrive\\OneDrive.exe /background",
+      "created": "2026-08-11 12:54:31"
+    },
+    {
+      "pid": 28864,
+      "name": "mscopilot.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\Copilot\\Application\\mscopilot.exe --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-US --service-sandbox-type=service --startup-read-main-dll --metrics-shmem-handle=2904,i,4670097125760237399,5653582269024381686,524288 --field-trial-handle=2632",
+      "created": "2026-08-11 16:55:01"
+    },
+    {
+      "pid": 28980,
+      "name": "RuntimeBroker.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding",
+      "created": "2026-08-11 20:43:02"
+    },
+    {
+      "pid": 29256,
+      "name": "python.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Users\\katre\\AppData\\Local\\Programs\\Python\\Python313\\python.exe -m pytest -v",
+      "created": "2026-08-11 20:46:58"
+    },
+    {
+      "pid": 29392,
+      "name": "AppActions.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\AppActions.exe -Embedding",
+      "created": "2026-08-11 13:04:15"
+    },
+    {
+      "pid": 29404,
+      "name": "RuntimeBroker.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Windows\\System32\\RuntimeBroker.exe -Embedding",
+      "created": "2026-08-11 20:42:57"
+    },
+    {
+      "pid": 29440,
+      "name": "svchost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup -s CDPUserSvc",
+      "created": "2026-08-11 12:54:14"
+    },
+    {
+      "pid": 29588,
+      "name": "Antigravity.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Users\\katre\\AppData\\Local\\Programs\\Antigravity\\Antigravity.exe",
+      "created": "2026-08-11 12:58:39"
+    },
+    {
+      "pid": 29884,
+      "name": "WmiPrvSE.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 20:33:11"
+    },
+    {
+      "pid": 30040,
+      "name": "msedge.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --no-startup-window",
+      "created": "2026-08-11 19:51:51"
+    },
+    {
+      "pid": 30324,
+      "name": "msedgewebview2.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\151.0.4129.72\\msedgewebview2.exe --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-GB --service-sandbox-type=service --noerrdialogs --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\MSTeams_8wekyb3d8bbwe\\LocalCache\\M",
+      "created": "2026-08-11 12:54:35"
+    },
+    {
+      "pid": 30632,
+      "name": "unsecapp.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\system32\\wbem\\unsecapp.exe -Embedding",
+      "created": "2026-08-11 12:54:53"
+    },
+    {
+      "pid": 30664,
+      "name": "uihost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\McAfee\\WebAdvisor\\UIHost.exe",
+      "created": "2026-08-11 12:54:13"
+    },
+    {
+      "pid": 31388,
+      "name": "FileCoAuth.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\Microsoft OneDrive\\26.134.0713.0007\\FileCoAuth.exe -Embedding",
+      "created": "2026-08-11 13:44:02"
+    },
+    {
+      "pid": 31564,
+      "name": "svchost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-10 14:27:37"
+    },
+    {
+      "pid": 31580,
+      "name": "CrossDeviceResume.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\CrossDeviceResume.exe /tileid MicrosoftWindows.Client.CBS_cw5n1h2txyewy!CrossDeviceResumeApp",
+      "created": "2026-08-11 12:54:14"
+    },
+    {
+      "pid": 31604,
+      "name": "RtkAudUService64.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Windows\\System32\\DriverStore\\FileRepository\\realtekservice.inf_amd64_ef58a27152e818c4\\RtkAudUService64.exe -background",
+      "created": "2026-08-11 12:54:30"
+    },
+    {
+      "pid": 31836,
+      "name": "Antigravity.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Users\\katre\\AppData\\Local\\Programs\\Antigravity\\Antigravity.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --user-data-dir=C:\\Users\\katre\\AppData\\Roaming\\Antigravity --standard-schemes=plugin --secure-schemes=plugin --cors-schemes=plugin",
+      "created": "2026-08-11 12:58:40"
+    },
+    {
+      "pid": 31896,
+      "name": "elevation_service.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 19:51:51"
+    },
+    {
+      "pid": 31932,
+      "name": "Spotify.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\WindowsApps\\SpotifyAB.SpotifyMusic_1.295.453.0_x64__zpdnekdrzrea0\\Spotify.exe --type=utility --utility-sub-type=media.mojom.CdmServiceBroker --lang=en-US --service-sandbox-type=cdm --video-capture-use-gpu-memory-buffer --no-pre-read-main-dll --user-data-dir=C:\\Users\\katre\\AppData\\Lo",
+      "created": "2026-08-11 20:43:05"
+    },
+    {
+      "pid": 31960,
+      "name": "mscopilot.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\Copilot\\Application\\mscopilot.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --startup-read-main-dll --metrics-shmem-handle=2492,i,18099204977517322348,18279573194172651418,524288 --field-trial-handle=2632,",
+      "created": "2026-08-11 16:55:01"
+    },
+    {
+      "pid": 32112,
+      "name": "Spotify.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\WindowsApps\\SpotifyAB.SpotifyMusic_1.295.453.0_x64__zpdnekdrzrea0\\Spotify.exe --type=gpu-process --no-pre-read-main-dll --start-stack-profiler --user-data-dir=C:\\Users\\katre\\AppData\\Local\\Packages\\SpotifyAB.SpotifyMusic_zpdnekdrzrea0\\LocalCache\\Spotify --log-severity=disable --user-",
+      "created": "2026-08-11 20:43:01"
+    },
+    {
+      "pid": 32180,
+      "name": "fontdrvhost.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 12:36:22"
+    },
+    {
+      "pid": 32424,
+      "name": "msedge.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --type=renderer --extension-process --renderer-sub-type=extension --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=en-US --js-flags=--ms-user-locale=en_IN --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-fra",
+      "created": "2026-08-11 19:51:51"
+    },
+    {
+      "pid": 32468,
+      "name": "msedge.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe --type=renderer --pdf-upsell-enabled --video-capture-use-gpu-memory-buffer --lang=en-US --js-flags=--ms-user-locale=en_IN --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=14 --tim",
+      "created": "2026-08-11 19:51:54"
+    },
+    {
+      "pid": 32480,
+      "name": "PhoneExperienceHost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "C:\\Program Files\\WindowsApps\\Microsoft.YourPhone_1.26062.145.0_x64__8wekyb3d8bbwe\\PhoneExperienceHost.exe -ComServer:Background -Embedding",
+      "created": "2026-08-11 19:36:15"
+    },
+    {
+      "pid": 32528,
+      "name": "spl-lang-server-sockets.exe",
+      "username": "-",
+      "cmdline": "",
+      "created": "2026-08-11 11:23:26"
+    },
+    {
+      "pid": 32660,
+      "name": "conhost.exe",
+      "username": "NANI123\\katre",
+      "cmdline": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0x4",
+      "created": "2026-08-11 12:58:41"
+    }
+  ],
+  "connections": [
+    {
+      "pid": 9088,
+      "laddr": "10.163.178.52:55158",
+      "raddr": "172.217.116.4:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 2360,
+      "laddr": "0.0.0.0:49666",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 6020,
+      "laddr": "127.0.0.1:52194",
+      "raddr": "127.0.0.1:8191",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 13660,
+      "laddr": "0.0.0.0:62665",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 20388,
+      "laddr": "127.0.0.1:8191",
+      "raddr": "127.0.0.1:49351",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 5644,
+      "laddr": "0.0.0.0:5353",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:62109",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 21296,
+      "laddr": "127.0.0.1:64949",
+      "raddr": "127.0.0.1:62390",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 18860,
+      "laddr": ":::7680",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 6020,
+      "laddr": "127.0.0.1:56716",
+      "raddr": "127.0.0.1:8191",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 28636,
+      "laddr": "10.163.178.52:62120",
+      "raddr": "150.171.22.11:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 17896,
+      "laddr": "fe80::ff6a:5f19:da3e:da64:52428",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 1532,
+      "laddr": "0.0.0.0:49670",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 3816,
+      "laddr": "127.0.0.1:54902",
+      "raddr": "127.0.0.1:49812",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:63261",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:64136",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 10832,
+      "laddr": "10.163.178.52:57051",
+      "raddr": "3.90.192.161:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "10.163.178.52:49226",
+      "raddr": "172.217.116.4:443",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 4,
+      "laddr": "192.168.62.1:137",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 21856,
+      "laddr": "127.0.0.1:54937",
+      "raddr": "127.0.0.1:8191",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:54892",
+      "raddr": "127.0.0.1:8194",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 13660,
+      "laddr": "0.0.0.0:57621",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 21552,
+      "laddr": "127.0.0.1:54890",
+      "raddr": "127.0.0.1:54909",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:50663",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:53268",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "10.163.178.52:53607",
+      "raddr": "34.54.84.110:443",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 20388,
+      "laddr": "0.0.0.0:8191",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 21856,
+      "laddr": "127.0.0.1:53620",
+      "raddr": "127.0.0.1:8191",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:49812",
+      "raddr": "127.0.0.1:54902",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 2168,
+      "laddr": ":::5353",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 21552,
+      "laddr": "127.0.0.1:54890",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:49818",
+      "raddr": "127.0.0.1:64951",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 13660,
+      "laddr": "10.163.178.52:52016",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:64959",
+      "raddr": "127.0.0.1:64951",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 13660,
+      "laddr": "0.0.0.0:5353",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 21856,
+      "laddr": "127.0.0.1:49351",
+      "raddr": "127.0.0.1:8191",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:54464",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 17896,
+      "laddr": "192.168.62.1:52433",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 4,
+      "laddr": "192.168.134.1:138",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 6020,
+      "laddr": "127.0.0.1:54619",
+      "raddr": "127.0.0.1:8191",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:65219",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 17896,
+      "laddr": "192.168.134.1:52432",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:49823",
+      "raddr": "127.0.0.1:54890",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 9088,
+      "laddr": "10.163.178.52:49225",
+      "raddr": "172.217.117.4:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:57286",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:58234",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 13660,
+      "laddr": "10.163.178.52:50651",
+      "raddr": "104.199.241.202:4070",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 11964,
+      "laddr": "0.0.0.0:5040",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 26144,
+      "laddr": "10.163.178.52:53608",
+      "raddr": "23.205.118.24:443",
+      "status": "CLOSE_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:62653",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 3816,
+      "laddr": "127.0.0.1:54902",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 10832,
+      "laddr": "10.163.178.52:49324",
+      "raddr": "52.37.230.57:443",
+      "status": "CLOSE_WAIT"
+    },
+    {
+      "pid": 18860,
+      "laddr": "0.0.0.0:7680",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 4,
+      "laddr": "192.168.56.1:139",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 1532,
+      "laddr": ":::49670",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 4,
+      "laddr": "10.163.178.52:139",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 13660,
+      "laddr": "0.0.0.0:54657",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:61848",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:52764",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 6020,
+      "laddr": "0.0.0.0:8089",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 26144,
+      "laddr": "10.163.178.52:53611",
+      "raddr": "23.59.175.107:443",
+      "status": "CLOSE_WAIT"
+    },
+    {
+      "pid": 5644,
+      "laddr": ":::5353",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 17896,
+      "laddr": "::1:52429",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 13660,
+      "laddr": "192.168.134.1:52017",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 20388,
+      "laddr": "127.0.0.1:8191",
+      "raddr": "127.0.0.1:53625",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 23864,
+      "laddr": "10.163.178.52:63647",
+      "raddr": "34.160.81.0:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 15172,
+      "laddr": "10.163.178.52:2177",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:58379",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 6204,
+      "laddr": "10.163.178.52:55794",
+      "raddr": "4.213.25.242:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:53349",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 17896,
+      "laddr": "fe80::f4dd:1873:80c0:c662:52426",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 20388,
+      "laddr": "127.0.0.1:8191",
+      "raddr": "127.0.0.1:54619",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 20388,
+      "laddr": "127.0.0.1:8191",
+      "raddr": "127.0.0.1:52191",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 23864,
+      "laddr": "0.0.0.0:52150",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:64666",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:61274",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 28636,
+      "laddr": "10.163.178.52:61428",
+      "raddr": "4.213.25.242:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 5832,
+      "laddr": ":::4500",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:53932",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 5536,
+      "laddr": ":::49668",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 17896,
+      "laddr": "fe80::ff6a:5f19:da3e:da64:1900",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:53936",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:54912",
+      "raddr": "127.0.0.1:54902",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:53351",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:60185",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 21856,
+      "laddr": "127.0.0.1:63006",
+      "raddr": "127.0.0.1:8191",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 15172,
+      "laddr": "fe80::f4dd:1873:80c0:c662:2177",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:8089",
+      "raddr": "127.0.0.1:62214",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:53349",
+      "raddr": "127.0.0.1:62380",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 20388,
+      "laddr": "127.0.0.1:8191",
+      "raddr": "127.0.0.1:54941",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 13660,
+      "laddr": ":::5353",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:61189",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 1868,
+      "laddr": ":::135",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 2360,
+      "laddr": ":::49666",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 13660,
+      "laddr": "0.0.0.0:1900",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 23864,
+      "laddr": "10.163.178.52:59285",
+      "raddr": "35.186.224.35:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 17896,
+      "laddr": "10.163.178.52:52431",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 17896,
+      "laddr": "fe80::f4dd:1873:80c0:c662:1900",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 21296,
+      "laddr": "127.0.0.1:64951",
+      "raddr": "127.0.0.1:64959",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:64722",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 3076,
+      "laddr": "0.0.0.0:5000",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:52793",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 13660,
+      "laddr": "127.0.0.1:7768",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:53349",
+      "raddr": "127.0.0.1:62379",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 20388,
+      "laddr": "127.0.0.1:8191",
+      "raddr": "127.0.0.1:63006",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 17896,
+      "laddr": "10.163.178.52:1900",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 3756,
+      "laddr": ":::49667",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 13660,
+      "laddr": "10.163.178.52:50690",
+      "raddr": "35.186.224.35:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 15172,
+      "laddr": "192.168.62.1:2177",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 21856,
+      "laddr": "127.0.0.1:56718",
+      "raddr": "127.0.0.1:8191",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:51178",
+      "raddr": "127.0.0.1:59466",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 26144,
+      "laddr": "10.163.178.52:53616",
+      "raddr": "162.159.142.9:80",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:63339",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 13660,
+      "laddr": "0.0.0.0:54658",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 2880,
+      "laddr": "0.0.0.0:50072",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 17896,
+      "laddr": "fe80::13d5:89b1:51e9:652f:52427",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 18936,
+      "laddr": "127.0.0.1:50592",
+      "raddr": "127.0.0.1:7768",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:59281",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:62848",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 4,
+      "laddr": "192.168.134.1:137",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:54914",
+      "raddr": "127.0.0.1:54897",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 13660,
+      "laddr": "0.0.0.0:49255",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 15856,
+      "laddr": "10.163.178.52:57661",
+      "raddr": "142.250.4.188:5228",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 21552,
+      "laddr": "127.0.0.1:8194",
+      "raddr": "127.0.0.1:54893",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 20388,
+      "laddr": "127.0.0.1:8191",
+      "raddr": "127.0.0.1:56717",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 21296,
+      "laddr": "127.0.0.1:62383",
+      "raddr": "127.0.0.1:53349",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "10.163.178.52:62666",
+      "raddr": "35.186.224.24:443",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 26144,
+      "laddr": "10.163.178.52:53609",
+      "raddr": "104.18.33.89:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 21296,
+      "laddr": "127.0.0.1:62390",
+      "raddr": "127.0.0.1:64949",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 9088,
+      "laddr": "127.0.0.1:63726",
+      "raddr": "127.0.0.1:58408",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 20388,
+      "laddr": "127.0.0.1:8191",
+      "raddr": "127.0.0.1:52194",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 6020,
+      "laddr": "127.0.0.1:53625",
+      "raddr": "127.0.0.1:8191",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 23864,
+      "laddr": "10.163.178.52:53988",
+      "raddr": "104.104.138.169:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:63980",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:55172",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 17896,
+      "laddr": "192.168.56.1:52430",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 6020,
+      "laddr": "127.0.0.1:52191",
+      "raddr": "127.0.0.1:8191",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 1376,
+      "laddr": ":::49665",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 20388,
+      "laddr": "127.0.0.1:8191",
+      "raddr": "127.0.0.1:54937",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:53349",
+      "raddr": "127.0.0.1:62378",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 26144,
+      "laddr": "10.163.178.52:53617",
+      "raddr": "162.159.142.9:80",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 1564,
+      "laddr": "0.0.0.0:49664",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:51159",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 9088,
+      "laddr": "10.163.178.52:56609",
+      "raddr": "172.217.114.4:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:60002",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:53442",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:62134",
+      "raddr": "127.0.0.1:8089",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:62214",
+      "raddr": "127.0.0.1:8089",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 3756,
+      "laddr": "0.0.0.0:49667",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 4,
+      "laddr": "10.163.178.52:138",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 5832,
+      "laddr": "0.0.0.0:500",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 5840,
+      "laddr": "127.0.0.1:57782",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:55747",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 21296,
+      "laddr": "127.0.0.1:64949",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:59516",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 18936,
+      "laddr": "0.0.0.0:60547",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 1564,
+      "laddr": ":::49664",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 11964,
+      "laddr": "0.0.0.0:5050",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 31836,
+      "laddr": "127.0.0.1:58408",
+      "raddr": "127.0.0.1:63726",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 10832,
+      "laddr": "10.163.178.52:54509",
+      "raddr": "34.209.20.43:443",
+      "status": "CLOSE_WAIT"
+    },
+    {
+      "pid": 7264,
+      "laddr": "0.0.0.0:5432",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:54909",
+      "raddr": "127.0.0.1:54890",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "10.163.178.52:61483",
+      "raddr": "20.42.65.84:443",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 2880,
+      "laddr": "10.163.178.52:59166",
+      "raddr": "20.249.168.239:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:62902",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:53349",
+      "raddr": "127.0.0.1:62384",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 26144,
+      "laddr": "10.163.178.52:53615",
+      "raddr": "162.159.142.9:80",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 1976,
+      "laddr": "127.0.0.1:54897",
+      "raddr": "127.0.0.1:49804",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 1976,
+      "laddr": "127.0.0.1:54897",
+      "raddr": "127.0.0.1:54914",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:64439",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:53349",
+      "raddr": "127.0.0.1:62383",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 24680,
+      "laddr": "127.0.0.1:59465",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:65426",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 23864,
+      "laddr": "10.163.178.52:52389",
+      "raddr": "35.186.224.24:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 17896,
+      "laddr": "192.168.62.1:1900",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:62119",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 4,
+      "laddr": ":::445",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 21296,
+      "laddr": "127.0.0.1:64951",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 15172,
+      "laddr": "192.168.56.1:2177",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 21552,
+      "laddr": "127.0.0.1:8194",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:61790",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:58830",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 2880,
+      "laddr": ":::50072",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 1976,
+      "laddr": "127.0.0.1:50157",
+      "raddr": "127.0.0.1:8089",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 4,
+      "laddr": "192.168.134.1:139",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 17896,
+      "laddr": "192.168.56.1:1900",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 17896,
+      "laddr": "127.0.0.1:52434",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 26144,
+      "laddr": "10.163.178.52:53618",
+      "raddr": "162.159.142.9:80",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 17896,
+      "laddr": "192.168.134.1:1900",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 6020,
+      "laddr": "127.0.0.1:56717",
+      "raddr": "127.0.0.1:8191",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "10.163.178.52:56930",
+      "raddr": "35.186.224.24:443",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:57259",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:52160",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:55531",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 15172,
+      "laddr": "fe80::ff6a:5f19:da3e:da64:2177",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 26144,
+      "laddr": "10.163.178.52:53606",
+      "raddr": "104.104.138.112:443",
+      "status": "CLOSE_WAIT"
+    },
+    {
+      "pid": 5256,
+      "laddr": "0.0.0.0:123",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:51071",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 4,
+      "laddr": "192.168.62.1:138",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 9088,
+      "laddr": "127.0.0.1:63726",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 20388,
+      "laddr": "127.0.0.1:8191",
+      "raddr": "127.0.0.1:53620",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 20388,
+      "laddr": "127.0.0.1:8191",
+      "raddr": "127.0.0.1:56716",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 6228,
+      "laddr": "10.163.178.52:54582",
+      "raddr": "57.155.141.122:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 6080,
+      "laddr": "0.0.0.0:902",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:53349",
+      "raddr": "127.0.0.1:62381",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 20388,
+      "laddr": "127.0.0.1:8191",
+      "raddr": "127.0.0.1:56718",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 24680,
+      "laddr": "127.0.0.1:59466",
+      "raddr": "127.0.0.1:51178",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 13660,
+      "laddr": "0.0.0.0:57621",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:54893",
+      "raddr": "127.0.0.1:8194",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 4,
+      "laddr": "192.168.62.1:139",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 6204,
+      "laddr": "10.163.178.52:64742",
+      "raddr": "4.213.25.242:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 21296,
+      "laddr": "127.0.0.1:64951",
+      "raddr": "127.0.0.1:49818",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 4,
+      "laddr": "10.163.178.52:137",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 4,
+      "laddr": "192.168.56.1:137",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 26144,
+      "laddr": "10.163.178.52:53612",
+      "raddr": "23.59.175.107:443",
+      "status": "CLOSE_WAIT"
+    },
+    {
+      "pid": 24680,
+      "laddr": "127.0.0.1:59468",
+      "raddr": "127.0.0.1:53351",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 23864,
+      "laddr": "10.163.178.52:55731",
+      "raddr": "104.86.189.48:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 21296,
+      "laddr": "127.0.0.1:62381",
+      "raddr": "127.0.0.1:53349",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:59977",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 7264,
+      "laddr": ":::5432",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 1868,
+      "laddr": "0.0.0.0:135",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:57017",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 5832,
+      "laddr": ":::500",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 21552,
+      "laddr": "127.0.0.1:54890",
+      "raddr": "127.0.0.1:49823",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 21296,
+      "laddr": "127.0.0.1:62384",
+      "raddr": "127.0.0.1:53349",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 9088,
+      "laddr": "10.163.178.52:49227",
+      "raddr": "172.217.24.97:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:53351",
+      "raddr": "127.0.0.1:59468",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 6020,
+      "laddr": "0.0.0.0:8000",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 11184,
+      "laddr": "10.163.178.52:65360",
+      "raddr": "20.249.168.239:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 21856,
+      "laddr": "127.0.0.1:54936",
+      "raddr": "127.0.0.1:8191",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 4,
+      "laddr": "192.168.56.1:138",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 26144,
+      "laddr": "10.163.178.52:53610",
+      "raddr": "23.59.175.107:443",
+      "status": "CLOSE_WAIT"
+    },
+    {
+      "pid": 5536,
+      "laddr": "0.0.0.0:49668",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 21296,
+      "laddr": "127.0.0.1:62377",
+      "raddr": "127.0.0.1:53349",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 9088,
+      "laddr": "10.163.178.52:57935",
+      "raddr": "172.217.116.4:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 21296,
+      "laddr": "127.0.0.1:62379",
+      "raddr": "127.0.0.1:53349",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 3816,
+      "laddr": "127.0.0.1:54902",
+      "raddr": "127.0.0.1:54912",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:65343",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:54665",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:62117",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 2168,
+      "laddr": ":::5355",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 23864,
+      "laddr": "10.163.178.52:49224",
+      "raddr": "35.186.224.24:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 5256,
+      "laddr": ":::123",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 2168,
+      "laddr": "0.0.0.0:5353",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:49804",
+      "raddr": "127.0.0.1:54897",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 17896,
+      "laddr": "fe80::13d5:89b1:51e9:652f:1900",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 1976,
+      "laddr": "127.0.0.1:54896",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 13660,
+      "laddr": "192.168.56.1:52015",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 15172,
+      "laddr": "fe80::13d5:89b1:51e9:652f:2177",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 1376,
+      "laddr": "0.0.0.0:49665",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 9088,
+      "laddr": "127.0.0.1:63727",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 6228,
+      "laddr": "10.163.178.52:55762",
+      "raddr": "57.155.141.122:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 24680,
+      "laddr": "127.0.0.1:59466",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 17896,
+      "laddr": "::1:1900",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 13660,
+      "laddr": "127.0.0.1:7768",
+      "raddr": "127.0.0.1:50592",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 13660,
+      "laddr": "192.168.62.1:52018",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 21552,
+      "laddr": "127.0.0.1:8194",
+      "raddr": "127.0.0.1:54892",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 26144,
+      "laddr": "10.163.178.52:53604",
+      "raddr": "104.104.138.112:443",
+      "status": "CLOSE_WAIT"
+    },
+    {
+      "pid": 1976,
+      "laddr": "127.0.0.1:54897",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 24680,
+      "laddr": "127.0.0.1:59466",
+      "raddr": "127.0.0.1:53534",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 5852,
+      "laddr": "::1:49669",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:62933",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 2168,
+      "laddr": "0.0.0.0:5355",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 26144,
+      "laddr": "10.163.178.52:53605",
+      "raddr": "23.205.118.24:443",
+      "status": "CLOSE_WAIT"
+    },
+    {
+      "pid": 4,
+      "laddr": "0.0.0.0:445",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 20388,
+      "laddr": "127.0.0.1:8191",
+      "raddr": "127.0.0.1:54936",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 3816,
+      "laddr": "127.0.0.1:54901",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 6080,
+      "laddr": "0.0.0.0:912",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:62132",
+      "raddr": "127.0.0.1:8089",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 21296,
+      "laddr": "127.0.0.1:62378",
+      "raddr": "127.0.0.1:53349",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 17896,
+      "laddr": "127.0.0.1:1900",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 15172,
+      "laddr": "192.168.134.1:2177",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:53349",
+      "raddr": "127.0.0.1:62377",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 6020,
+      "laddr": "127.0.0.1:8089",
+      "raddr": "127.0.0.1:50157",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 21856,
+      "laddr": "127.0.0.1:54941",
+      "raddr": "127.0.0.1:8191",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 26144,
+      "laddr": "10.163.178.52:53613",
+      "raddr": "23.59.175.107:443",
+      "status": "CLOSE_WAIT"
+    },
+    {
+      "pid": 5832,
+      "laddr": "0.0.0.0:4500",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 0,
+      "laddr": "127.0.0.1:59841",
+      "raddr": "127.0.0.1:5000",
+      "status": "TIME_WAIT"
+    },
+    {
+      "pid": 8240,
+      "laddr": "127.0.0.1:53534",
+      "raddr": "127.0.0.1:59466",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 13660,
+      "laddr": "0.0.0.0:54659",
+      "raddr": "-",
+      "status": "NONE"
+    },
+    {
+      "pid": 29588,
+      "laddr": "127.0.0.1:63725",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 16916,
+      "laddr": "127.0.0.1:8065",
+      "raddr": "-",
+      "status": "LISTEN"
+    },
+    {
+      "pid": 18936,
+      "laddr": "10.163.178.52:62133",
+      "raddr": "35.186.224.24:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 15856,
+      "laddr": "10.163.178.52:50537",
+      "raddr": "185.199.110.153:443",
+      "status": "ESTABLISHED"
+    },
+    {
+      "pid": 21296,
+      "laddr": "127.0.0.1:62380",
+      "raddr": "127.0.0.1:53349",
+      "status": "ESTABLISHED"
+    }
+  ],
+  "users": [
+    {
+      "name": "katre",
+      "terminal": "-",
+      "host": "-",
+      "started": "2026-08-11 12:36:25"
+    }
+  ]
+}

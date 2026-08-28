@@ -71,7 +71,7 @@
   },
   "nani123|Canary File Triggered": {
     "window_start": 1787938979.002406,
-    "window_count": 4,
+    "window_count": 5,
     "baseline_n": 3,
     "baseline_mean": 3.333333333333333,
     "baseline_m2": 12.666666666666666
@@ -105,10 +105,10 @@
     "baseline_m2": 0.0
   },
   "nani123|Suspicious Execution Detected": {
-    "window_start": 1787918277.439591,
+    "window_start": 1787939759.8658342,
     "window_count": 1,
-    "baseline_n": 0,
-    "baseline_mean": 0.0,
+    "baseline_n": 1,
+    "baseline_mean": 1.0,
     "baseline_m2": 0.0
   }
 }
