@@ -1,0 +1,40 @@
+1254: 
+1255:     # ── Stage 4c: Evidence Snapshot (core/evidence_snapshot.py) ─
+1256:     # Captures process/connection/logged-in-user state the instant a
+1257:     # CRITICAL alert fires — forensic value drops fast once a host is
+1258:     # touched further, so this runs as early as severity allows rather
+1259:     # than being deferred to persistence. Wrapped non-fatal like SOAR
+1260:     # above: a psutil hiccup should never be able to stop the alert
+1261:     # itself from being recorded.
+1262:     if severity == "CRITICAL":
+1263:         try:
+1264:             from core.evidence_snapshot import capture_snapshot
+1265:             capture_snapshot(alert)
+1266:         except Exception as e:
+1267:             print(f"[EvidenceSnapshot] non-fatal: {e}")
+1268: 
+1269:     # ── Stage 5: Auto Response ──────────────────────────────
+1270:     alert["auto_response"] = build_auto_response(
+1271:         severity, mitre["mitre_tactic"]
+1272:     )
+1273: 
+1274:     # ── Stage 8a: Persist + Push ────────────────────────────
+1275:     _persist_alert(alert)
+1276:     _console_print(alert, label="ALERT")
+1277:     # _push_to_flask(alert)
+1278:     _auto_create_case(alert)
+1279: 
+1280:     # ── Stage 8a-ii: SLA Tracking ──────────────────────────────
+1281:     # Start the SLA clock the instant the alert is persisted.
+1282:     try:
+1283:         from core.sla_tracker import track_new_alert
+1284:         track_new_alert(alert["id"], alert.get("severity", "medium"))
+1285:     except Exception:
+1286:         pass  # SLA tracking is non-fatal
+1287: 
+1288:     # ── Stage 8b: Notify (email/Slack/Teams for CRITICAL+, see
+1289:     # integrations/notifier.py) — wrapped so a notification failure
+1290:     # (bad SMTP creds, webhook down, no network) can never prevent the
+1291:     # alert itself from being recorded; this only ever adds a side effect,
+1292:     # it's never load-bearing for detection.
+1293:     try:

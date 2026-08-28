@@ -1,0 +1,246 @@
+[
+  {
+    "timestamp": "2026-08-28 23:13:38",
+    "event": "Canary File Triggered",
+    "severity": "CRITICAL",
+    "mitre": "T0000",
+    "tactic": "Unknown",
+    "alert_id": "ALT-59268476",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 23:13:38",
+    "event": "🚨 Incident Declared — Host Under Active Attack",
+    "severity": "CRITICAL",
+    "mitre": "-",
+    "tactic": "-",
+    "alert_id": "INC-787744",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 23:13:23",
+    "event": "Canary File Triggered",
+    "severity": "CRITICAL",
+    "mitre": "T0000",
+    "tactic": "Unknown",
+    "alert_id": "ALT-27637184",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 23:13:10",
+    "event": "Canary File Triggered",
+    "severity": "CRITICAL",
+    "mitre": "T0000",
+    "tactic": "Unknown",
+    "alert_id": "ALT-97924921",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 23:12:58",
+    "event": "Canary File Triggered",
+    "severity": "CRITICAL",
+    "mitre": "T0000",
+    "tactic": "Unknown",
+    "alert_id": "ALT-55351960",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 22:03:25",
+    "event": "Process Ancestry Attack Detected",
+    "severity": "HIGH",
+    "mitre": "T1059.001",
+    "tactic": "Execution",
+    "alert_id": "ALT-13917343",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 21:57:52",
+    "event": "Process Ancestry Attack Detected",
+    "severity": "HIGH",
+    "mitre": "T1059.001",
+    "tactic": "Execution",
+    "alert_id": "ALT-35500428",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 21:50:45",
+    "event": "Process Ancestry Attack Detected",
+    "severity": "HIGH",
+    "mitre": "T1059.001",
+    "tactic": "Execution",
+    "alert_id": "ALT-46435072",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 21:34:50",
+    "event": "🚨 Incident Declared — Host Under Active Attack",
+    "severity": "CRITICAL",
+    "mitre": "-",
+    "tactic": "-",
+    "alert_id": "INC-693412",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 21:34:36",
+    "event": "Process Ancestry Attack Detected",
+    "severity": "CRITICAL",
+    "mitre": "T1059.001",
+    "tactic": "Execution",
+    "alert_id": "ALT-46024606",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 21:34:19",
+    "event": "Process Ancestry Attack Detected",
+    "severity": "HIGH",
+    "mitre": "T1059.001",
+    "tactic": "Execution",
+    "alert_id": "ALT-28108637",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 21:34:14",
+    "event": "Suspicious PowerShell Detected",
+    "severity": "LOW",
+    "mitre": "T1059.001",
+    "tactic": "Execution",
+    "alert_id": "ALT-57656544",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 21:31:54",
+    "event": "Process Ancestry Attack Detected",
+    "severity": "HIGH",
+    "mitre": "T1059.001",
+    "tactic": "Execution",
+    "alert_id": "ALT-43285160",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 20:34:40",
+    "event": "Suspicious PowerShell Detected",
+    "severity": "LOW",
+    "mitre": "T1059.001",
+    "tactic": "Execution",
+    "alert_id": "ALT-41453958",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 20:30:17",
+    "event": "Process Ancestry Attack Detected",
+    "severity": "HIGH",
+    "mitre": "T1189",
+    "tactic": "Initial Access",
+    "alert_id": "ALT-95093480",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 18:58:43",
+    "event": "🚨 Incident Declared — Host Under Active Attack",
+    "severity": "CRITICAL",
+    "mitre": "-",
+    "tactic": "-",
+    "alert_id": "INC-302966",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 18:58:43",
+    "event": "Process Ancestry Attack Detected",
+    "severity": "HIGH",
+    "mitre": "T1059.001",
+    "tactic": "Execution",
+    "alert_id": "ALT-29760216",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 18:57:21",
+    "event": "Process Ancestry Attack Detected",
+    "severity": "CRITICAL",
+    "mitre": "T1059.001",
+    "tactic": "Execution",
+    "alert_id": "ALT-50806528",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 18:56:11",
+    "event": "Process Ancestry Attack Detected",
+    "severity": "HIGH",
+    "mitre": "T1059.001",
+    "tactic": "Execution",
+    "alert_id": "ALT-87520760",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 17:27:59",
+    "event": "Registry Persistence Detected",
+    "severity": "CRITICAL",
+    "mitre": "T1547.001",
+    "tactic": "Persistence",
+    "alert_id": "ALT-71657793",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 17:27:57",
+    "event": "Canary File Triggered",
+    "severity": "CRITICAL",
+    "mitre": "T0000",
+    "tactic": "Unknown",
+    "alert_id": "ALT-28048817",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 17:27:57",
+    "event": "Suspicious Execution Detected",
+    "severity": "LOW",
+    "mitre": "T0000",
+    "tactic": "Unknown",
+    "alert_id": "ALT-44120937",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 17:19:34",
+    "event": "Registry Persistence Detected",
+    "severity": "CRITICAL",
+    "mitre": "T1547.001",
+    "tactic": "Persistence",
+    "alert_id": "ALT-12822505",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 17:09:01",
+    "event": "Registry Persistence Detected",
+    "severity": "CRITICAL",
+    "mitre": "T1547.001",
+    "tactic": "Persistence",
+    "alert_id": "ALT-82361453",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 16:51:37",
+    "event": "Process Ancestry Attack Detected",
+    "severity": "HIGH",
+    "mitre": "T1189",
+    "tactic": "Initial Access",
+    "alert_id": "ALT-38098261",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 16:30:45",
+    "event": "Process Ancestry Attack Detected",
+    "severity": "HIGH",
+    "mitre": "T1059.001",
+    "tactic": "Execution",
+    "alert_id": "ALT-42954345",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-28 16:20:10",
+    "event": "Mimikatz Credential Dumping Detected",
+    "severity": "CRITICAL",
+    "mitre": "T1003.001",
+    "tactic": "Credential Access",
+    "alert_id": "ALT-16982860",
+    "host": "SOC-ENDPOINT-01"
+  },
+  {
+    "timest

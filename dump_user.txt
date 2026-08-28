@@ -1,0 +1,5 @@
+User Management',sec:'M8 — Settings',
+ title:'User & Access Management',sub:'Enterprise Role-Based Access Control (RBAC)',badges:[['RBAC Active', 'b'], ['Admin Command', 'r']],
+ html:()=>{
+  setTimeout(function(){ if(typeof _loadUsersManagementUi === 'function') _loadUsersManagementUi(); }, 50);
+  const currentU =

@@ -1,0 +1,20 @@
+3400:      }).join('') +
+3401:      '</tbody></table></div>' :
+3402:      '<div style="text-align:center;color:var(--text3);padding:28px">' +
+3403:       '<div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:6px">🛡️ Zero External IoCs in Current Stream</div>' +
+3404:       '<div style="font-size:10.5px;color:var(--text3);max-width:550px;margin:0 auto 14px">All network connections and telemetry streams are clean. Generate an attack simulation to populate real-time VirusTotal, AbuseIPDB, and MITRE IoC feeds.</div>' +
+3405:       '<button class="btn btn-r" style="padding:5px 16px;font-size:10.5px;font-weight:700" onclick="_openAttackSimModal()">🎯 Simulate C2 Attack</button>' +
+3406:      '</div>'
+3407:     )
+3408:    ) +
+3409: 
+3410:    g2(
+3411:     card('Correlated MITRE ATT&CK Techniques', 'Technique frequency in live session',
+3412:      (topMitreEntries.length ?
+3413:       topMitreEntries.slice(0, 6).map(function([id, cnt]){
+3414:        return '<a href="https://attack.mitre.org/techniques/' + id.replace('.', '/') + '/" target="_blank" style="text-decoration:none;display:block">' +
+3415:         brrow(id, Math.min(100, cnt * 25), 'blue', cnt + ' alert(s)') +
+3416:        '</a>';
+3417:       }).join('') :
+3418:       '<div style="text-align:center;padding:16px;color:var(--text3);font-size:10.5px">No MITRE techniques recorded in current stream</div>'
+3419:      )

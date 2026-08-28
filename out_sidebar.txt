@@ -1,0 +1,67 @@
+Widget _buildMobileDrawer() {
+    return Drawer(
+      backgroundColor: const Color(0xFF0b0f19),
+      child: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              child: Row(
+                children: [
+                  Container(width: 32, height: 32, decoration: BoxDecoration(color: const Color(0xFF0a84ff), borderRadius: BorderRadius.circular(4)), alignment: Alignment.center, child: const Text('SX', style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w900))),
+                  const SizedBox(width: 12),
+                  Column(crossAxisAlignment: CrossAxisAlignment.start, children: const [Text('SENTINELX', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w900)), Text('SOC Automation', style: TextStyle(color: Color(0xFF8b949e), fontSize: 10))]),
+                ],
+              ),
+            ),
+            const Divider(color: Color(0xFF1f242d), height: 1),
+            Expanded(
+              child: ListView(
+                padding: const EdgeInsets.only(bottom: 20),
+                children: [
+                  _buildSectionHeader('M2 — DASHBOARD'),
+                  _buildSidebarItem('1', 'Main Dashboard'), _buildSidebarItem('2', 'Detailed Metrics'), _buildSidebarItem('3', 'Threat Overview'), _buildSidebarItem('4', 'SOC Health Status'),
+                  _buildSectionHeader('M3 — DETECTION'),
+                  _buildSidebarItem('5', 'Live Alerts', hasRedBadge: true), _buildSidebarItem('6', 'Alert Feed (Table)'), _buildSidebarItem('7', '📡 SentinelX Stream'), _buildSidebarItem('8', '🗺️ World Threat Map'), _buildSidebarItem('9', 'Suspicious Executables'), _buildSidebarItem('10', 'PowerShell Detection'), _buildSidebarItem('11', 'Network Suspicious Activity'), _buildSidebarItem('12', 'File Creation Alerts'), _buildSidebarItem('13', 'Registry Persistence Alerts'),
+                  _buildSectionHeader('M4 — INVESTIGATION'),
+                  _buildSidebarItem('14', 'Alert Detail'),
+                  _buildSidebarItem('15', 'Parent-Child Process Analysis'),
+                  _buildSidebarItem('16', 'Network Connection Analysis'),
+                  _buildSidebarItem('17', 'Threat Intelligence'),
+                  _buildSidebarItem('18', 'Registry Persistence Investigation'),
+                  _buildSidebarItem('20', 'User Behavior Analysis'),
+                  _buildSidebarItem('21', 'Containment & Neutralization'),
+                  _buildSidebarItem('22', 'Response Action History'),
+                  _buildSectionHeader('M5 — AI ENGINE'),
+                  _buildSidebarItem('23', 'AI Threat Analysis'),
+                  _buildSidebarItem('24', 'Threat Classification'),
+                  _buildSidebarItem('25', 'Threat Intelligence Framework'),
+                  _buildSectionHeader('M6 — ADVANCED SOC'),
+                  _buildSidebarItem('26', 'Alert Correlation'),
+                  _buildSidebarItem('27', 'Threat Hunting'),
+                  _buildSidebarItem('28', 'IOC Dashboard'),
+                  _buildSidebarItem('29', 'Endpoint Summary'),
+                  _buildSidebarItem('30', 'SOC Automation Playbook'),
+                  _buildSidebarItem('31', 'Playbook Builder'),
+                  _buildSectionHeader('M7 — REPORTING'),
+                  _buildSidebarItem('32', 'Incident Reports'),
+                  _buildSidebarItem('33', 'Report Generator'),
+                  _buildSidebarItem('34', 'Export Logs'),
+                  _buildSectionHeader('M8 — SETTINGS'),
+                  _buildSidebarItem('35', 'Rule Engine'),
+                  _buildSidebarItem('36', 'Custom Detection Rules'),
+                  _buildSidebarItem('37', 'Audit Log'),
+                  _buildSidebarItem('38', 'User Management'),
+                  _buildSectionHeader('M9 — ADMIN COMMAND'),
+                  _buildSidebarItem('39', '⚡ Admin Command Center'),
+],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  

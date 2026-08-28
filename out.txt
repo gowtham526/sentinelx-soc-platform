@@ -1,0 +1,14 @@
+Alert Correlation',sec:'M6 — Advanced SOC',
+ title:'AI Multi-Signal Alert Correlation Engine',sub:'Real-time temporal clustering & attack vector graph correlation',badges:[['● AI CORRELATION ACTIVE','g'],['5-Min Rolling Window','b'],['Multi-Vector Fusion','p']],
+ html:()=>{
+  const ra = typeof _realAlerts === 'function' ? _realAlerts() : _A;
+  
+  // Group real alerts by host+user or IP into correlation clusters
+  const groups={};
+  ra.forEach(a=>{
+   const host = a.host && a.host !== '-' ? a.host : (a.ip || 'ENDPOINT-PRIMARY');
+   const user = a.user && a.user !== '-' ? a.user : 'SYSTEM';
+   const key = host + '|' + user;
+   if(!groups[key]) groups[key] = { host: host, user: user, alerts: [], sev: 'LOW', tactics: new Set(), score: 0 };
+   groups[key].alerts.push(a);
+   if(a.mitre_tactic) g

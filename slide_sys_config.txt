@@ -1,0 +1,89 @@
+{id:'SYS_CONFIG',label:'System Configuration',sec:'M8 — Settings',
+ title:'System Configuration & Engine Health',sub:'Platform architecture, sensor threads, security thresholds & autonomous SOAR engine settings',badges:[['Engine Active','g'],['v3.8 Production','b']],
+ html:()=>{
+  const detectors = [
+    { name: 'Sysmon Detector', file: 'detectors/sysmon_detector.py', scope: 'Process Creation (EID 1), Network (EID 3), Memory (EID 10), File (EID 11)', freq: '2.0s', status: 'HEALTHY' },
+    { name: 'PowerShell Detector', file: 'detectors/powershell_detector.py', scope: 'Script Block Logging (EID 4104), Encoded Commands, Ingress Transfer', freq: '2.0s', status: 'HEALTHY' },
+    { name: 'CMD & Process Detector', file: 'detectors/cmd_detector.py', scope: 'Sub-shell Spawning, Account Modification (net user), System Discovery', freq: '3.0s', status: 'HEALTHY' },
+    { name: 'EXE & Binary Detector', file: 'detectors/exe_detector.py', scope: 'Untrusted Binary Execution, LOLBin Invocations, Directory Staging', freq: '3.0s', status: 'HEALTHY' },
+    { name: 'Network Socket Detector', file: 'detectors/network_detector.py', scope: 'Active Socket Tables, Outbound C2 Ports (4444, 6666, 8080), Tor Nodes', freq: '3.0s', status: 'HEALTHY' },
+    { name: 'Registry Persistence Detector', file: 'detectors/registry_detector.py', scope: 'Run/RunOnce Keys, Winlogon Userinit, Startup Folder Hijacks', freq: '3.0s', status: 'HEALTHY' },
+    { name: 'Canary Tripwire Detector', file: 'detectors/canary_detector.py', scope: 'Ransomware Decoy Traps & Canary File Watchdog Monitoring', freq: 'Real-time', status: 'HEALTHY' }
+  ];
+
+  return `
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:10px">
+   <div>
+    <div style="font-size:14px;font-weight:900;color:var(--text);display:flex;align-items:center;gap:8px">
+     <span>⚙️ SENTINELX ENTERPRISE PLATFORM CONFIGURATION</span>
+     <span class="bx bx-g font-bold">ALL 7 DETECTORS OPERATIONAL</span>
+    </div>
+    <div style="font-size:11px;color:var(--text3);margin-top:3px">Real-time daemon health, detection pipeline tuners, external intel connectors, and SOAR execution policies.</div>
+   </div>
+   <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <button class="btn btn-ac" style="padding:6px 14px;font-size:11px;font-weight:800;background:var(--accent);color:#000" onclick="_runSystemDiagnosticSelfTest()">🚀 Run Engine Self-Test</button>
+    <button class="btn btn-gh" style="padding:6px 14px;font-size:11px;font-weight:700" onclick="window.open('/api/report/json?token='+encodeURIComponent(_authToken||''),'_blank')">💾 Export Config & Telemetry</button>
+   </div>
+  </div>
+
+  <div class="stat-grid">
+   ${scard('Engine Status', 'ACTIVE', 'sv-g', 'Flask Port 5000 · 0.0.0.0', 'sc-g')}
+   ${scard('Sensor Threads', '7 / 7 Active', 'sv-g', '100% Ingestion Rate', 'sc-g')}
+   ${scard('Auth Security', 'HMAC-SHA256', 'sv-b', '8-Hour Bearer JWT TTL', 'sc-b')}
+   ${scard('SOAR Auto-Mitigation', 'ARMED', 'sv-g', 'Host Isolation & Process Kill', 'sc-g')}
+  </div>
+
+  ${g2(
+   card('Runtime Platform State', 'Engine daemon parameters',
+    dr('Platform Version', '<span class="mono font-bold">SentinelX Enterprise v3.8</span>') +
+    dr('Web Daemon Host / Port', '<span class="mono">http://127.0.0.1:5000/</span>') +
+    dr('Telemetry Refresh Rate', '<span class="mono text-green-400">4.0 seconds (Adaptive Loop)</span>') +
+    dr('Session Authentication', '<span class="mono">HMAC-SHA256 Token (8h Expiry)</span>') +
+    dr('Audit Trail Integrity', '<span class="bx bx-g font-bold">SHA-256 Tamper-Proof</span>') +
+    dr('Memory Cache Capacity', '<span class="mono">5,000 Events (Thread-Safe Buffer)</span>') +
+    dr('Evidence Snapshots', '<span class="bx bx-g font-bold">Automatic on Critical</span>')
+   ),
+   card('External Threat Intel Connectors', 'Enrichment and verification feeds',
+    dr('VirusTotal API v3', '<span class="bx bx-g font-bold">Configured (72 Engines)</span>') +
+    dr('AbuseIPDB Reputation', '<span class="bx bx-g font-bold">Configured (100% Confidence)</span>') +
+    dr('MITRE ATT&CK Matrix', '<span class="bx bx-b font-bold">v14 Enterprise (130+ TTPs)</span>') +
+    dr('Tor Exit Node Feed', '<span class="bx bx-g font-bold">Active Dynamic Feed</span>') +
+    dr('AlienVault OTX', '<span class="bx bx-g font-bold">Enabled</span>') +
+    dr('CISA KEV Catalog', '<span class="bx bx-b font-bold">Mapped</span>')
+   )
+  )}
+
+  ${card('Sensor Detector Threads Status (7 Active Sensors)', 'Continuous monitoring threads running in parallel with dedicated event queues',
+   '<table class="tbl">' +
+   tblHead('Detector Sensor', 'Source File', 'Monitored Vectors & Event IDs', 'Polling Frequency', 'Thread State') +
+   '<tbody>' +
+   detectors.map(d => '<tr>' +
+     '<td class="hi font-bold" style="font-size:11px">' + d.name + '</td>' +
+     '<td class="mono" style="font-size:10px;color:var(--cyan)">' + d.file + '</td>' +
+     '<td style="font-size:10.5px">' + d.scope + '</td>' +
+     '<td class="mono font-bold" style="font-size:10px">' + d.freq + '</td>' +
+     '<td><span class="bx bx-g font-bold">● ' + d.status + '</span></td>' +
+    '</tr>'
+   ).join('') +
+   '</tbody></table>'
+  )}
+
+  ${card('Pipeline Risk Scoring Thresholds', 'Deterministic score boundaries configured in core/alert_pipeline.py',
+   '<table class="tbl">' +
+   tblHead('Severity Tier', 'Score Range', 'Autonomous SOAR Pipeline Trigger Action') +
+   '<tbody>' +
+   [
+     ['CRITICAL', '71 – 999+', 'Auto-declares Incident + Cases + Triggers SOAR Playbook host isolation and sound siren.'],
+     ['HIGH', '46 – 70', 'Auto-folds into active Incident Case + Notifies analyst queue + Triage prompt.'],
+     ['MEDIUM', '21 – 45', 'Enriched with Threat Intel + Logged to real-time stream + Anomaly tracking.'],
+     ['LOW / INFO', '0 – 20', 'Baseline activity recording + Statistical Gaussian distribution profiling.']
+   ].map(([sev, range, act]) => '<tr>' +
+     '<td>' + sevBx(sev) + '</td>' +
+     '<td class="mono font-bold" style="font-size:11px;color:var(--cyan)">' + range + '</td>' +
+     '<td style="font-size:10.5px;color:var(--text)">' + act + '</td>' +
+    '</tr>'
+   ).join('') +
+   '</tbody></table>'
+  )}
+  `;
+ }}

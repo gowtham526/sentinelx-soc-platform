@@ -1,0 +1,122 @@
+{
+  "total_alerts": 24,
+  "critical_alerts": 8,
+  "high_alerts": 4,
+  "medium_alerts": 2,
+  "low_alerts": 10,
+  "open_alerts": 24,
+  "investigating": 0,
+  "resolved_alerts": 0,
+  "false_positives": 0,
+  "fp_rate": 0.0,
+  "mttd_display": "< 5 seconds (fully automated)",
+  "mttr_display": "No resolved alerts",
+  "coverage": {
+    "covered": 6,
+    "total": 11,
+    "percentage": 54.5,
+    "tactics": [
+      "Initial Access",
+      "Execution",
+      "Persistence",
+      "Defense Evasion",
+      "Command & Control",
+      "Impact"
+    ],
+    "missing": [
+      "Privilege Escalation",
+      "Credential Access",
+      "Discovery",
+      "Lateral Movement",
+      "Exfiltration"
+    ]
+  },
+  "attack_chains": 6,
+  "automation_rate": "100%",
+  "analyst_reduction": "~95%",
+  "detection_sources": 7,
+  "cases": {
+    "total": 2,
+    "open": 2,
+    "closed": 0,
+    "unassigned": 2
+  },
+  "incidents": {
+    "total": 7,
+    "open": 7,
+    "closed": 0
+  },
+  "by_tactic": {
+    "Attack Chain": 6,
+    "Execution": 6,
+    "Initial Access": 2,
+    "Impact": 2,
+    "Command & Control": 2,
+    "Defense Evasion": 2,
+    "Persistence": 2,
+    "Unknown": 2
+  },
+  "by_mitre": {
+    "TA0001": 6,
+    "T1059.001": 6,
+    "T1189": 2,
+    "T1490": 2,
+    "T1105": 2,
+    "T1027": 2,
+    "T1547.001": 2
+  },
+  "by_host": {
+    "nani123": 24
+  },
+  "trend_7day": [
+    {
+      "label": "06/08",
+      "date": "2026-06-08",
+      "count": 0,
+      "critical": 0,
+      "high": 0
+    },
+    {
+      "label": "06/09",
+      "date": "2026-06-09",
+      "count": 0,
+      "critical": 0,
+      "high": 0
+    },
+    {
+      "label": "06/10",
+      "date": "2026-06-10",
+      "count": 0,
+      "critical": 0,
+      "high": 0
+    },
+    {
+      "label": "06/11",
+      "date": "2026-06-11",
+      "count": 2,
+      "critical": 0,
+      "high": 0
+    },
+    {
+      "label": "06/12",
+      "date": "2026-06-12",
+      "count": 0,
+      "critical": 0,
+      "high": 0
+    },
+    {
+      "label": "06/13",
+      "date": "2026-06-13",
+      "count": 0,
+      "critical": 0,
+      "high": 0
+    },
+    {
+      "label": "06/14",
+      "date": "2026-06-14",
+      "count": 0,
+      "critical": 0,
+      "high": 0
+    }
+  ]
+}

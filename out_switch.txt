@@ -1,0 +1,15 @@
+1470:              _buildDetailRow('Open Alerts', '70 detection events'),
+1471:              const SizedBox(height: 12),
+1472:              ElevatedButton(
+1473:                 onPressed: (){ ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Incident closed successfully.'), backgroundColor: Color(0xFF30d158))); }, 
+1474:                 style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF1f242d), foregroundColor: const Color(0xFF30d158), side: const BorderSide(color: Color(0xFF30d158))), 
+1475:                 child: const Text('✓ Resolve & Close Incident')
+1476:              )
+1477:           ])),
+1478:         ]));
+1479: 
+1480:       default: return const Center(child: Text('Data Loading...'));
+1481:     }
+1482:   }
+1483: 
+1484:   Widget _buildFilterChip(String label, Color color, {bool isSelected = false}) {

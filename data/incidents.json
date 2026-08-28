@@ -1,0 +1,44 @@
+[
+  {
+    "incident_id": "INC-787744",
+    "id": "INC-787744",
+    "event": "🚨 Incident Declared — Host Under Active Attack",
+    "classification": "Canary File Triggered",
+    "severity": "CRITICAL",
+    "status": "OPEN",
+    "host": "nani123",
+    "user": "katre",
+    "created": "2026-08-28 23:13:38",
+    "source_alert": "ALT-27637184",
+    "detail": "Incident ID   : INC-787744\nHost          : nani123\nAlert Count   : 3 HIGH/CRITICAL in 600s\nTrigger Alert : Canary File Triggered\nAction        : Escalate to SOC Lead immediately",
+    "timestamp": "2026-08-28 23:13:38"
+  },
+  {
+    "incident_id": "INC-693412",
+    "id": "INC-693412",
+    "event": "🚨 Incident Declared — Host Under Active Attack",
+    "classification": "Process Ancestry Attack Detected",
+    "severity": "CRITICAL",
+    "status": "OPEN",
+    "host": "nani123",
+    "user": "katre",
+    "created": "2026-08-28 21:34:50",
+    "source_alert": "ALT-46024606",
+    "detail": "Incident ID   : INC-693412\nHost          : nani123\nAlert Count   : 3 HIGH/CRITICAL in 600s\nTrigger Alert : Process Ancestry Attack Detected\nAction        : Escalate to SOC Lead immediately",
+    "timestamp": "2026-08-28 21:34:50"
+  },
+  {
+    "incident_id": "INC-302966",
+    "id": "INC-302966",
+    "event": "🚨 Incident Declared — Host Under Active Attack",
+    "classification": "Process Ancestry Attack Detected",
+    "severity": "CRITICAL",
+    "status": "OPEN",
+    "host": "nani123",
+    "user": "katre",
+    "created": "2026-08-28 18:58:43",
+    "source_alert": "ALT-29760216",
+    "detail": "Incident ID   : INC-302966\nHost          : nani123\nAlert Count   : 3 HIGH/CRITICAL in 600s\nTrigger Alert : Process Ancestry Attack Detected\nAction        : Escalate to SOC Lead immediately",
+    "timestamp": "2026-08-28 18:58:43"
+  }
+]

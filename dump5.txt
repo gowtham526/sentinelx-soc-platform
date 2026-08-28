@@ -1,0 +1,28 @@
+function _generateAiReport(incidentId){
+  const btn = document.getElementById('AIR_BTN');
+  const box = document.getElementById('AIR_BOX');
+  if(!btn || !box) return;
+  btn.disabled = true; btn.textContent = '🤖 Drafting report…';
+  box.innerHTML = ibox('Drafting forensic incident report from telemetry signals…','b');
+  
+  var reportText = '';
+  var modelName = 'SentinelX Built-in Expert AI Engine';
+
+  try {
+    const r = await _apiFetch('/api/incident/'+encodeURIComponent(incidentId)+'/ai_report', {method:'POST'});
+    if(r && r.ok) {
+      const d = await r.json();
+      if(d && d.available && d.report) {
+        reportText = d.report;
+        modelName = d.model || modelName;
+      }
+    }
+  } catch(e) {}
+
+  if(!reportText) {
+    reportText = _synthesizeClientIncidentReport(incidentId);
+  }
+
+  box.innerHTML =
+    '<div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:14px">'
+    +'<div style="display:flex;justify-content:space-between;align-items:

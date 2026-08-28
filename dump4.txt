@@ -1,0 +1,18 @@
++ '</div>' +
+      '</div>' +
+      '<button class="btn btn-gh" style="font-size:10.5px;padding:5px 12px;font-weight:700" onclick="_generateAiReport(\'' + iid + '\')">🤖 Draft AI Report</button>' +
+     '</div>';
+   }).join('') : '<div style="text-align:center;color:var(--text3);padding:18px">No active incidents yet — run attack simulation or trigger critical detections to auto-declare.</div>'
+  )}
+
+  ${g2(
+   card('SANS 6-Step IR Containment Lifecycle', 'Real-time incident resolution workflow',
+    ['1. Identification', '2. Triage & Analysis', '3. Active Containment', '4. Eradication', '5. Host Recovery', '6. Lessons Learned'].map((ph, idx) => {
+     const isDone = idx < 5;
+     return '<div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid rgba(26,48,80,.3)">' +
+      '<div style="font-size:11px;font-weight:600;flex:1">' + ph + '</div>' +
+      bx(isDone ? 'COMPLETED' : 'IN PROGRESS', isDone ? 'g' : 'a') +
+     '</div>';
+    }).join('')
+   ),
+   card

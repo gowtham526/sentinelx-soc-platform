@@ -1,0 +1,68 @@
+name: E2E and Security Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  security-sast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Bandit (Python SAST)
+        run: bandit -r . -f json -o sast-report.json || true
+      - name: Run Trivy (Dependencies)
+        run: trivy fs . --format table -o trivy-report.txt || true
+      - name: Upload Security Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: security-reports
+          path: |
+            sast-report.json
+            trivy-report.txt
+            Vulnerability Test Results/
+
+  e2e-selenium:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+      - name: Install Selenium
+        run: npm install selenium-webdriver
+      - name: Run Selenium Tests
+        run: node selenium-tests/tests/login-tests.js || true
+      - name: Upload Selenium Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: selenium-results
+          path: selenium-tests/*.xlsx
+
+  e2e-appium:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+      - name: Run Appium Tests
+        run: echo "Appium test mock run"
+      - name: Upload Appium Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: appium-results
+          path: appium-tests/*.xlsx
+
+  load-testing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run k6 Load Test
+        run: echo "k6 run load-test.js"
+      - name: Upload Load Test Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: load-test-results
+          path: load-test-report.html

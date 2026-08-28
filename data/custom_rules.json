@@ -1,0 +1,13 @@
+[
+  {
+    "id": "CR-1787292796750",
+    "name": "Failed SSH",
+    "keyword": "sshd: attempt to login using a non-existent user",
+    "score": 35,
+    "event_id": "EID 1 - Process Create",
+    "description": "",
+    "created_by": "admin",
+    "created_at": "2026-08-21 11:43:16",
+    "active": true
+  }
+]

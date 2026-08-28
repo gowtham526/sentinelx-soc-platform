@@ -1,0 +1,22 @@
+[
+  {
+    "playbook_id": "PB-1787843200226",
+    "name": "alert",
+    "enabled": true,
+    "trigger": {
+      "mitre_tactic": "T1059.001",
+      "min_severity": "MEDIUM"
+    },
+    "conditions": [],
+    "actions": [
+      {
+        "type": "block_ip",
+        "auto": true,
+        "requires_approval": false,
+        "params": {}
+      }
+    ],
+    "created_by": "admin",
+    "created_at": "2026-08-27 20:36:40"
+  }
+]

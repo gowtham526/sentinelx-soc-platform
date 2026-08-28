@@ -1,0 +1,202 @@
+1174:       case '17':
+1175:         List<dynamic> exes = _alerts.where((a) => _isExeAlert(a)).toList();
+1176:         return Padding(padding: const EdgeInsets.all(12), child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+1177:           Container(
+1178:             padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: const Color(0xFF161b22), borderRadius: BorderRadius.circular(4), border: Border.all(color: const Color(0xFF2a2f3a))),
+1179:             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+1180:               const Text('🔍 Universal Threat Intelligence & Hash Search', style: TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold)),
+1181:               const SizedBox(height: 12),
+1182:               Row(children: [
+1183:                  Expanded(child: TextField(
+1184:                    style: const TextStyle(color: Colors.white, fontSize: 11, fontFamily: 'monospace'),
+1185:                    decoration: InputDecoration(
+1186:                      isDense: true, contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+1187:                      hintText: 'Enter IP address, domain, MD5/SHA256 hash, or executable name...',
+1188:                      hintStyle: const TextStyle(color: Color(0xFF8b949e), fontSize: 9),
+1189:                      filled: true, fillColor: Colors.black54, border: OutlineInputBorder(borderRadius: BorderRadius.circular(4), borderSide: BorderSide.none),
+1190:                    ),
+1191:                  )),
+1192:                  const SizedBox(width: 8),
+1193:                  ElevatedButton(onPressed: (){}, style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF32ade6), foregroundColor: Colors.black, padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12)), child: const Text('Query Intel', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10))),
+1194:                  const SizedBox(width: 8),
+1195:                  ElevatedButton(onPressed: (){}, style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF1f242d), foregroundColor: const Color(0xFF32ade6), side: const BorderSide(color: Color(0xFF32ade6)), padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12)), child: const Text('Open on VT ↗', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10))),
+1196:               ]),
+1197:               const SizedBox(height: 8),
+1198:               Row(children: [
+1199:                 const Text('Quick Query Chips:', style: TextStyle(color: Color(0xFF8b949e), fontSize: 9)), const SizedBox(width: 8),
+1200:                 _buildMapChip('Meterpreter Hash'), _buildMapChip('C2 IP'), _buildMapChip('mimikatz.exe')
+1201:               ])
+1202:             ])
+1203:           ),
+1204:           const SizedBox(height: 12),
+1205:           Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+1206:             Expanded(child: _buildBox('Live File IoCs & Hashes', 'Extracted from active alerts', SingleChildScrollView(scrollDirection: Axis.horizontal, child: DataTable(
+1207:               showCheckboxColumn: false, headingRowHeight: 30, columnSpacing: 16,
+1208:               headingTextStyle: const TextStyle(color: Color(0xFF8b949e), fontSize: 9, fontWeight: FontWeight.bold), dataTextStyle: const TextStyle(color: Colors.white, fontSize: 10),
+1209:               columns: const [DataColumn(label: Text('TIME')), DataColumn(label: Text('FILE')), DataColumn(label: Text('SEVERITY')), DataColumn(label: Text('ACTIONS'))],
+1210:               rows: exes.map((a) {
+1211:                 String sev = (a['severity'] ?? 'LOW').toString().toUpperCase();
+1212:                 Color sCol = sev == 'CRITICAL' ? const Color(0xFFFF3B30) : (sev == 'HIGH' ? Colors.orange : (sev == 'MEDIUM' ? Colors.amber : const Color(0xFF32ade6)));
+1213:                 return DataRow(cells: [
+1214:                   DataCell(Text((a['timestamp'] ?? '').toString().split(' ').last)),
+1215:                   DataCell(Text((a['event'] ?? '').toString())),
+1216:                   DataCell(Container(padding: const EdgeInsets.symmetric(horizontal:6,vertical:2), decoration: BoxDecoration(color: sCol.withOpacity(0.15), border: Border.all(color: sCol.withOpacity(0.5)), borderRadius: BorderRadius.circular(10)), child: Text(sev, style: TextStyle(color: sCol, fontSize: 9, fontWeight: FontWeight.bold)))),
+1217:                   DataCell(Container(padding: const EdgeInsets.symmetric(horizontal:8,vertical:4), decoration: BoxDecoration(border: Border.all(color: const Color(0xFF32ade6)), borderRadius: BorderRadius.circular(2)), child: const Text('Lookup', style: TextStyle(color: Color(0xFF32ade6), fontSize: 9)))),
+1218:                 ]);
+1219:               }).toList(),
+1220:             )))),
+1221:             const SizedBox(width: 12),
+1222:             Expanded(child: _buildBox('Verified Signature Reference', 'VirusTotal verified', Column(children: [
+1223:               _buildAlertWarningBox('MALICIOUS SIGNATURE MATCH: 52/72 AV engines flagged', const Color(0xFFFF3B30)),
+1224:               _buildDetailRow('Sample MD5', '4a1...'),
+1225:               _buildDetailRow('Threat Name', 'Trojan.Meterpreter.Agent'),
+1226:             ])))
+1227:           ])
+1228:         ]));
+1229: 
+1230:       default: return const Center(child: Text('Data Loading...'));
+1231:     }
+1232:   }
+1233: 
+1234:   Widget _buildFilterChip(String label, Color color, {bool isSelected = false}) {
+1235:     return Container(
+1236:       margin: const EdgeInsets.only(right: 8), padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+1237:       decoration: BoxDecoration(color: isSelected ? const Color(0xFF30363d) : Colors.transparent, border: Border.all(color: color.withOpacity(0.5)), borderRadius: BorderRadius.circular(4)),
+1238:       child: Text(label, style: TextStyle(color: color, fontSize: 10, fontWeight: FontWeight.bold)),
+1239:     );
+1240:   }
+1241:   
+1242:   Widget _buildActionMiniBtn(String label, Color color) {
+1243:     return Container(
+1244:       margin: const EdgeInsets.only(right: 4), padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+1245:       decoration: BoxDecoration(color: color.withOpacity(0.15), border: Border.all(color: color.withOpacity(0.5)), borderRadius: BorderRadius.circular(2)),
+1246:       child: Text(label, style: TextStyle(color: color, fontSize: 8, fontWeight: FontWeight.bold)),
+1247:     );
+1248:   }
+1249: 
+1250:   Widget _buildMapChip(String label) {
+1251:     return Container(
+1252:       margin: const EdgeInsets.only(right: 4), padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+1253:       decoration: BoxDecoration(color: const Color(0xFF1f242d), borderRadius: BorderRadius.circular(4), border: Border.all(color: const Color(0xFF30363d))),
+1254:       child: Text(label, style: const TextStyle(color: Colors.white, fontSize: 9)),
+1255:     );
+1256:   }
+1257:   
+1258:   Widget _buildContinentShape(double w, double h) {
+1259:     return Container(width: w, height: h, child: CustomPaint(painter: PolygonPainter()));
+1260:   }
+1261:   
+1262:   Widget _buildMapPin(String label) {
+1263:     return Row(children: [
+1264:       Container(width: 8, height: 8, decoration: BoxDecoration(color: Colors.red, shape: BoxShape.circle, border: Border.all(color: Colors.redAccent.withOpacity(0.5), width: 2), boxShadow: [BoxShadow(color: Colors.red.withOpacity(0.8), blurRadius: 4, spreadRadius: 2)])),
+1265:       const SizedBox(width: 4),
+1266:       Text(label, style: const TextStyle(color: Colors.white, fontSize: 8, fontWeight: FontWeight.bold))
+1267:     ]);
+1268:   }
+1269:   
+1270:   DataRow _buildCompRow(String comp, String stat, String ver, String det, String up) {
+1271:     return DataRow(cells: [
+1272:       DataCell(Text(comp, style: const TextStyle(fontWeight: FontWeight.bold))),
+1273:       DataCell(Container(padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2), decoration: BoxDecoration(color: const Color(0x3330d158), border: Border.all(color: const Color(0xFF30d158)), borderRadius: BorderRadius.circular(2)), child: Text(stat, style: const TextStyle(color: Color(0xFF30d158), fontSize: 9)))),
+1274:       DataCell(Text(ver)), DataCell(Text(det)), DataCell(Text(up, style: const TextStyle(color: Color(0xFF8b949e)))),
+1275:     ]);
+1276:   }
+1277: 
+1278:   @override
+1279:   Widget build(BuildContext context) {
+1280:     return Scaffold(
+1281:       backgroundColor: const Color(0xFF0d1117),
+1282:       drawer: _buildMobileDrawer(),
+1283:       appBar: AppBar(
+1284:         backgroundColor: const Color(0xFF161b22), elevation: 0, iconTheme: const IconThemeData(color: Colors.white),
+1285:         title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text(_currentViewTitle, style: const TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold)), Row(children: [Container(width: 6, height: 6, decoration: const BoxDecoration(color: Color(0xFF30d158), shape: BoxShape.circle)), const SizedBox(width: 6), const Text('Secure Uplink Active', style: TextStyle(color: Color(0xFF8b949e), fontSize: 10))])]),
+1286:         actions: [IconButton(icon: const Icon(Icons.power_settings_new, color: Color(0xFF8b949e), size: 22), onPressed: _handleLogout)],
+1287:       ),
+1288:       body: RefreshIndicator(
+1289:         onRefresh: _loadDashboardData, backgroundColor: const Color(0xFF161b22), color: const Color(0xFF0a84ff),
+1290:         child: Column(
+1291:           children: [
+1292:             _buildTopActionBar(), // <--- NEW GLOBAL ACTION BAR
+1293:             Expanded(child: SingleChildScrollView(physics: const AlwaysScrollableScrollPhysics(), child: _buildContentBody())),
+1294:           ],
+1295:         ),
+1296:       ),
+1297:     );
+1298:   }
+1299: }
+1300:   bool _isExeAlert(Map<String, dynamic> a) {
+1301:     String src = (a['source'] ?? '').toString().toLowerCase();
+1302:     String ls = (a['log_source'] ?? '').toString().toLowerCase();
+1303:     String ev = (a['event'] ?? '').toString().toLowerCase();
+1304:     String det = (a['detail'] ?? '').toString().toLowerCase();
+1305:     String mid = (a['mitre_id'] ?? '').toString().toLowerCase();
+1306:     return src == 'exe' || ls.contains('app') || ev.contains('exe') || ev.contains('binary') || ev.contains('process') || ev.contains('executable') || ev.contains('payload') || det.contains('.exe') || det.contains(r'\temp') || det.contains(r'\appdata') || det.contains(r'temp\') || det.contains('programdata') || mid.contains('t1204') || mid.contains('t1059.003');
+1307:   }
+1308: 
+1309:   bool _isPsAlert(Map<String, dynamic> a) {
+1310:     String src = (a['source'] ?? '').toString().toLowerCase();
+1311:     String ls = (a['log_source'] ?? '').toString().toLowerCase();
+1312:     String ev = (a['event'] ?? '').toString().toLowerCase();
+1313:     String det = (a['detail'] ?? '').toString().toLowerCase();
+1314:     String mid = (a['mitre_id'] ?? '').toString().toLowerCase();
+1315:     return src == 'powershell' || ls.contains('powershell') || ev.contains('powershell') || ev.contains('mimikatz') || ev.contains('script') || ev.contains('pwsh') || det.contains('powershell') || det.contains('-enc') || det.contains('encodedcommand') || det.contains('bypass') || det.contains('iex') || det.contains('downloadstring') || det.contains('invoke-') || mid.contains('t1059.001') || mid.contains('t1003');
+1316:   }
+1317: 
+1318:   bool _isNetAlert(Map<String, dynamic> a) {
+1319:     String src = (a['source'] ?? '').toString().toLowerCase();
+1320:     String ls = (a['log_source'] ?? '').toString().toLowerCase();
+1321:     String ev = (a['event'] ?? '').toString().toLowerCase();
+1322:     String det = (a['detail'] ?? '').toString().toLowerCase();
+1323:     String mid = (a['mitre_id'] ?? '').toString().toLowerCase();
+1324:     bool hasIp = (a['ip'] != null && a['ip'] != '-' && a['ip'] != '127.0.0.1');
+1325:     return src == 'network' || src == 'sysmon_network' || ls.contains('net') || ev.contains('network') || ev.contains('connect') || ev.contains('c2') || ev.contains('beacon') || ev.contains('port scan') || ev.contains('socket') || ev.contains('reverse shell') || det.contains('connection') || det.contains('outbound') || det.contains('inbound') || det.contains(':4444') || det.contains(':6666') || det.contains(':1337') || det.contains(':31337') || det.contains(':9001') || det.contains(':8080') || det.contains(':80') || det.contains(':443') || det.contains('port') || mid.contains('t1071') || mid.contains('t1095') || mid.contains('t1041') || (hasIp && (ev.contains('beacon') || ev.contains('c2') || ev.contains('traffic') || ev.contains('connection')));
+1326:   }
+1327: 
+1328:   bool _isFileAlert(Map<String, dynamic> a) {
+1329:     String src = (a['source'] ?? '').toString().toLowerCase();
+1330:     String ls = (a['log_source'] ?? '').toString().toLowerCase();
+1331:     String ev = (a['event'] ?? '').toString().toLowerCase();
+1332:     String det = (a['detail'] ?? '').toString().toLowerCase();
+1333:     String mid = (a['mitre_id'] ?? '').toString().toLowerCase();
+1334:     return src == 'sysmon_file' || src == 'canary' || ev.contains('file') || ev.contains('drop') || ev.contains('ransomware') || ev.contains('canary') || ev.contains('shadow copy') || det.contains('file') || det.contains('canary') || det.contains('vssadmin') || det.contains('dropped') || mid.contains('t1204.002') || mid.contains('t1486') || mid.contains('t1490');
+1335:   }
+1336: 
+1337:   bool _isRegAlert(Map<String, dynamic> a) {
+1338:     String src = (a['source'] ?? '').toString().toLowerCase();
+1339:     String ls = (a['log_source'] ?? '').toString().toLowerCase();
+1340:     String ev = (a['event'] ?? '').toString().toLowerCase();
+1341:     String det = (a['detail'] ?? '').toString().toLowerCase();
+1342:     String mid = (a['mitre_id'] ?? '').toString().toLowerCase();
+1343:     return src == 'registry' || ls.contains('reg') || ev.contains('registry') || ev.contains('persistence') || ev.contains('runkey') || ev.contains('run key') || ev.contains('reg.exe') || det.contains('hkcu') || det.contains('hklm') || det.contains(r'currentversion\run') || det.contains('runonce') || det.contains('autorun') || det.contains('registry') || det.contains('reg add') || mid.contains('t1547') || mid.contains('t1070.004');
+1344:   }
+1345: 
+1346:   Widget _buildAlertWarningBox(String title, Color c) {
+1347:     return Container(
+1348:       padding: const EdgeInsets.all(12),
+1349:       margin: const EdgeInsets.only(bottom: 12),
+1350:       decoration: BoxDecoration(color: c.withOpacity(0.1), border: Border.all(color: c.withOpacity(0.5)), borderRadius: BorderRadius.circular(4)),
+1351:       child: Text(title, style: TextStyle(color: c, fontSize: 11)),
+1352:     );
+1353:   }
+1354: 
+1355: class GridPainter extends CustomPainter {
+1356:   @override
+1357:   void paint(Canvas canvas, Size size) {
+1358:     final paint = Paint()..color = const Color(0xFF162032)..strokeWidth = 1;
+1359:     for (double i = 0; i < size.width; i += 40) { canvas.drawLine(Offset(i, 0), Offset(i, size.height), paint); }
+1360:     for (double i = 0; i < size.height; i += 40) { canvas.drawLine(Offset(0, i), Offset(size.width, i), paint); }
+1361:   }
+1362:   @override bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+1363: }
+1364: 
+1365: class PolygonPainter extends CustomPainter {
+1366:   @override
+1367:   void paint(Canvas canvas, Size size) {
+1368:     final paint = Paint()..color = const Color(0xFF1a2b4c)..style = PaintingStyle.fill;
+1369:     final border = Paint()..color = const Color(0xFF32ade6).withOpacity(0.5)..style = PaintingStyle.stroke..strokeWidth = 1;
+1370:     final path = Path()..moveTo(0, size.height * 0.2)..lineTo(size.width * 0.8, 0)..lineTo(size.width, size.height * 0.5)..lineTo(size.width * 0.5, size.height)..lineTo(0, size.height * 0.8)..close();
+1371:     canvas.drawPath(path, paint); canvas.drawPath(path, border);
+1372:   }
+1373:   @override bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+1374: 
+1375: }

@@ -1,0 +1,15 @@
+Auditor:
+auditor' ? '👁️ AUDITOR' : '🛡️ SOC ANALYST')), 'g');
+    }
+  }
+
+  fetch('/api/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username: u, password: p })
+  }).then(function(r) { return r.json(); }).then(function(d) {
+    if (d && d.success && d.token) {
+      handleLoginSuccess(d.token, d.role || 'analyst', d.username || u);
+    } else {
+      if ((u === 'admin' && p === 'admin123') || (u === 'analyst' && p === 'analyst123') || (u === 'a
+

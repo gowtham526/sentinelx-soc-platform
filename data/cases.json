@@ -1,0 +1,119 @@
+[
+  {
+    "case_id": "CASE-1787938984",
+    "status": "OPEN",
+    "analyst": "Unassigned",
+    "severity": "CRITICAL",
+    "host": "nani123",
+    "user": "katre",
+    "tactic": "Unknown",
+    "created": "2026-08-28 23:13:04",
+    "last_alert_at": "2026-08-28 23:13:30",
+    "closed": "",
+    "notes": [],
+    "related_alerts": [
+      "ALT-55351960",
+      "ALT-97924921",
+      "ALT-27637184"
+    ],
+    "source_alert": "ALT-55351960"
+  },
+  {
+    "case_id": "CASE-1787918283",
+    "status": "OPEN",
+    "analyst": "Unassigned",
+    "severity": "CRITICAL",
+    "host": "nani123",
+    "user": "katre",
+    "tactic": "Unknown",
+    "created": "2026-08-28 17:28:03",
+    "last_alert_at": "2026-08-28 17:28:03",
+    "closed": "",
+    "notes": [],
+    "related_alerts": [
+      "ALT-28048817"
+    ],
+    "source_alert": "ALT-28048817"
+  },
+  {
+    "case_id": "CASE-1787916097",
+    "status": "OPEN",
+    "analyst": "Unassigned",
+    "severity": "HIGH",
+    "host": "nani123",
+    "user": "katre",
+    "tactic": "Initial Access",
+    "created": "2026-08-28 16:51:37",
+    "last_alert_at": "2026-08-28 20:30:17",
+    "closed": "",
+    "notes": [],
+    "related_alerts": [
+      "ALT-38098261",
+      "ALT-95093480"
+    ],
+    "source_alert": "ALT-38098261"
+  },
+  {
+    "case_id": "CASE-1787914846",
+    "status": "OPEN",
+    "analyst": "Unassigned",
+    "severity": "HIGH",
+    "host": "nani123",
+    "user": "katre",
+    "tactic": "Execution",
+    "created": "2026-08-28 16:30:46",
+    "last_alert_at": "2026-08-28 22:03:25",
+    "closed": "",
+    "notes": [],
+    "related_alerts": [
+      "ALT-42954345",
+      "ALT-87520760",
+      "ALT-50806528",
+      "ALT-29760216",
+      "ALT-43285160",
+      "ALT-28108637",
+      "ALT-46024606",
+      "ALT-46435072",
+      "ALT-35500428",
+      "ALT-13917343"
+    ],
+    "source_alert": "ALT-42954345"
+  },
+  {
+    "case_id": "CASE-1787914217",
+    "status": "OPEN",
+    "analyst": "Unassigned",
+    "severity": "CRITICAL",
+    "host": "SOC-ENDPOINT-01",
+    "user": "analyst_demo",
+    "tactic": "Credential Access",
+    "created": "2026-08-28 16:20:17",
+    "last_alert_at": "2026-08-28 16:20:17",
+    "closed": "",
+    "notes": [],
+    "related_alerts": [
+      "ALT-16982860"
+    ],
+    "source_alert": "ALT-16982860"
+  },
+  {
+    "case_id": "CASE-1787914109",
+    "status": "OPEN",
+    "analyst": "Unassigned",
+    "severity": "CRITICAL",
+    "host": "nani123",
+    "user": "katre",
+    "tactic": "Persistence",
+    "created": "2026-08-28 16:18:29",
+    "last_alert_at": "2026-08-28 17:28:06",
+    "closed": "",
+    "notes": [],
+    "related_alerts": [
+      "ALT-30765848",
+      "ALT-82361453",
+      "ALT-12822505",
+      "ALT-71657793"
+    ],
+    "source_alert": "ALT-30765848"
+  }
+]

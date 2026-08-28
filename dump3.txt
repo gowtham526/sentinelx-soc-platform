@@ -1,0 +1,23 @@
+ponse || '🔴 Autonomous SOAR Protocol Engaged — Host Containment Active') + '</span>') +
+   '<div class="btn-row" style="margin-top:14px;display:flex;gap:10px;align-items:center">' +
+   '<button class="btn btn-gh" style="padding:6px 14px;font-size:11px;font-weight:700" onclick="_printExecutiveDossier()">🖨️ Print Executive Dossier</button> <button class="btn btn-ac" id="AIR_BTN" style="font-weight:800;padding:8px 18px;background:var(--accent);color:#000" onclick="_generateAiReport(\'' + id + '\')">🤖 Generate AI Incident Report</button>' +
+   '<button class="btn btn-gh" style="font-weight:600;padding:8px 14px" onclick="window.open(\'/api/report/markdown?token=\'+encodeURIComponent(_authToken||\'\'),\'_blank\')">📄 Export Markdown</button>' +
+   '</div>' +
+   '<div id="AIR_BOX" style="margin-top:14px"></div>'
+  )}
+
+  ${card('All Active Incidents & Attack Chains (' + irData.length + ')', 'Autonomous kill-chain correlations and high-severity incidents',
+   irData.length ? irData.map((i, idx) => {
+     const iid = i.id || i.incident_id || ('INC-' + (idx + 1));
+     const icls = i.classification || i.event || 'Security Incident';
+     const isev = i.severity || 'HIGH';
+     const istat = i.status || 'OPEN';
+     return '<div style="padding:12px 0;border-bottom:1px solid rgba(26,48,80,.4);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">' +
+      '<div>' +
+       '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">' +
+        '<span class="mono" style="font-size:11px;font-weight:800;color:var(--cyan)">' + iid + '</span>' +
+        sevBx(isev) +
+        bx(istat, istat === 'CLOSED' ? 'g' : istat === 'OPEN' ? 'r' : 'a') +
+        '<span style="font-size:11px;color:var(--text);font-weight:700">' + icls + '</span>' +
+       '</div>' +
+       '<div style="font-size:10.5px;color:var(--text2)">Host: <b>' + (i.host || 'SOC-HOST-01') + '</b> · User: ' + (i.user || 'analyst') + ' · Created: ' + (i.timestamp || i.created || '-') 

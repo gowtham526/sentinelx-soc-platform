@@ -1,0 +1,5 @@
+QUICK DEMO EVALUATOR LOGIN</div>
+        <div class="quick-login-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px">
+          <button type="button" class="qbtn" onclick="promptAdminLogin()" style="background:#131c2a;border:1px solid rgba(255,255,255,0.18);padding:8px 4px;border-radius:6px;text-align:center;font-size:10.5px;cursor:pointer;color:#fff;font-weight:700" title="Full Admin Permissions">👑 Admin</button>
+          <button type="button" class="qbtn" onclick="promptAnalystLogin()" style="background:#131c2a;border:1px solid rgba(255,255,255,0.18);padding:8px 4px;border-radius:6px;text-align:center;font-size:10.5px;cursor:pointer;color:#58a6ff;font-weight:700" title="Triage & SOAR">🛡️ Analyst</button>
+          <button type="button" class="qbtn" onclick="_quickLogin('auditor','auditor123')" style="background:#131c2a;border:1px solid rgba(255,255,255,0.18);padding:8px 4px;border-radius:6px;text-align:center;font-size:10.5px;cursor:pointer;color:#ff9500;font-weight:700" title=

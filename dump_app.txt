@@ -1,0 +1,20 @@
+715: @app.route("/api/alerts/status", methods=["POST"])
+716: @require_auth
+717: def api_update_status(alert_id=None):
+718:     data       = request.json or {}
+719:     target_id  = str(alert_id or data.get("alert_id") or "")
+720:     new_status = data.get("status", "").upper()
+721:     if not target_id or new_status not in {"OPEN","INVESTIGATING","RESOLVED","FALSE_POSITIVE"}:
+722:         return jsonify({"success": False, "message": "Invalid alert_id or status"}), 400
+723:     alerts = load_json(ALERT_FILE)
+724:     for a in alerts:
+725:         if str(a.get("id")) == target_id:
+726:             a["status"] = new_status
+727:             a["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+728:             a["updated_by"] = _get_current_user() or "analyst"
+729:             save_json(ALERT_FILE, alerts)
+730:             print(f"\n✏️  ALERT {target_id} status → {new_status}")
+731:             return jsonify({"success": True, "id": target_id, "status": new_status})
+732:     return jsonify({"success": False, "error": f"Alert {target_id} not found"}), 404
+733: 
+734: @app.route("/api/alert/<alert_id>/notes", methods=["POST"])

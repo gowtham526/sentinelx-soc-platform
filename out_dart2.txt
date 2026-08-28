@@ -1,0 +1,50 @@
+1431:                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Killed $t successfully!'), backgroundColor: const Color(0xFF30d158)));
+1432:                         } else {
+1433:                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Failed: $res'), backgroundColor: const Color(0xFFFF3B30)));
+1434:                         }
+1435:                     } else {
+1436:                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Executed $_selectedContainmentAction on $t!'), backgroundColor: const Color(0xFF30d158)));
+1437:                     }
+1438:                  }, style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFFFF3B30), foregroundColor: Colors.white, padding: const EdgeInsets.symmetric(vertical: 12)), child: const Text('⚡ Execute Action', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10)))),
+1439:               ]),
+1440:               
+1441:               const SizedBox(height: 8),
+1442:               Wrap(spacing: 8, runSpacing: 8, crossAxisAlignment: WrapCrossAlignment.center, children: [
+1443:                 const Text('Quick Targets:', style: TextStyle(color: Color(0xFF8b949e), fontSize: 9)),
+1444:                 InkWell(onTap: () { setState(() { _containmentTargetController.text = 'powershell.exe'; }); }, child: _buildMapChip('powershell.exe')),
+1445:                 InkWell(onTap: () { setState(() { _containmentTargetController.text = 'cmd.exe'; }); }, child: _buildMapChip('cmd.exe')),
+1446:                 InkWell(onTap: () { setState(() { _containmentTargetController.text = '185.220.101.5'; }); }, child: _buildMapChip('185.220.101.5')),
+1447:               ])
+1448: 
+1449:               if (_containmentScore != null) ...[
+1450:                  const SizedBox(height: 12),
+1451:                  Container(
+1452:                    padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: const Color(0xFF161b22), border: Border.all(color: const Color(0xFF32ade6).withValues(alpha: 0.3))),
+1453:                    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+1454:                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+1455:                            Text('🔍 THREAT INTELLIGENCE DOSSIER: ${_containmentScore!['ip'] ?? _containmentTargetController.text}', style: const TextStyle(color: Color(0xFF32ade6), fontSize: 11, fontWeight: FontWeight.bold)),
+1456:                            Text('RISK: ${_containmentScore!['risk'] ?? 'UNKNOWN'}', style: const TextStyle(color: Color(0xFF8b949e), fontSize: 10, fontWeight: FontWeight.bold))
+1457:                        ]),
+1458:                        const SizedBox(height: 8),
+1459:                        Row(children: [
+1460:                            Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+1461:                                const Text('VirusTotal Engines', style: TextStyle(color: Color(0xFF8b949e), fontSize: 9)),
+1462:                                Text('${_containmentScore!['vt_score']}/${_containmentScore!['vt_total']} Flagged', style: const TextStyle(color: Color(0xFFFF3B30), fontSize: 10, fontWeight: FontWeight.bold))
+1463:                            ])),
+1464:                            Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+1465:                                const Text('AbuseIPDB Confidence', style: TextStyle(color: Color(0xFF8b949e), fontSize: 9)),
+1466:                                Text('${_containmentScore!['abuse_score']}% Malicious', style: const TextStyle(color: Colors.orange, fontSize: 10, fontWeight: FontWeight.bold))
+1467:                            ])),
+1468:                        ]),
+1469:                        const SizedBox(height: 6),
+1470:                        Row(children: [
+1471:                            Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+1472:                                const Text('Origin Location', style: TextStyle(color: Color(0xFF8b949e), fontSize: 9)),
+1473:                                Text('${_containmentScore!['country'] ?? 'Unknown'}', style: const TextStyle(color: Colors.white, fontSize: 10))
+1474:                            ])),
+1475:                            Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+1476:                                const Text('ISP / Infrastructure', style: TextStyle(color: Color(0xFF8b949e), fontSize: 9)),
+1477:                                Text('${_containmentScore!['isp'] ?? '-'}', style: const TextStyle(color: Colors.white, fontSize: 10))
+1478:                            ])),
+1479:                        ])
+1480:                    ])

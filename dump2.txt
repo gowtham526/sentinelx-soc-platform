@@ -1,0 +1,28 @@
+Incident Reports',sec:'M7 — Reporting',
+ title:'Incident Reports',sub:'Full incident documentation & autonomous AI reporting from live telemetry',badges:[['Auto-generated','g'],['AI-Powered','b']],
+ html:()=>{
+  const inc = (_I && _I.length) ? _I[0] : {};
+  const id = inc.id || inc.incident_id || (_I.length ? 'INC-001' : 'INC-LIVE-01');
+  const cls = inc.classification || inc.event || (id.startsWith('CHAIN-') ? '⚡ Multi-Stage Attack Chain Detected' : 'Autonomous Security Incident');
+  const host = inc.host || (_A.length ? _A[0].host : 'SOC-HOST-01');
+  const user = inc.user || (_A.length ? _A[0].user : 'analyst');
+  const sev = inc.severity || 'HIGH';
+  const status = inc.status || 'OPEN';
+  const relAlerts = _A.filter(a => !host || host === '-' || a.host === host);
+  const ips = [...new Set(_A.map(a => a.ip).filter(b => b && b !== '-' && b !== '127.0.0.1'))];
+  const irData = (_I && _I.length) ? _I : [];
+  const openInc = irData.filter(i => i.status === 'OPEN').length || irData.length || 1;
+  const closedInc = irData.filter(i => i.status === 'CLOSED').length || 0;
+
+  return `
+  ${_I.length === 0 ? ibox('ℹ️ Real-time Incident Tracker active — showing live telemetry and autonomous incident draft engine.', 'b') : ibox('✅ Incident data loaded from ' + _I.length + ' declared incidents and attack chains.', 'g')}
+  
+  ${card('Current Incident — ' + id, '',
+   dr('Incident ID', '<span class="mono" style="color:var(--cyan);font-weight:700">' + id + '</span>') +
+   dr('Classification', '<span style="font-weight:600">' + cls + '</span>') +
+   dr('Host Affected', '<span class="mono">' + host + '</span>') +
+   dr('User Affected', '<span class="mono">' + user + '</span>') +
+   dr('Severity', sevBx(sev)) +
+   dr('Incident Status', bx(status, status === 'OPEN' ? 'r' : 'g')) +
+   dr('Correlated Alerts', '<span class="mono">' + (relAlerts.length || _A.length) + ' alerts correlated on this endpoint</span>') +
+   dr('Observed Threat IPs', (ips.length ? ips.map(ip => '<span class="bx b

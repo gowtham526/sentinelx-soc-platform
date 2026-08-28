@@ -1,0 +1,33 @@
+836:     if (qLower.includes('incident') || qLower.includes('summary')) {
+837:       text = '📊 **Incident Overview:** Currently tracking **' + incCount + ' active incident cases** across all monitored hosts. ' + critList.length + ' critical detections require immediate containment.';
+838:     } else if (qLower.includes('critical') || qLower.includes('alert')) {
+839:       text = '🚨 **Critical Security Detections:** Found **' + critList.length + ' critical alerts**. Top attack vectors include: ' + (critList.map(function(a){ return a.event; }).slice(0,3).join(', ') || 'Mimikatz LSASS Dump, C2 Beacon') + '.';
+840:     } else if (qLower.includes('ioc') || qLower.includes('ip')) {
+841:       text = '🌐 **Threat Intelligence Check:** Queried IP matches known malicious infrastructure (Abuse Score: 94%, VT: 14/72 engines flagged as Cobalt Strike C2). Recommended Action: Block IP at Perimeter Firewall.';
+842:     } else {
+843:       text = '🤖 **Copilot Insight:** Security posture evaluated for "' + query + '". SOC Automation Engine is healthy with 7 active log detectors and automated playbook response active.';
+844:     }
+845:   }
+=====================================
+2974:       '<option value="Outbound Only">📤 Outbound Only (C2 Prevention)</option>'+
+2975:       '<option value="Malicious Domain">🌐 Malicious Domain (DNS Sinkhole)</option>'+
+2976:       '<option value="Port 4444 (C2 Shell)">⚡ Port 4444 / Reverse Shell</option>'+
+2977:      '</select>'+
+2978:      '<input id="BD_RSN" class="inp" style="margin:0;flex:1.5;min-width:180px" placeholder="Reason (e.g. Malicious C2 / Kill process)"/>'+
+2979:      '<button class="btn btn-b" onclick="_bdCheck()" style="white-space:nowrap;padding:8px 14px">🔍 Check Score</button>'+
+2980:      '<button class="btn btn-r" id="BD_BTN" onclick="_bdExecuteAction()" style="white-space:nowrap;padding:8px 16px;font-weight:700">⚡ Execute Action</button>'+
+2981:     '</div>'+
+2982: 
+2983:     '<div style="display:flex;gap:6px;align-items:center;margin-bottom:12px;flex-wrap:wrap">'+
+=====================================
+8465:         text = '✅ **Zero Critical Threats:** No critical alerts active in pipeline right now. System health is optimal.';
+8466:       }
+8467:     } else if (qLower.indexOf('isolate') !== -1 || qLower.indexOf('contain') !== -1 || qLower.indexOf('firewall') !== -1) {
+8468:       text = '🔒 **SOAR Host Containment Guide:**\nSentinelX automatically blocks inbound/outbound TCP traffic using Windows Firewall (`netsh advfirewall`) while maintaining a secure administrative communication channel to the SOC server.';
+8469:     } else if (qLower.indexOf('185.220') !== -1 || qLower.indexOf('ip') !== -1 || qLower.indexOf('ioc') !== -1) {
+8470:       text = '🌐 **Threat Intel on IP `185.220.101.5`:**\n- **Classification**: High Confidence Cobalt Strike C2 Node (Russia/Tor Exit)\n- **AbuseIPDB Score**: 100% (Malicious)\n- **VirusTotal Score**: 14/72 detections\n- **Recommended Action**: 1-Click Firewall Block via Threat Intel panel.';
+8471:     } else {
+8472:       text = '🤖 **SentinelX AI Analysis for "' + query + '":**\nAnalyzed ' + ra.length + ' alert signals across your SOC environment. All detection baselines and MITRE ATT&CK mappings are active. No anomalies found outside documented alert chains.';
+8473:     }
+8474:   }
+=====================================

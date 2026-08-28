@@ -1,0 +1,120 @@
+1134: def process_alert(raw: dict) -> dict | None:
+1135:     """
+1136:     Full 8-stage pipeline.
+1137: 
+1138:     Minimum input:
+1139:         {"event": "...", "detail": "..."}
+1140: 
+1141:     Optional fields:
+1142:         host, user, id (generated if missing)
+1143: 
+1144:     Returns enriched alert dict, or None if duplicate.
+1145:     """
+1146: 
+1147:     event  = raw.get("event",  "Unknown Detection")
+1148:     detail = raw.get("detail", "")
+1149: 
+1150:     # ── Stage 1: Deduplication ──────────────────────────────
+1151:     if _is_duplicate(event, detail):
+1152:         return None
+1153: 
+1154:     # ── Base fields ─────────────────────────────────────────
+1155:     alert = {
+1156:         "id":        raw.get("id", f"ALT-{random.randint(10000000,99999999)}"),
+1157:         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+1158:         "event":     event,
+1159:         "detail":    detail,
+1160:         "host":      raw.get("host", socket.gethostname()),
+1161:         "user":      raw.get("user", "system"),
+1162:         "source":    raw.get("source", "unknown"),
+1163:         "log_source": raw.get("log_source", "Security"),
+1164:         "status":    "OPEN",
+1165:         "notes":     "",
+1166:         "analyst":   "",
+1167:     }
+1168: 
+1169:     # ── Stage 1b: Suppression Rules ────────────────────────────
+1170:     # Check AFTER base fields are built so rules can match on any field.
+1171:     try:
+1172:         from core.suppression_rules import check_suppression
+1173:         suppression = check_suppression(alert)
+1174:         if suppression:
+1175:             if suppression.get("action") == "lower_severity":
+1176:                 # Don't drop — just force severity to low later
+1177:                 raw["_force_low_severity"] = True
+1178:             else:
+1179:                 # Full suppress — alert is dropped (but logged in suppressed_alerts.json)
+1180:                 return None
+1181:     except ImportError:
+1182:         pass
+1183: 
+1184:     # ── Stage 2: MITRE Mapping ──────────────────────────────
+1185:     mitre = map_mitre(event, detail, override=raw.get("mitre_override"))
+1186:     alert.update({
+1187:         "mitre":       mitre["mitre_id"],
+1188:         "mitre_id":    mitre["mitre_id"],
+1189:         "mitre_name":  mitre["mitre_name"],
+1190:         "mitre_tactic":mitre["mitre_tactic"],
+1191:         "mitre_url":   mitre["mitre_url"],
+1192:         "tactic":      mitre["mitre_tactic"],
+1193:     })
+1194: 
+1195:     # ── Stage 3: Threat Intel ───────────────────────────────
+1196:     intel = enrich_threat_intel(detail)
+1197:     if 'vt_score' in raw:
+1198:         intel['vt_score'] = raw['vt_score']
+1199:     if 'abuse_score' in raw:
+1200:         intel['abuse_score'] = raw['abuse_score']
+1201:     alert.update(intel)
+1202: 
+1203:     # ── Stage 3b: Anomaly Baseline (core/anomaly_baseline.py) ──
+1204:     # Must run BEFORE Stage 4 — it injects ANOMALY_HINT into `detail`,
+1205:     # which Signal 24 then reads exactly the same way every other
+1206:     # detector-sourced hint works. This is the one signal not produced
+1207:     # by the detector that raised the raw event: it needs a shared,
+1208:     # continuously-updated baseline per (host, event) pair across every
+1209:     # detector, which no single detector has visibility into on its own,
+1210:     # so it's computed centrally, here, for every alert that passes
+1211:     # through. Wrapped non-fatal like every other side system in this
+1212:     # function — a baseline-file hiccup should never be able to stop an
+1213:     # alert from being scored and saved.
+1214:     try:
+1215:         from core.anomaly_baseline import record_and_check
+1216:         anomaly_hint = record_and_check(alert["host"], event)
+1217:         if anomaly_hint:
+1218:             detail = f"{detail}\nANOMALY_HINT:{anomaly_hint}"
+1219:             alert["detail"] = detail
+1220:     except Exception as e:
+1221:         print(f"[AnomalyBaseline] non-fatal: {e}")
+1222: 
+1223:     # ── Stage 4: Risk Scoring → Severity ────────────────────
+1224:     severity, score = calculate_severity(
+1225:         event, detail,
+1226:         intel.get("vt_score",    0),
+1227:         intel.get("abuse_score", 0),
+1228:         intel.get("ioc_feed_confidence", 0),
+1229:     )
+1230:     alert["severity"]    = severity
+1231:     alert["score"]       = score
+1232:     alert["threat_risk"] = intel.get("threat_risk", severity)
+1233: 
+1234:     # ── Stage 4a: Suppression override ─────────────────────────
+1235:     # If a suppression rule with action='lower_severity' matched,
+1236:     # override to low regardless of what the scorer calculated.
+1237:     if raw.get("_force_low_severity"):
+1238:         alert["severity"] = "low"
+1239:         alert["suppressed_by"] = "suppression_rule_downgrade"
+1240:         severity = "low"
+1241: 
+1242:     # ── Stage 4b: SOAR playbooks (core/soar_engine.py) ──────
+1243:     # Runs right after severity is final and before persistence, so every
+1244:     # playbook trigger/condition sees the real, finished severity — never
+1245:     # a pre-scoring guess. Wrapped so a playbook/action bug can never
+1246:     # prevent the alert itself from being recorded; SOAR is a consumer of
+1247:     # a finished alert, not a gate on it existing.
+1248:     try:
+1249:         from core.soar_engine import run_playbooks
+1250:         alert["playbook_matches"] = run_playbooks(alert)
+1251:     except Exception as e:
+1252:         print(f"[SOAR] non-fatal: {e}")
+1253:         alert["playbook_matches"] = []

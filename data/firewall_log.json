@@ -1,0 +1,89 @@
+[
+  {
+    "ip": "9709473ab351387aab9e816eff3910b9f28a7a70202e250ed46dba8f820f34a8",
+    "blocked_at": "2026-08-27 00:00:32",
+    "reason": "Manual containment action",
+    "type": "All Traffic",
+    "blocked_by": "operator:admin",
+    "action": "BLOCK"
+  },
+  {
+    "ip": "185.220.101.5",
+    "blocked_at": "2026-08-21 14:09:16",
+    "reason": "Threat intel block",
+    "type": "Malicious IP",
+    "blocked_by": "operator:admin",
+    "action": "BLOCK"
+  },
+  {
+    "ip": "185.220.101.5",
+    "blocked_at": "2026-08-12 10:57:20",
+    "reason": "C2 block from Net Conn Detail",
+    "type": "C2 Server",
+    "blocked_by": "operator:admin",
+    "action": "BLOCK"
+  },
+  {
+    "ip": "nani123",
+    "blocked_at": "2026-08-12 10:54:15",
+    "reason": "File drop: Unknown → Defense Evasion → Execution → Persistence",
+    "type": "Malicious File Host",
+    "blocked_by": "operator:admin",
+    "action": "BLOCK"
+  },
+  {
+    "ip": "185.220.101.5",
+    "blocked_at": "2026-08-10 21:23:57",
+    "reason": "Manual block",
+    "type": "Malicious IP",
+    "blocked_by": "admin:admin",
+    "action": "BLOCK"
+  },
+  {
+    "ip": "9709473ab351387aab9e816eff3910b9f28a7a70202e250ed46dba8f820f34a8",
+    "blocked_at": "2026-08-10 15:35:22",
+    "reason": "Manual analyst block",
+    "type": "All Traffic",
+    "blocked_by": "admin:admin",
+    "action": "BLOCK"
+  },
+  {
+    "ip": "185.220.101.45",
+    "blocked_at": "2026-07-14 09:21:39",
+    "reason": "Manual analyst block",
+    "type": "All Traffic",
+    "blocked_by": "analyst",
+    "action": "BLOCK"
+  },
+  {
+    "ip": "203.0.113.42",
+    "blocked_at": "2026-07-11 23:38:53",
+    "reason": "Manual analyst block",
+    "type": "All Traffic",
+    "blocked_by": "analyst",
+    "action": "BLOCK"
+  },
+  {
+    "ip": "104.2.252.47",
+    "blocked_at": "2026-07-07 17:48:31",
+    "reason": "Threat intel block",
+    "type": "Malicious IP",
+    "blocked_by": "analyst",
+    "action": "BLOCK"
+  },
+  {
+    "ip": "-",
+    "blocked_at": "2026-07-06 20:43:30",
+    "reason": "File drop block: backdoor6.exe",
+    "type": "Malicious File Host",
+    "blocked_by": "analyst",
+    "action": "BLOCK"
+  },
+  {
+    "ip": "203.0.113.42",
+    "blocked_at": "2026-06-27 17:15:17",
+    "reason": "C2 server — Meterpreter beacon",
+    "by": "analyst",
+    "action": "BLOCK"
+  }
+]

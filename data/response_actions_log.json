@@ -1,0 +1,5282 @@
+[
+  {
+    "timestamp": "2026-08-27 00:19:43",
+    "action": "block_ip",
+    "target": "9709473ab351387aab9e816eff3910b9f28a7a70202e250ed46dba8f820f34a8",
+    "reason": "Manual containment action",
+    "triggered_by": "operator:admin",
+    "success": true,
+    "method": "netsh_block",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-27 00:01:45",
+    "action": "block_ip",
+    "target": "9709473ab351387aab9e816eff3910b9f28a7a70202e250ed46dba8f820f34a8",
+    "reason": "Manual containment action",
+    "triggered_by": "operator:admin",
+    "success": true,
+    "method": "netsh_block",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-27 00:00:35",
+    "action": "block_ip",
+    "target": "9709473ab351387aab9e816eff3910b9f28a7a70202e250ed46dba8f820f34a8",
+    "reason": "Manual containment action",
+    "triggered_by": "operator:admin",
+    "success": true,
+    "method": "netsh_block",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-27 00:00:32",
+    "action": "block_ip",
+    "target": "9709473ab351387aab9e816eff3910b9f28a7a70202e250ed46dba8f820f34a8",
+    "reason": "Manual containment action",
+    "triggered_by": "operator:admin",
+    "success": false,
+    "method": "netsh_block",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-21 14:09:16",
+    "action": "block_ip",
+    "target": "185.220.101.5",
+    "reason": "Threat intel block",
+    "triggered_by": "operator:admin",
+    "success": true,
+    "method": "netsh_block",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-21 10:38:44",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-21 10:38:44",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-21 10:38:44",
+    "action": "create_case",
+    "target": "CASE-1787288924",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-21 10:38:44",
+    "action": "create_case",
+    "target": "CASE-1787288924",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-21 10:38:43",
+    "action": "create_case",
+    "target": "CASE-1787288923",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-21 10:38:43",
+    "action": "create_case",
+    "target": "CASE-1787288923",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-21 10:38:43",
+    "action": "create_case",
+    "target": "CASE-1787288923",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-19 13:56:28",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-19 13:56:27",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-19 13:56:27",
+    "action": "create_case",
+    "target": "CASE-1787127987",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-19 13:56:27",
+    "action": "create_case",
+    "target": "CASE-1787127987",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-19 13:56:27",
+    "action": "create_case",
+    "target": "CASE-1787127987",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-19 13:56:27",
+    "action": "create_case",
+    "target": "CASE-1787127987",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-19 13:56:26",
+    "action": "create_case",
+    "target": "CASE-1787127986",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 22:01:44",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 22:01:44",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 22:01:44",
+    "action": "create_case",
+    "target": "CASE-1787070704",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 22:01:44",
+    "action": "create_case",
+    "target": "CASE-1787070704",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 22:01:44",
+    "action": "create_case",
+    "target": "CASE-1787070703",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 22:01:43",
+    "action": "create_case",
+    "target": "CASE-1787070703",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 22:01:42",
+    "action": "create_case",
+    "target": "CASE-1787070702",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 21:42:46",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 21:42:46",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 21:42:46",
+    "action": "create_case",
+    "target": "CASE-1787069566",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 21:42:46",
+    "action": "create_case",
+    "target": "CASE-1787069566",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 21:42:46",
+    "action": "create_case",
+    "target": "CASE-1787069565",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 21:42:45",
+    "action": "create_case",
+    "target": "CASE-1787069565",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 21:42:45",
+    "action": "create_case",
+    "target": "CASE-1787069565",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 17:24:19",
+    "action": "block_ip",
+    "target": "185.220.101.5",
+    "reason": "Threat intel block",
+    "triggered_by": "operator:admin",
+    "success": true,
+    "method": "netsh_block",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:58:59",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:58:58",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:58:58",
+    "action": "create_case",
+    "target": "CASE-1787052538",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:58:58",
+    "action": "create_case",
+    "target": "CASE-1787052537",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:58:57",
+    "action": "create_case",
+    "target": "CASE-1787052537",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:58:57",
+    "action": "create_case",
+    "target": "CASE-1787052537",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:58:56",
+    "action": "create_case",
+    "target": "CASE-1787052536",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:54:50",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:54:50",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:54:49",
+    "action": "create_case",
+    "target": "CASE-1787052289",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:54:49",
+    "action": "create_case",
+    "target": "CASE-1787052289",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:54:49",
+    "action": "create_case",
+    "target": "CASE-1787052289",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:54:49",
+    "action": "create_case",
+    "target": "CASE-1787052289",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:54:48",
+    "action": "create_case",
+    "target": "CASE-1787052287",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:51:52",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:51:52",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:51:52",
+    "action": "create_case",
+    "target": "CASE-1787052112",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:51:52",
+    "action": "create_case",
+    "target": "CASE-1787052112",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:51:52",
+    "action": "create_case",
+    "target": "CASE-1787052112",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:51:52",
+    "action": "create_case",
+    "target": "CASE-1787052112",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:51:51",
+    "action": "create_case",
+    "target": "CASE-1787052111",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:50:04",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:50:04",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:50:04",
+    "action": "create_case",
+    "target": "CASE-1787052004",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:50:04",
+    "action": "create_case",
+    "target": "CASE-1787052004",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:50:04",
+    "action": "create_case",
+    "target": "CASE-1787052004",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:50:04",
+    "action": "create_case",
+    "target": "CASE-1787052004",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:50:03",
+    "action": "create_case",
+    "target": "CASE-1787052003",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:48:36",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:48:36",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:48:36",
+    "action": "create_case",
+    "target": "CASE-1787051916",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:48:36",
+    "action": "create_case",
+    "target": "CASE-1787051916",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:48:36",
+    "action": "create_case",
+    "target": "CASE-1787051916",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:48:36",
+    "action": "create_case",
+    "target": "CASE-1787051916",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:48:36",
+    "action": "create_case",
+    "target": "CASE-1787051915",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:47:02",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:47:01",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:47:01",
+    "action": "create_case",
+    "target": "CASE-1787051821",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:47:01",
+    "action": "create_case",
+    "target": "CASE-1787051821",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:47:01",
+    "action": "create_case",
+    "target": "CASE-1787051821",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:47:01",
+    "action": "create_case",
+    "target": "CASE-1787051821",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-18 16:47:01",
+    "action": "create_case",
+    "target": "CASE-1787051821",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:26:50",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:26:50",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:26:50",
+    "action": "create_case",
+    "target": "CASE-1786971410",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:26:50",
+    "action": "create_case",
+    "target": "CASE-1786971410",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:26:50",
+    "action": "create_case",
+    "target": "CASE-1786971410",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:26:50",
+    "action": "create_case",
+    "target": "CASE-1786971410",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:26:50",
+    "action": "create_case",
+    "target": "CASE-1786971410",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:24:01",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:24:00",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:24:00",
+    "action": "create_case",
+    "target": "CASE-1786971240",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:24:00",
+    "action": "create_case",
+    "target": "CASE-1786971240",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:24:00",
+    "action": "create_case",
+    "target": "CASE-1786971240",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:24:00",
+    "action": "create_case",
+    "target": "CASE-1786971240",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:24:00",
+    "action": "create_case",
+    "target": "CASE-1786971240",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:10:32",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:10:31",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:10:31",
+    "action": "create_case",
+    "target": "CASE-1786970431",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:10:31",
+    "action": "create_case",
+    "target": "CASE-1786970431",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:10:31",
+    "action": "create_case",
+    "target": "CASE-1786970430",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:10:31",
+    "action": "create_case",
+    "target": "CASE-1786970430",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:10:29",
+    "action": "create_case",
+    "target": "CASE-1786970429",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:03:39",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:03:39",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:03:39",
+    "action": "create_case",
+    "target": "CASE-1786970019",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:03:39",
+    "action": "create_case",
+    "target": "CASE-1786970018",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:03:38",
+    "action": "create_case",
+    "target": "CASE-1786970018",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:03:38",
+    "action": "create_case",
+    "target": "CASE-1786970018",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 18:03:37",
+    "action": "create_case",
+    "target": "CASE-1786970017",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:56:06",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:56:06",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:56:06",
+    "action": "create_case",
+    "target": "CASE-1786969566",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:56:05",
+    "action": "create_case",
+    "target": "CASE-1786969565",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:56:05",
+    "action": "create_case",
+    "target": "CASE-1786969565",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:56:05",
+    "action": "create_case",
+    "target": "CASE-1786969565",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:56:04",
+    "action": "create_case",
+    "target": "CASE-1786969564",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:46:19",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:46:19",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:46:19",
+    "action": "create_case",
+    "target": "CASE-1786968979",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:46:18",
+    "action": "create_case",
+    "target": "CASE-1786968978",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:46:18",
+    "action": "create_case",
+    "target": "CASE-1786968978",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:46:18",
+    "action": "create_case",
+    "target": "CASE-1786968978",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:46:17",
+    "action": "create_case",
+    "target": "CASE-1786968977",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:00:54",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:00:54",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:00:54",
+    "action": "create_case",
+    "target": "CASE-1786966254",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:00:54",
+    "action": "create_case",
+    "target": "CASE-1786966254",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:00:54",
+    "action": "create_case",
+    "target": "CASE-1786966254",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:00:54",
+    "action": "create_case",
+    "target": "CASE-1786966254",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 17:00:53",
+    "action": "create_case",
+    "target": "CASE-1786966253",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:43:42",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:43:42",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:43:42",
+    "action": "create_case",
+    "target": "CASE-1786965222",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:43:42",
+    "action": "create_case",
+    "target": "CASE-1786965222",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:43:42",
+    "action": "create_case",
+    "target": "CASE-1786965222",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:43:42",
+    "action": "create_case",
+    "target": "CASE-1786965222",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:43:41",
+    "action": "create_case",
+    "target": "CASE-1786965221",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:23:24",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:23:24",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:23:24",
+    "action": "create_case",
+    "target": "CASE-1786964004",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:23:24",
+    "action": "create_case",
+    "target": "CASE-1786964004",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:23:24",
+    "action": "create_case",
+    "target": "CASE-1786964004",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:23:24",
+    "action": "create_case",
+    "target": "CASE-1786964004",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:23:23",
+    "action": "create_case",
+    "target": "CASE-1786964003",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:12:47",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:12:47",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:12:47",
+    "action": "create_case",
+    "target": "CASE-1786963367",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:12:47",
+    "action": "create_case",
+    "target": "CASE-1786963367",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:12:47",
+    "action": "create_case",
+    "target": "CASE-1786963367",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:12:47",
+    "action": "create_case",
+    "target": "CASE-1786963367",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 16:12:46",
+    "action": "create_case",
+    "target": "CASE-1786963366",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 15:59:41",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 15:59:41",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 15:59:41",
+    "action": "create_case",
+    "target": "CASE-1786962581",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 15:59:41",
+    "action": "create_case",
+    "target": "CASE-1786962581",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 15:59:41",
+    "action": "create_case",
+    "target": "CASE-1786962580",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 15:59:40",
+    "action": "create_case",
+    "target": "CASE-1786962580",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-17 15:59:40",
+    "action": "create_case",
+    "target": "CASE-1786962580",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:40:16",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:40:16",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:40:16",
+    "action": "create_case",
+    "target": "CASE-1786515016",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:40:16",
+    "action": "create_case",
+    "target": "CASE-1786515016",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:40:16",
+    "action": "create_case",
+    "target": "CASE-1786515016",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:40:16",
+    "action": "create_case",
+    "target": "CASE-1786515016",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:40:15",
+    "action": "create_case",
+    "target": "CASE-1786515015",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:32:30",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:32:30",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:32:30",
+    "action": "create_case",
+    "target": "CASE-1786514550",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:32:30",
+    "action": "create_case",
+    "target": "CASE-1786514550",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:32:29",
+    "action": "create_case",
+    "target": "CASE-1786514549",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:32:29",
+    "action": "create_case",
+    "target": "CASE-1786514549",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:32:29",
+    "action": "create_case",
+    "target": "CASE-1786514549",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:30:37",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:30:37",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:30:37",
+    "action": "create_case",
+    "target": "CASE-1786514437",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:30:37",
+    "action": "create_case",
+    "target": "CASE-1786514437",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:30:37",
+    "action": "create_case",
+    "target": "CASE-1786514437",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:30:37",
+    "action": "create_case",
+    "target": "CASE-1786514437",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:30:36",
+    "action": "create_case",
+    "target": "CASE-1786514436",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:16:13",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:16:12",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:16:12",
+    "action": "create_case",
+    "target": "CASE-1786513572",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:16:12",
+    "action": "create_case",
+    "target": "CASE-1786513572",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:16:12",
+    "action": "create_case",
+    "target": "CASE-1786513571",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:16:12",
+    "action": "create_case",
+    "target": "CASE-1786513571",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:16:10",
+    "action": "create_case",
+    "target": "CASE-1786513570",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:04:01",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:04:01",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:04:01",
+    "action": "create_case",
+    "target": "CASE-1786512841",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:04:01",
+    "action": "create_case",
+    "target": "CASE-1786512840",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:04:00",
+    "action": "create_case",
+    "target": "CASE-1786512840",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:04:00",
+    "action": "create_case",
+    "target": "CASE-1786512840",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 11:03:59",
+    "action": "create_case",
+    "target": "CASE-1786512839",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:57:21",
+    "action": "block_ip",
+    "target": "185.220.101.5",
+    "reason": "C2 block from Net Conn Detail",
+    "triggered_by": "operator:admin",
+    "success": false,
+    "method": "netsh_block",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:54:17",
+    "action": "block_ip",
+    "target": "nani123",
+    "reason": "File drop: Unknown → Defense Evasion → Execution → Persistence",
+    "triggered_by": "operator:admin",
+    "success": false,
+    "method": "netsh_block",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:52:31",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:52:31",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:52:31",
+    "action": "create_case",
+    "target": "CASE-1786512151",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:52:31",
+    "action": "create_case",
+    "target": "CASE-1786512151",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:52:31",
+    "action": "create_case",
+    "target": "CASE-1786512150",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:52:30",
+    "action": "create_case",
+    "target": "CASE-1786512150",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:52:30",
+    "action": "create_case",
+    "target": "CASE-1786512150",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:45:36",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:45:35",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:45:35",
+    "action": "create_case",
+    "target": "CASE-1786511735",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:45:35",
+    "action": "create_case",
+    "target": "CASE-1786511735",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:45:35",
+    "action": "create_case",
+    "target": "CASE-1786511735",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:45:35",
+    "action": "create_case",
+    "target": "CASE-1786511735",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:45:34",
+    "action": "create_case",
+    "target": "CASE-1786511734",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:38:49",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:38:49",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:38:48",
+    "action": "create_case",
+    "target": "CASE-1786511328",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:38:48",
+    "action": "create_case",
+    "target": "CASE-1786511328",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:38:48",
+    "action": "create_case",
+    "target": "CASE-1786511328",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:38:48",
+    "action": "create_case",
+    "target": "CASE-1786511328",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 10:38:48",
+    "action": "create_case",
+    "target": "CASE-1786511328",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:56:43",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:56:43",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:56:43",
+    "action": "create_case",
+    "target": "CASE-1786508803",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:56:43",
+    "action": "create_case",
+    "target": "CASE-1786508803",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:56:42",
+    "action": "create_case",
+    "target": "CASE-1786508802",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:56:42",
+    "action": "create_case",
+    "target": "CASE-1786508802",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:56:42",
+    "action": "create_case",
+    "target": "CASE-1786508802",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:36:35",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:36:35",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:36:35",
+    "action": "create_case",
+    "target": "CASE-1786507595",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:36:35",
+    "action": "create_case",
+    "target": "CASE-1786507595",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:36:35",
+    "action": "create_case",
+    "target": "CASE-1786507595",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:36:35",
+    "action": "create_case",
+    "target": "CASE-1786507595",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:36:35",
+    "action": "create_case",
+    "target": "CASE-1786507595",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:16:37",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:16:37",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:16:37",
+    "action": "create_case",
+    "target": "CASE-1786506397",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:16:37",
+    "action": "create_case",
+    "target": "CASE-1786506397",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:16:37",
+    "action": "create_case",
+    "target": "CASE-1786506396",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:16:36",
+    "action": "create_case",
+    "target": "CASE-1786506396",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:16:36",
+    "action": "create_case",
+    "target": "CASE-1786506396",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:15:11",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:15:11",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:15:11",
+    "action": "create_case",
+    "target": "CASE-1786506311",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:15:11",
+    "action": "create_case",
+    "target": "CASE-1786506311",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:15:11",
+    "action": "create_case",
+    "target": "CASE-1786506310",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:15:11",
+    "action": "create_case",
+    "target": "CASE-1786506310",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 09:15:10",
+    "action": "create_case",
+    "target": "CASE-1786506310",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 08:55:51",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 08:55:50",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 08:55:50",
+    "action": "create_case",
+    "target": "CASE-1786505150",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 08:55:50",
+    "action": "create_case",
+    "target": "CASE-1786505150",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 08:55:50",
+    "action": "create_case",
+    "target": "CASE-1786505150",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 08:55:50",
+    "action": "create_case",
+    "target": "CASE-1786505150",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 08:55:50",
+    "action": "create_case",
+    "target": "CASE-1786505150",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 08:24:40",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 08:24:39",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 08:24:39",
+    "action": "create_case",
+    "target": "CASE-1786503279",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 08:24:39",
+    "action": "create_case",
+    "target": "CASE-1786503279",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 08:24:39",
+    "action": "create_case",
+    "target": "CASE-1786503279",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 08:24:39",
+    "action": "create_case",
+    "target": "CASE-1786503279",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-12 08:24:38",
+    "action": "create_case",
+    "target": "CASE-1786503278",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 22:29:27",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 22:29:24",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 22:29:24",
+    "action": "create_case",
+    "target": "CASE-1786467564",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 22:29:24",
+    "action": "create_case",
+    "target": "CASE-1786467564",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 22:29:23",
+    "action": "create_case",
+    "target": "CASE-1786467563",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 22:29:23",
+    "action": "create_case",
+    "target": "CASE-1786467563",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 22:29:22",
+    "action": "create_case",
+    "target": "CASE-1786467562",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 21:07:01",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 21:07:00",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 21:07:00",
+    "action": "create_case",
+    "target": "CASE-1786462620",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 21:07:00",
+    "action": "create_case",
+    "target": "CASE-1786462620",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 21:07:00",
+    "action": "create_case",
+    "target": "CASE-1786462620",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 21:07:00",
+    "action": "create_case",
+    "target": "CASE-1786462620",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 21:06:59",
+    "action": "create_case",
+    "target": "CASE-1786462619",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:57:42",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:57:42",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:57:42",
+    "action": "create_case",
+    "target": "CASE-1786462062",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:57:41",
+    "action": "create_case",
+    "target": "CASE-1786462061",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:57:41",
+    "action": "create_case",
+    "target": "CASE-1786462061",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:57:41",
+    "action": "create_case",
+    "target": "CASE-1786462061",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:57:41",
+    "action": "create_case",
+    "target": "CASE-1786462061",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:53:08",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:53:07",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:53:07",
+    "action": "create_case",
+    "target": "CASE-1786461787",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:53:07",
+    "action": "create_case",
+    "target": "CASE-1786461787",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:53:07",
+    "action": "create_case",
+    "target": "CASE-1786461787",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:53:07",
+    "action": "create_case",
+    "target": "CASE-1786461787",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:53:07",
+    "action": "create_case",
+    "target": "CASE-1786461787",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:47:07",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:47:06",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:47:06",
+    "action": "create_case",
+    "target": "CASE-1786461426",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:47:06",
+    "action": "create_case",
+    "target": "CASE-1786461426",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:47:06",
+    "action": "create_case",
+    "target": "CASE-1786461426",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:47:06",
+    "action": "create_case",
+    "target": "CASE-1786461426",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:47:06",
+    "action": "create_case",
+    "target": "CASE-1786461426",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:36:01",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:36:01",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:36:01",
+    "action": "create_case",
+    "target": "CASE-1786460761",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:36:00",
+    "action": "create_case",
+    "target": "CASE-1786460760",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:36:00",
+    "action": "create_case",
+    "target": "CASE-1786460760",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:36:00",
+    "action": "create_case",
+    "target": "CASE-1786460760",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 20:36:00",
+    "action": "create_case",
+    "target": "CASE-1786460760",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 19:41:22",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 19:41:21",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 19:41:21",
+    "action": "create_case",
+    "target": "CASE-1786457481",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 19:41:21",
+    "action": "create_case",
+    "target": "CASE-1786457481",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 19:41:21",
+    "action": "create_case",
+    "target": "CASE-1786457481",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 19:41:21",
+    "action": "create_case",
+    "target": "CASE-1786457481",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 19:41:20",
+    "action": "create_case",
+    "target": "CASE-1786457480",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 16:11:11",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 16:11:10",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 16:11:10",
+    "action": "create_case",
+    "target": "CASE-1786444870",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 16:11:10",
+    "action": "create_case",
+    "target": "CASE-1786444870",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 16:11:10",
+    "action": "create_case",
+    "target": "CASE-1786444870",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 16:11:10",
+    "action": "create_case",
+    "target": "CASE-1786444870",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 16:11:09",
+    "action": "create_case",
+    "target": "CASE-1786444869",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 16:02:15",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 16:02:15",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 16:02:15",
+    "action": "create_case",
+    "target": "CASE-1786444335",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 16:02:15",
+    "action": "create_case",
+    "target": "CASE-1786444335",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 16:02:15",
+    "action": "create_case",
+    "target": "CASE-1786444335",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 16:02:15",
+    "action": "create_case",
+    "target": "CASE-1786444335",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 16:02:14",
+    "action": "create_case",
+    "target": "CASE-1786444334",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:56:58",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:56:58",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:56:58",
+    "action": "create_case",
+    "target": "CASE-1786444018",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:56:58",
+    "action": "create_case",
+    "target": "CASE-1786444018",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:56:57",
+    "action": "create_case",
+    "target": "CASE-1786444017",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:56:57",
+    "action": "create_case",
+    "target": "CASE-1786444017",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:56:57",
+    "action": "create_case",
+    "target": "CASE-1786444017",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:20:33",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:20:32",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:20:32",
+    "action": "create_case",
+    "target": "CASE-1786441832",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:20:32",
+    "action": "create_case",
+    "target": "CASE-1786441832",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:20:32",
+    "action": "create_case",
+    "target": "CASE-1786441832",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:20:32",
+    "action": "create_case",
+    "target": "CASE-1786441832",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:20:32",
+    "action": "create_case",
+    "target": "CASE-1786441832",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:14:51",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:14:50",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:14:50",
+    "action": "create_case",
+    "target": "CASE-1786441490",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:14:50",
+    "action": "create_case",
+    "target": "CASE-1786441490",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:14:50",
+    "action": "create_case",
+    "target": "CASE-1786441490",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:14:50",
+    "action": "create_case",
+    "target": "CASE-1786441490",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 15:14:49",
+    "action": "create_case",
+    "target": "CASE-1786441489",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:41:44",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:41:44",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:41:44",
+    "action": "create_case",
+    "target": "CASE-1786439503",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:41:43",
+    "action": "create_case",
+    "target": "CASE-1786439503",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:41:43",
+    "action": "create_case",
+    "target": "CASE-1786439503",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:41:43",
+    "action": "create_case",
+    "target": "CASE-1786439503",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:41:43",
+    "action": "create_case",
+    "target": "CASE-1786439503",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:23:08",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:23:07",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:23:07",
+    "action": "create_case",
+    "target": "CASE-1786438387",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:23:07",
+    "action": "create_case",
+    "target": "CASE-1786438387",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:23:07",
+    "action": "create_case",
+    "target": "CASE-1786438387",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:23:07",
+    "action": "create_case",
+    "target": "CASE-1786438387",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:23:06",
+    "action": "create_case",
+    "target": "CASE-1786438386",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:14:23",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:14:22",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:14:22",
+    "action": "create_case",
+    "target": "CASE-1786437862",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:14:22",
+    "action": "create_case",
+    "target": "CASE-1786437862",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:14:22",
+    "action": "create_case",
+    "target": "CASE-1786437862",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:14:22",
+    "action": "create_case",
+    "target": "CASE-1786437862",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 14:14:21",
+    "action": "create_case",
+    "target": "CASE-1786437861",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 13:03:34",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 13:03:33",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 13:03:33",
+    "action": "create_case",
+    "target": "CASE-1786433613",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 13:03:33",
+    "action": "create_case",
+    "target": "CASE-1786433613",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 13:03:33",
+    "action": "create_case",
+    "target": "CASE-1786433613",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 13:03:33",
+    "action": "create_case",
+    "target": "CASE-1786433613",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 13:03:33",
+    "action": "create_case",
+    "target": "CASE-1786433613",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:32:03",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:32:03",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:32:03",
+    "action": "create_case",
+    "target": "CASE-1786431723",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:32:03",
+    "action": "create_case",
+    "target": "CASE-1786431723",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:32:03",
+    "action": "create_case",
+    "target": "CASE-1786431723",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:32:03",
+    "action": "create_case",
+    "target": "CASE-1786431723",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:32:03",
+    "action": "create_case",
+    "target": "CASE-1786431723",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:23:45",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:23:44",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:23:44",
+    "action": "create_case",
+    "target": "CASE-1786431224",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:23:44",
+    "action": "create_case",
+    "target": "CASE-1786431224",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:23:44",
+    "action": "create_case",
+    "target": "CASE-1786431224",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:23:44",
+    "action": "create_case",
+    "target": "CASE-1786431224",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:23:43",
+    "action": "create_case",
+    "target": "CASE-1786431223",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:17:40",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:17:40",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:17:40",
+    "action": "create_case",
+    "target": "CASE-1786430860",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:17:39",
+    "action": "create_case",
+    "target": "CASE-1786430859",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:17:39",
+    "action": "create_case",
+    "target": "CASE-1786430859",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:17:39",
+    "action": "create_case",
+    "target": "CASE-1786430859",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:17:39",
+    "action": "create_case",
+    "target": "CASE-1786430859",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:12:45",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:12:45",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:12:45",
+    "action": "create_case",
+    "target": "CASE-1786430565",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:12:45",
+    "action": "create_case",
+    "target": "CASE-1786430565",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:12:45",
+    "action": "create_case",
+    "target": "CASE-1786430565",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:12:45",
+    "action": "create_case",
+    "target": "CASE-1786430565",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 12:12:44",
+    "action": "create_case",
+    "target": "CASE-1786430564",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 11:54:47",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 11:54:47",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 11:54:47",
+    "action": "create_case",
+    "target": "CASE-1786429487",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 11:54:47",
+    "action": "create_case",
+    "target": "CASE-1786429487",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 11:54:47",
+    "action": "create_case",
+    "target": "CASE-1786429487",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 11:54:47",
+    "action": "create_case",
+    "target": "CASE-1786429487",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 11:54:46",
+    "action": "create_case",
+    "target": "CASE-1786429486",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 10:42:05",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 10:42:05",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 10:42:04",
+    "action": "create_case",
+    "target": "CASE-1786425124",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 10:42:04",
+    "action": "create_case",
+    "target": "CASE-1786425124",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 10:42:04",
+    "action": "create_case",
+    "target": "CASE-1786425124",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 10:42:04",
+    "action": "create_case",
+    "target": "CASE-1786425124",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 10:42:04",
+    "action": "create_case",
+    "target": "CASE-1786425124",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 09:59:29",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 09:59:28",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 09:59:28",
+    "action": "create_case",
+    "target": "CASE-1786422568",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 09:59:28",
+    "action": "create_case",
+    "target": "CASE-1786422568",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 09:59:28",
+    "action": "create_case",
+    "target": "CASE-1786422568",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 09:59:28",
+    "action": "create_case",
+    "target": "CASE-1786422568",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 09:59:28",
+    "action": "create_case",
+    "target": "CASE-1786422568",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 09:08:08",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 09:08:08",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 09:08:08",
+    "action": "create_case",
+    "target": "CASE-1786419488",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 09:08:08",
+    "action": "create_case",
+    "target": "CASE-1786419488",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 09:08:08",
+    "action": "create_case",
+    "target": "CASE-1786419488",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 09:08:08",
+    "action": "create_case",
+    "target": "CASE-1786419488",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-11 09:08:08",
+    "action": "create_case",
+    "target": "CASE-1786419488",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:55:18",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:55:18",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:55:18",
+    "action": "create_case",
+    "target": "CASE-1786382718",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:55:18",
+    "action": "create_case",
+    "target": "CASE-1786382718",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:55:18",
+    "action": "create_case",
+    "target": "CASE-1786382718",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:55:18",
+    "action": "create_case",
+    "target": "CASE-1786382718",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:55:17",
+    "action": "create_case",
+    "target": "CASE-1786382717",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:51:38",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:51:38",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:51:38",
+    "action": "create_case",
+    "target": "CASE-1786382498",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:51:38",
+    "action": "create_case",
+    "target": "CASE-1786382498",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:51:38",
+    "action": "create_case",
+    "target": "CASE-1786382498",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:51:38",
+    "action": "create_case",
+    "target": "CASE-1786382498",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:51:38",
+    "action": "create_case",
+    "target": "CASE-1786382498",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:45:54",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:45:54",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:45:54",
+    "action": "create_case",
+    "target": "CASE-1786382154",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:45:54",
+    "action": "create_case",
+    "target": "CASE-1786382154",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:45:53",
+    "action": "create_case",
+    "target": "CASE-1786382153",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:45:53",
+    "action": "create_case",
+    "target": "CASE-1786382153",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:45:53",
+    "action": "create_case",
+    "target": "CASE-1786382153",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:37:37",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:37:37",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:37:37",
+    "action": "create_case",
+    "target": "CASE-1786381657",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:37:37",
+    "action": "create_case",
+    "target": "CASE-1786381657",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:37:37",
+    "action": "create_case",
+    "target": "CASE-1786381657",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:37:37",
+    "action": "create_case",
+    "target": "CASE-1786381657",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:37:36",
+    "action": "create_case",
+    "target": "CASE-1786381656",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:37:03",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:37:03",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:37:03",
+    "action": "create_case",
+    "target": "CASE-1786381623",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:37:03",
+    "action": "create_case",
+    "target": "CASE-1786381623",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:37:03",
+    "action": "create_case",
+    "target": "CASE-1786381623",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:37:03",
+    "action": "create_case",
+    "target": "CASE-1786381623",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:37:03",
+    "action": "create_case",
+    "target": "CASE-1786381623",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:28:52",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:28:52",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:28:52",
+    "action": "create_case",
+    "target": "CASE-1786381132",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:28:52",
+    "action": "create_case",
+    "target": "CASE-1786381132",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:28:52",
+    "action": "create_case",
+    "target": "CASE-1786381132",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:28:52",
+    "action": "create_case",
+    "target": "CASE-1786381132",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:28:52",
+    "action": "create_case",
+    "target": "CASE-1786381132",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:26:15",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:26:14",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:26:14",
+    "action": "create_case",
+    "target": "CASE-1786380974",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:26:14",
+    "action": "create_case",
+    "target": "CASE-1786380974",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:26:14",
+    "action": "create_case",
+    "target": "CASE-1786380974",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:26:14",
+    "action": "create_case",
+    "target": "CASE-1786380974",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:26:14",
+    "action": "create_case",
+    "target": "CASE-1786380974",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:23:46",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:23:46",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:23:46",
+    "action": "create_case",
+    "target": "CASE-1786380826",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:23:46",
+    "action": "create_case",
+    "target": "CASE-1786380826",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:23:46",
+    "action": "create_case",
+    "target": "CASE-1786380826",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:23:46",
+    "action": "create_case",
+    "target": "CASE-1786380826",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:23:45",
+    "action": "create_case",
+    "target": "CASE-1786380825",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:22:40",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:22:40",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:22:40",
+    "action": "create_case",
+    "target": "CASE-1786380760",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:22:40",
+    "action": "create_case",
+    "target": "CASE-1786380759",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:22:39",
+    "action": "create_case",
+    "target": "CASE-1786380759",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:22:39",
+    "action": "create_case",
+    "target": "CASE-1786380759",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:22:39",
+    "action": "create_case",
+    "target": "CASE-1786380759",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:20:05",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:20:05",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:20:05",
+    "action": "create_case",
+    "target": "CASE-1786380605",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:20:05",
+    "action": "create_case",
+    "target": "CASE-1786380605",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:20:05",
+    "action": "create_case",
+    "target": "CASE-1786380605",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:20:05",
+    "action": "create_case",
+    "target": "CASE-1786380605",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:20:05",
+    "action": "create_case",
+    "target": "CASE-1786380605",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:17:18",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:17:18",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:17:18",
+    "action": "create_case",
+    "target": "CASE-1786380438",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:17:18",
+    "action": "create_case",
+    "target": "CASE-1786380438",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:17:18",
+    "action": "create_case",
+    "target": "CASE-1786380438",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:17:18",
+    "action": "create_case",
+    "target": "CASE-1786380438",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:17:18",
+    "action": "create_case",
+    "target": "CASE-1786380438",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:14:51",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:14:51",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:14:51",
+    "action": "create_case",
+    "target": "CASE-1786380291",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:14:51",
+    "action": "create_case",
+    "target": "CASE-1786380291",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:14:51",
+    "action": "create_case",
+    "target": "CASE-1786380291",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:14:51",
+    "action": "create_case",
+    "target": "CASE-1786380291",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:14:51",
+    "action": "create_case",
+    "target": "CASE-1786380291",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:14:05",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:14:05",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:14:05",
+    "action": "create_case",
+    "target": "CASE-1786380245",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:14:05",
+    "action": "create_case",
+    "target": "CASE-1786380245",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:14:05",
+    "action": "create_case",
+    "target": "CASE-1786380245",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:14:05",
+    "action": "create_case",
+    "target": "CASE-1786380245",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:14:05",
+    "action": "create_case",
+    "target": "CASE-1786380245",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:12:59",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:12:59",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:12:59",
+    "action": "create_case",
+    "target": "CASE-1786380179",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:12:59",
+    "action": "create_case",
+    "target": "CASE-1786380179",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:12:58",
+    "action": "create_case",
+    "target": "CASE-1786380178",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:12:58",
+    "action": "create_case",
+    "target": "CASE-1786380178",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 22:12:58",
+    "action": "create_case",
+    "target": "CASE-1786380178",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 21:23:58",
+    "action": "block_ip",
+    "target": "185.220.101.5",
+    "reason": "Manual block",
+    "triggered_by": "admin:admin",
+    "success": true,
+    "method": "netsh_block",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-08-10 15:35:23",
+    "action": "block_ip",
+    "target": "9709473ab351387aab9e816eff3910b9f28a7a70202e250ed46dba8f820f34a8",
+    "reason": "Manual analyst block",
+    "triggered_by": "admin:admin",
+    "success": true,
+    "method": "netsh_block",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-07-25 01:43:45",
+    "action": "restore_host",
+    "target": "test-host",
+    "reason": "manual restore",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_restore",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-07-25 01:43:45",
+    "action": "isolate_host",
+    "target": "test-host",
+    "reason": "",
+    "triggered_by": "system",
+    "success": true,
+    "method": "netsh_isolate",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-07-25 01:43:45",
+    "action": "create_case",
+    "target": "CASE-1784943825",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-07-25 01:43:45",
+    "action": "create_case",
+    "target": "CASE-1784943825",
+    "reason": "priority=P2",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-07-25 01:43:45",
+    "action": "create_case",
+    "target": "CASE-1784943825",
+    "reason": "folded, priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case_folded",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-07-25 01:43:45",
+    "action": "create_case",
+    "target": "CASE-1784943825",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-1",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  },
+  {
+    "timestamp": "2026-07-25 01:43:45",
+    "action": "create_case",
+    "target": "CASE-1784943825",
+    "reason": "priority=P1",
+    "triggered_by": "playbook:PB-TEST",
+    "success": true,
+    "method": "playbook_case",
+    "error": ""
+  }
+]

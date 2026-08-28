@@ -1,0 +1,420 @@
+<Sysmon schemaversion="4.90">
+<!--  =========================================================
+       SentinelX Sysmon v2.1 FINAL — Enterprise Edition
+       Optimized for SOC telemetry + low noise + SIEM ingestion
+       =========================================================  -->
+<HashAlgorithms>SHA256</HashAlgorithms>
+<CheckRevocation>false</CheckRevocation>
+<EventFiltering>
+<!--  =====================================================
+         EVENT ID 1 — PROCESS CREATION
+         =====================================================  -->
+<RuleGroup name="SOC_PROCESS_CREATION" groupRelation="or">
+<ProcessCreate onmatch="include">
+<!--  Encoded PowerShell  -->
+<CommandLine condition="contains"> -enc </CommandLine>
+<CommandLine condition="contains">EncodedCommand</CommandLine>
+<CommandLine condition="contains">FromBase64String</CommandLine>
+<!--  PowerShell Download Cradles  -->
+<CommandLine condition="contains">Invoke-WebRequest</CommandLine>
+<CommandLine condition="contains">DownloadString</CommandLine>
+<CommandLine condition="contains">Net.WebClient</CommandLine>
+<CommandLine condition="contains">DownloadFile</CommandLine>
+<CommandLine condition="contains">Invoke-Expression</CommandLine>
+<CommandLine condition="contains">IEX(</CommandLine>
+<!--  Hidden / Bypass  -->
+<CommandLine condition="contains">-w hidden</CommandLine>
+<CommandLine condition="contains">-WindowStyle Hidden</CommandLine>
+<CommandLine condition="contains">-nop</CommandLine>
+<CommandLine condition="contains">bypass</CommandLine>
+<CommandLine condition="contains">AmsiBypass</CommandLine>
+<!--  Shadow Copy Deletion (Ransomware)  -->
+<CommandLine condition="contains">vssadmin delete shadows</CommandLine>
+<CommandLine condition="contains">wmic shadowcopy delete</CommandLine>
+<CommandLine condition="contains">bcdedit /set</CommandLine>
+<CommandLine condition="contains">wbadmin delete catalog</CommandLine>
+<CommandLine condition="contains">recoveryenabled no</CommandLine>
+<!--  Certutil / Bitsadmin Downloader Abuse  -->
+<CommandLine condition="contains">certutil -urlcache</CommandLine>
+<CommandLine condition="contains">certutil -decode</CommandLine>
+<CommandLine condition="contains">bitsadmin /transfer</CommandLine>
+<!--  Recon Commands  -->
+<CommandLine condition="contains">net user</CommandLine>
+<CommandLine condition="contains">net localgroup</CommandLine>
+<CommandLine condition="contains">whoami /all</CommandLine>
+<CommandLine condition="contains">nltest /domain_trusts</CommandLine>
+<CommandLine condition="contains">netstat -ano</CommandLine>
+<!--  Scheduled Task Creation  -->
+<CommandLine condition="contains">schtasks /create</CommandLine>
+<Image condition="end with">schtasks.exe</Image>
+<!--  WMI Abuse  -->
+<CommandLine condition="contains">wmic process call create</CommandLine>
+<!--  LOLBins  -->
+<Image condition="end with">powershell.exe</Image>
+<Image condition="end with">pwsh.exe</Image>
+<Image condition="end with">cmd.exe</Image>
+<Image condition="end with">rundll32.exe</Image>
+<Image condition="end with">regsvr32.exe</Image>
+<Image condition="end with">mshta.exe</Image>
+<Image condition="end with">certutil.exe</Image>
+<Image condition="end with">bitsadmin.exe</Image>
+<Image condition="end with">wmic.exe</Image>
+<Image condition="end with">wscript.exe</Image>
+<Image condition="end with">cscript.exe</Image>
+<Image condition="end with">msbuild.exe</Image>
+<Image condition="end with">installutil.exe</Image>
+<Image condition="end with">regasm.exe</Image>
+<Image condition="end with">regsvcs.exe</Image>
+<Image condition="end with">cmstp.exe</Image>
+<Image condition="end with">odbcconf.exe</Image>
+<!--  Lateral Movement  -->
+<Image condition="end with">psexec.exe</Image>
+<Image condition="end with">psexec64.exe</Image>
+<!--  Credential / Attack Tools  -->
+<Image condition="end with">mimikatz.exe</Image>
+<Image condition="end with">procdump.exe</Image>
+<Image condition="end with">procdump64.exe</Image>
+<Image condition="end with">netcat.exe</Image>
+<Image condition="end with">nc.exe</Image>
+<Image condition="end with">ncat.exe</Image>
+</ProcessCreate>
+</RuleGroup>
+<!--  =====================================================
+         OFFICE MACRO BEHAVIOR — AND correlated rules
+         =====================================================  -->
+<RuleGroup name="SOC_OFFICE_MACRO" groupRelation="or">
+<ProcessCreate onmatch="include">
+<Rule groupRelation="and">
+<ParentImage condition="end with">winword.exe</ParentImage>
+<Image condition="end with">powershell.exe</Image>
+</Rule>
+<Rule groupRelation="and">
+<ParentImage condition="end with">winword.exe</ParentImage>
+<Image condition="end with">cmd.exe</Image>
+</Rule>
+<Rule groupRelation="and">
+<ParentImage condition="end with">winword.exe</ParentImage>
+<Image condition="end with">wscript.exe</Image>
+</Rule>
+<Rule groupRelation="and">
+<ParentImage condition="end with">excel.exe</ParentImage>
+<Image condition="end with">cmd.exe</Image>
+</Rule>
+<Rule groupRelation="and">
+<ParentImage condition="end with">excel.exe</ParentImage>
+<Image condition="end with">powershell.exe</Image>
+</Rule>
+<Rule groupRelation="and">
+<ParentImage condition="end with">excel.exe</ParentImage>
+<Image condition="end with">wscript.exe</Image>
+</Rule>
+<Rule groupRelation="and">
+<ParentImage condition="end with">outlook.exe</ParentImage>
+<Image condition="end with">powershell.exe</Image>
+</Rule>
+<Rule groupRelation="and">
+<ParentImage condition="end with">outlook.exe</ParentImage>
+<Image condition="end with">cmd.exe</Image>
+</Rule>
+<Rule groupRelation="and">
+<ParentImage condition="end with">powerpnt.exe</ParentImage>
+<Image condition="end with">cmd.exe</Image>
+</Rule>
+<Rule groupRelation="and">
+<ParentImage condition="end with">powerpnt.exe</ParentImage>
+<Image condition="end with">powershell.exe</Image>
+</Rule>
+<Rule groupRelation="and">
+<ParentImage condition="end with">mshta.exe</ParentImage>
+<Image condition="end with">powershell.exe</Image>
+</Rule>
+<Rule groupRelation="and">
+<ParentImage condition="end with">wscript.exe</ParentImage>
+<Image condition="end with">powershell.exe</Image>
+</Rule>
+</ProcessCreate>
+</RuleGroup>
+<!--  =====================================================
+         PROCESS CREATION EXCLUSIONS
+         =====================================================  -->
+<RuleGroup name="SOC_PROCESS_EXCLUDE" groupRelation="or">
+<ProcessCreate onmatch="exclude">
+<Image condition="contains">Google\Chrome</Image>
+<Image condition="contains">Microsoft\Edge</Image>
+<Image condition="contains">OneDrive</Image>
+<Image condition="contains">Teams</Image>
+<Image condition="contains">Discord</Image>
+<Image condition="contains">Spotify</Image>
+<Image condition="contains">Code.exe</Image>
+<Image condition="contains">Steam</Image>
+<Image condition="contains">NVIDIA</Image>
+<Image condition="contains">MsMpEng</Image>
+<Image condition="contains">SecurityHealthService</Image>
+<Image condition="contains">WindowsApps</Image>
+<Image condition="contains">Zoom</Image>
+</ProcessCreate>
+</RuleGroup>
+<!--  =====================================================
+         EVENT ID 3 — NETWORK CONNECTION
+         =====================================================  -->
+<RuleGroup name="SOC_C2_DETECTION" groupRelation="or">
+<NetworkConnect onmatch="include">
+<!--  Common C2 / Reverse Shell Ports  -->
+<DestinationPort condition="is">4444</DestinationPort>
+<DestinationPort condition="is">5555</DestinationPort>
+<DestinationPort condition="is">6666</DestinationPort>
+<DestinationPort condition="is">7777</DestinationPort>
+<DestinationPort condition="is">8888</DestinationPort>
+<DestinationPort condition="is">9999</DestinationPort>
+<DestinationPort condition="is">1337</DestinationPort>
+<DestinationPort condition="is">31337</DestinationPort>
+<DestinationPort condition="is">9001</DestinationPort>
+<DestinationPort condition="is">4545</DestinationPort>
+<DestinationPort condition="is">1080</DestinationPort>
+<DestinationPort condition="is">6667</DestinationPort>
+<!--  Suspicious Processes making outbound connections  -->
+<!--  ADDITION 3: wscript + cscript added for C2 coverage  -->
+<Image condition="end with">powershell.exe</Image>
+<Image condition="end with">pwsh.exe</Image>
+<Image condition="end with">cmd.exe</Image>
+<Image condition="end with">mshta.exe</Image>
+<Image condition="end with">rundll32.exe</Image>
+<Image condition="end with">regsvr32.exe</Image>
+<Image condition="end with">wscript.exe</Image>
+<Image condition="end with">cscript.exe</Image>
+<Image condition="end with">certutil.exe</Image>
+<Image condition="end with">bitsadmin.exe</Image>
+<Image condition="end with">wmic.exe</Image>
+<Image condition="end with">nc.exe</Image>
+<Image condition="end with">ncat.exe</Image>
+<Image condition="end with">netcat.exe</Image>
+<!--  Office apps making network connections  -->
+<Image condition="end with">winword.exe</Image>
+<Image condition="end with">excel.exe</Image>
+<Image condition="end with">outlook.exe</Image>
+</NetworkConnect>
+</RuleGroup>
+<!--  =====================================================
+         NETWORK EXCLUSIONS
+         =====================================================  -->
+<RuleGroup name="SOC_NETWORK_EXCLUDE" groupRelation="or">
+<NetworkConnect onmatch="exclude">
+<Image condition="contains">Chrome</Image>
+<Image condition="contains">Edge</Image>
+<Image condition="contains">OneDrive</Image>
+<Image condition="contains">Teams</Image>
+<Image condition="contains">Discord</Image>
+<Image condition="contains">Spotify</Image>
+<Image condition="contains">MsMpEng</Image>
+<Image condition="contains">Zoom</Image>
+<Image condition="contains">NVIDIA</Image>
+<DestinationPort condition="is">80</DestinationPort>
+<DestinationPort condition="is">443</DestinationPort>
+<DestinationPort condition="is">53</DestinationPort>
+</NetworkConnect>
+</RuleGroup>
+<!--  =====================================================
+         EVENT ID 8 — REMOTE THREAD / PROCESS INJECTION
+         =====================================================  -->
+<RuleGroup name="SOC_PROCESS_INJECTION" groupRelation="or">
+<CreateRemoteThread onmatch="include">
+<TargetImage condition="end with">lsass.exe</TargetImage>
+<TargetImage condition="end with">explorer.exe</TargetImage>
+<TargetImage condition="end with">svchost.exe</TargetImage>
+<TargetImage condition="end with">winlogon.exe</TargetImage>
+<TargetImage condition="end with">notepad.exe</TargetImage>
+<TargetImage condition="end with">spoolsv.exe</TargetImage>
+<SourceImage condition="end with">powershell.exe</SourceImage>
+<SourceImage condition="end with">cmd.exe</SourceImage>
+<SourceImage condition="end with">rundll32.exe</SourceImage>
+<SourceImage condition="end with">mshta.exe</SourceImage>
+<SourceImage condition="contains">\Temp\</SourceImage>
+<SourceImage condition="contains">\AppData\</SourceImage>
+</CreateRemoteThread>
+</RuleGroup>
+<!--  =====================================================
+         EVENT ID 10 — LSASS / CREDENTIAL DUMPING
+         =====================================================  -->
+<RuleGroup name="SOC_CREDENTIAL_DUMPING" groupRelation="or">
+<ProcessAccess onmatch="include">
+<TargetImage condition="end with">lsass.exe</TargetImage>
+<SourceImage condition="end with">procdump.exe</SourceImage>
+<SourceImage condition="end with">procdump64.exe</SourceImage>
+<SourceImage condition="end with">mimikatz.exe</SourceImage>
+<SourceImage condition="end with">powershell.exe</SourceImage>
+<SourceImage condition="end with">rundll32.exe</SourceImage>
+<SourceImage condition="contains">\Temp\</SourceImage>
+<SourceImage condition="contains">\AppData\</SourceImage>
+</ProcessAccess>
+</RuleGroup>
+<RuleGroup name="SOC_PROCESS_ACCESS_EXCLUDE" groupRelation="or">
+<ProcessAccess onmatch="exclude">
+<SourceImage condition="end with">MsMpEng.exe</SourceImage>
+<SourceImage condition="end with">SecurityHealthService.exe</SourceImage>
+<SourceImage condition="end with">svchost.exe</SourceImage>
+<SourceImage condition="end with">WerFault.exe</SourceImage>
+</ProcessAccess>
+</RuleGroup>
+<!--  =====================================================
+         EVENT ID 11 — FILE CREATION
+         =====================================================  -->
+<RuleGroup name="SOC_FILE_CREATION" groupRelation="or">
+<FileCreate onmatch="include">
+<!--  Suspicious Locations  -->
+<TargetFilename condition="contains">\Temp\</TargetFilename>
+<TargetFilename condition="contains">\AppData\Roaming\</TargetFilename>
+<TargetFilename condition="contains">\Public\</TargetFilename>
+<TargetFilename condition="contains">Startup</TargetFilename>
+<TargetFilename condition="contains">\ProgramData\</TargetFilename>
+<!--  Suspicious Filenames (malware keywords)  -->
+<TargetFilename condition="contains">payload</TargetFilename>
+<TargetFilename condition="contains">trojan</TargetFilename>
+<TargetFilename condition="contains">keylogger</TargetFilename>
+<TargetFilename condition="contains">meterpreter</TargetFilename>
+<TargetFilename condition="contains">stealer</TargetFilename>
+<TargetFilename condition="contains">ransomware</TargetFilename>
+<TargetFilename condition="contains">backdoor</TargetFilename>
+<TargetFilename condition="contains">mimikatz</TargetFilename>
+<TargetFilename condition="contains">dropper</TargetFilename>
+<!--  Ransomware Extensions  -->
+<TargetFilename condition="end with">.crypt</TargetFilename>
+<TargetFilename condition="end with">.locked</TargetFilename>
+<TargetFilename condition="end with">.encrypted</TargetFilename>
+<TargetFilename condition="end with">.enc</TargetFilename>
+<TargetFilename condition="end with">.WNCRY</TargetFilename>
+<TargetFilename condition="end with">.cerber</TargetFilename>
+<TargetFilename condition="end with">.locky</TargetFilename>
+<!--  Ransom Notes  -->
+<TargetFilename condition="contains">README_DECRYPT</TargetFilename>
+<TargetFilename condition="contains">HOW_TO_DECRYPT</TargetFilename>
+<TargetFilename condition="contains">YOUR_FILES_ARE_ENCRYPTED</TargetFilename>
+<!--  Script drops  -->
+<TargetFilename condition="end with">.ps1</TargetFilename>
+<TargetFilename condition="end with">.vbs</TargetFilename>
+<TargetFilename condition="end with">.hta</TargetFilename>
+<TargetFilename condition="end with">.bat</TargetFilename>
+</FileCreate>
+</RuleGroup>
+<RuleGroup name="SOC_FILE_EXCLUDE" groupRelation="or">
+<FileCreate onmatch="exclude">
+<Image condition="contains">Chrome</Image>
+<Image condition="contains">Edge</Image>
+<Image condition="contains">OneDrive</Image>
+<Image condition="contains">Teams</Image>
+<Image condition="contains">Discord</Image>
+<Image condition="contains">Spotify</Image>
+<Image condition="contains">MsMpEng</Image>
+<Image condition="contains">NVIDIA</Image>
+<Image condition="contains">WindowsApps</Image>
+<TargetFilename condition="end with">.tmp</TargetFilename>
+<TargetFilename condition="end with">.log</TargetFilename>
+<TargetFilename condition="end with">.etl</TargetFilename>
+<TargetFilename condition="end with">.db</TargetFilename>
+</FileCreate>
+</RuleGroup>
+<!--  =====================================================
+         EVENT ID 13 — REGISTRY PERSISTENCE
+         ADDITION 1: WDigest, COM hijacking, UAC bypass added
+         =====================================================  -->
+<RuleGroup name="SOC_REGISTRY_PERSISTENCE" groupRelation="or">
+<RegistryEvent onmatch="include">
+<!--  Standard autorun keys  -->
+<TargetObject condition="contains">\CurrentVersion\Run</TargetObject>
+<TargetObject condition="contains">\CurrentVersion\RunOnce</TargetObject>
+<TargetObject condition="contains">\CurrentVersion\RunOnceEx</TargetObject>
+<TargetObject condition="contains">Winlogon\Shell</TargetObject>
+<TargetObject condition="contains">Winlogon\Userinit</TargetObject>
+<TargetObject condition="contains">AppInit_DLLs</TargetObject>
+<TargetObject condition="contains">BootExecute</TargetObject>
+<!--  ADDITION 1a: WDigest plaintext password re-enable  -->
+<TargetObject condition="contains">WDigest\UseLogonCredential</TargetObject>
+<!--  ADDITION 1b: COM hijacking paths  -->
+<TargetObject condition="contains">Classes\CLSID</TargetObject>
+<TargetObject condition="contains">Classes\Wow6432Node\CLSID</TargetObject>
+<!--  ADDITION 1c: UAC bypass registry paths  -->
+<TargetObject condition="contains">ms-settings\shell\open\command</TargetObject>
+<TargetObject condition="contains">mscfile\shell\open\command</TargetObject>
+<!--  Disable security tools  -->
+<TargetObject condition="contains">DisableAntiSpyware</TargetObject>
+<TargetObject condition="contains">DisableRealtimeMonitoring</TargetObject>
+<TargetObject condition="contains">DisableAntiVirus</TargetObject>
+<!--  RDP enable  -->
+<TargetObject condition="contains">fDenyTSConnections</TargetObject>
+<!--  Firewall disable  -->
+<TargetObject condition="contains">FirewallPolicy\StandardProfile</TargetObject>
+<TargetObject condition="contains">FirewallPolicy\DomainProfile</TargetObject>
+<!--  LSA package injection  -->
+<TargetObject condition="contains">LSA\Notification Packages</TargetObject>
+<TargetObject condition="contains">LSA\Security Packages</TargetObject>
+<TargetObject condition="contains">LSA\Authentication Packages</TargetObject>
+<!--  Image File Execution Options (debugger hijack)  -->
+<TargetObject condition="contains">Image File Execution Options</TargetObject>
+</RegistryEvent>
+</RuleGroup>
+<RuleGroup name="SOC_REGISTRY_EXCLUDE" groupRelation="or">
+<RegistryEvent onmatch="exclude">
+<Image condition="contains">MsMpEng</Image>
+<Image condition="contains">SecurityHealthService</Image>
+<Image condition="contains">Teams</Image>
+<Image condition="contains">OneDrive</Image>
+<Image condition="contains">Discord</Image>
+<Image condition="contains">Chrome</Image>
+<Image condition="contains">Edge</Image>
+<Image condition="contains">Spotify</Image>
+<Image condition="contains">NVIDIA</Image>
+<Image condition="end with">svchost.exe</Image>
+</RegistryEvent>
+</RuleGroup>
+<!--  =====================================================
+         EVENT ID 22 — DNS QUERIES
+         ADDITION 2: raw.githubusercontent.com added
+         =====================================================  -->
+<RuleGroup name="SOC_DNS_C2" groupRelation="or">
+<DnsQuery onmatch="include">
+<!--  Suspicious TLDs  -->
+<QueryName condition="end with">.tk</QueryName>
+<QueryName condition="end with">.ml</QueryName>
+<QueryName condition="end with">.xyz</QueryName>
+<QueryName condition="end with">.top</QueryName>
+<QueryName condition="end with">.pw</QueryName>
+<QueryName condition="end with">.ga</QueryName>
+<QueryName condition="end with">.cf</QueryName>
+<QueryName condition="end with">.gq</QueryName>
+<QueryName condition="end with">.onion</QueryName>
+<QueryName condition="end with">.bit</QueryName>
+<!--  Dynamic DNS (common C2 hosting)  -->
+<QueryName condition="contains">duckdns</QueryName>
+<QueryName condition="contains">no-ip</QueryName>
+<QueryName condition="contains">dyndns</QueryName>
+<QueryName condition="contains">hopto.org</QueryName>
+<QueryName condition="contains">zapto.org</QueryName>
+<QueryName condition="contains">ddns.net</QueryName>
+<QueryName condition="contains">afraid.org</QueryName>
+<!--  Paste / staging sites used by attackers  -->
+<QueryName condition="contains">pastebin</QueryName>
+<QueryName condition="contains">paste.ee</QueryName>
+<QueryName condition="contains">hastebin</QueryName>
+<QueryName condition="contains">ghostbin</QueryName>
+<!--  ADDITION 2: GitHub raw — common PowerShell cradle target  -->
+<QueryName condition="contains">raw.githubusercontent.com</QueryName>
+</DnsQuery>
+</RuleGroup>
+<RuleGroup name="SOC_DNS_EXCLUDE" groupRelation="or">
+<DnsQuery onmatch="exclude">
+<QueryName condition="end with">microsoft.com</QueryName>
+<QueryName condition="end with">windows.com</QueryName>
+<QueryName condition="end with">windowsupdate.com</QueryName>
+<QueryName condition="end with">google.com</QueryName>
+<QueryName condition="end with">googleapis.com</QueryName>
+<QueryName condition="end with">gstatic.com</QueryName>
+<QueryName condition="end with">office.com</QueryName>
+<QueryName condition="end with">office365.com</QueryName>
+<QueryName condition="end with">live.com</QueryName>
+<QueryName condition="end with">azure.com</QueryName>
+<QueryName condition="end with">cloudflare.com</QueryName>
+<QueryName condition="end with">akamai.com</QueryName>
+<QueryName condition="end with">amazonaws.com</QueryName>
+</DnsQuery>
+</RuleGroup>
+</EventFiltering>
+</Sysmon>

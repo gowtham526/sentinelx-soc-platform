@@ -1,0 +1,15 @@
+function promptAdminLogin() {
+    var u = prompt("Enter Admin Username:");
+    if (!u) return;
+    var p = prompt("Enter Admin Password:");
+    if (!p) return;
+    _quickLogin(u, p);
+}
+
+function promptAnalystLogin() {
+    var u = prompt("Enter Analyst Username:");
+    if (!u) return;
+    var p = prompt("Enter Analyst Password:");
+    if (!p) return;
+    _quickLogin(u, p);
+}

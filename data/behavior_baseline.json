@@ -1,0 +1,114 @@
+{
+  "nani123|Suspicious PowerShell Detected": {
+    "window_start": 1787933054.0371642,
+    "window_count": 1,
+    "baseline_n": 27,
+    "baseline_mean": 2.037037037037037,
+    "baseline_m2": 180.96296296296296
+  },
+  "SMOKE-HOST-01|Mimikatz Credential Dumping Detected": {
+    "window_start": 1787288917.948122,
+    "window_count": 1,
+    "baseline_n": 41,
+    "baseline_mean": 1.5853658536585362,
+    "baseline_m2": 31.951219512195113
+  },
+  "nani123|Process Ancestry Attack Detected": {
+    "window_start": 1787934805.817926,
+    "window_count": 1,
+    "baseline_n": 57,
+    "baseline_mean": 2.6491228070175445,
+    "baseline_m2": 316.9824561403508
+  },
+  "SOC-ENDPOINT-01|Mimikatz Credential Dumping Detected": {
+    "window_start": 1787914212.0911882,
+    "window_count": 1,
+    "baseline_n": 4,
+    "baseline_mean": 1.5,
+    "baseline_m2": 1.0
+  },
+  "SOC-ENDPOINT-01|Ransomware Precursor & Shadow Copy Deletion": {
+    "window_start": 1786961502.3910725,
+    "window_count": 1,
+    "baseline_n": 2,
+    "baseline_mean": 1.0,
+    "baseline_m2": 0.0
+  },
+  "SOC-ENDPOINT-01|Registry RunKey Persistence Implant": {
+    "window_start": 1786437604.925571,
+    "window_count": 1,
+    "baseline_n": 0,
+    "baseline_mean": 0.0,
+    "baseline_m2": 0.0
+  },
+  "nani123|Registry Key Deleted": {
+    "window_start": 1787689829.6171868,
+    "window_count": 2,
+    "baseline_n": 3,
+    "baseline_mean": 1.3333333333333333,
+    "baseline_m2": 0.6666666666666666
+  },
+  "nani123|Suspicious EXE File Detected": {
+    "window_start": 1787338656.1850488,
+    "window_count": 1,
+    "baseline_n": 1,
+    "baseline_mean": 2.0,
+    "baseline_m2": 0.0
+  },
+  "nani123|Suspicious Network Connection Detected": {
+    "window_start": 1786507980.3621643,
+    "window_count": 2,
+    "baseline_n": 0,
+    "baseline_mean": 0.0,
+    "baseline_m2": 0.0
+  },
+  "nani123|Registry Persistence Detected": {
+    "window_start": 1787917774.6142077,
+    "window_count": 2,
+    "baseline_n": 3,
+    "baseline_mean": 1.3333333333333333,
+    "baseline_m2": 0.6666666666666666
+  },
+  "nani123|Canary File Triggered": {
+    "window_start": 1787938979.002406,
+    "window_count": 4,
+    "baseline_n": 3,
+    "baseline_mean": 3.333333333333333,
+    "baseline_m2": 12.666666666666666
+  },
+  "wazuh-server|Wazuh: pam": {
+    "window_start": 1787292826.507214,
+    "window_count": 2,
+    "baseline_n": 1,
+    "baseline_mean": 3.0,
+    "baseline_m2": 0.0
+  },
+  "wazuh-server|Wazuh: ossec": {
+    "window_start": 1787291989.57557,
+    "window_count": 1,
+    "baseline_n": 0,
+    "baseline_mean": 0.0,
+    "baseline_m2": 0.0
+  },
+  "wazuh-server|Wazuh: syslog": {
+    "window_start": 1787294089.1195784,
+    "window_count": 2,
+    "baseline_n": 2,
+    "baseline_mean": 4.0,
+    "baseline_m2": 0.0
+  },
+  "nani123|Mimikatz Test": {
+    "window_start": 1787839944.6772408,
+    "window_count": 1,
+    "baseline_n": 0,
+    "baseline_mean": 0.0,
+    "baseline_m2": 0.0
+  },
+  "nani123|Suspicious Execution Detected": {
+    "window_start": 1787918277.439591,
+    "window_count": 1,
+    "baseline_n": 0,
+    "baseline_mean": 0.0,
+    "baseline_m2": 0.0
+  }
+}

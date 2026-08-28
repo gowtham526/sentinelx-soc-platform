@@ -1,0 +1,85 @@
+ALT-2C47CAAC | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\aaa.exe
+ALT-DADAFC60 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\aaa_new.exe
+ALT-B16C9144 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\backend_test.exe
+ALT-914ADE6A | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\backend_test2.exe
+ALT-01095FAF | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\brand_new_attack.exe
+ALT-29EF0CE4 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\case_test.exe
+ALT-811430EC | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\clean_test1.exe
+ALT-EC3AF056 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\debug_test.exe
+ALT-0BB4C7CD | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\dedup_test.exe
+ALT-506B9584 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\dedup_test1.exe
+ALT-D4AA06E6 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\demo.exe
+ALT-329B7550 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\demo1.exe
+ALT-A6E5F8F1 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\evil.exe
+ALT-E1953DC6 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\fig9CED.exe
+ALT-F87DFE9C | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\final_clean.exe
+ALT-86141E51 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\final_clean1.exe
+ALT-B2813E13 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\final_fixed_test.exe
+ALT-6FFA79D8 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\final_live_fix.exe
+ALT-0CE64886 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\final_real_test.exe
+ALT-C1C9DC50 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\final_test.exe
+ALT-0AF055A7 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\final_test1.exe
+ALT-70CE51EB | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\final_test2.exe
+ALT-45A1976A | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\final_test_unique.exe
+ALT-754CE3F5 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\final_unique_test.exe
+ALT-2084D173 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\final_unique_test2.exe
+ALT-683EF029 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\fix_test.exe
+ALT-E3880D1E | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\hack_admin_test.exe
+ALT-77E31EF7 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\hack_live_final.exe
+ALT-183CAD4E | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\hack_real_time.exe
+ALT-A669B06C | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\host_test.exe
+ALT-D4D9D8CB | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\host_test1.exe
+ALT-69973201 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\host_test2.exe
+ALT-D863DF92 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\host_test_NEW.exe
+ALT-CBB95381 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\live_alert_test.exe
+ALT-49BFE817 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\live_attack.exe
+ALT-9B220357 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\live_attack_final.exe
+ALT-E9B1F35D | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\live_fix.exe
+ALT-D3508E94 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\live_test123.exe
+ALT-6BE951F6 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\multi_test.exe
+ALT-3C79B2AC | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\real_attack.exe
+ALT-3986720C | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\soc_test.exe
+ALT-9C3567C4 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\soc_test1.exe
+ALT-62D99885 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\test.exe
+ALT-D043440D | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\test_alert.exe
+ALT-0B4F26E9 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\ultimate_test.exe
+ALT-750E3C72 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\ultimate_test1.exe
+ALT-7626EB2E | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\ultimate_test2.exe
+ALT-B627C261 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\ultimate_test3.exe
+ALT-CE73A7F7 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\ultimate_test4.exe
+ALT-FA7748D0 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\ultimate_test7.exe
+ALT-327B5239 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\ultimate_test9.exe
+ALT-AE9F1761 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\verify_test.exe
+ALT-33FBF4F5 | 23:07:57 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\zzz123.exe
+ALT-ED266C37 | 23:08:05 | Local EXE Created | C:\Users\katre\AppData\Local\Temp\fresh_test.exe
+{'id': 'ALT-2D106D8C', 'time': '23:13:00', 'event': 'Local EXE Created', 'detail': 'C:\\Users\\katre\\AppData\\Local\\Temp\\brand_new.exe', 'user': 'katre', 'host': 'nani123'}
+{"id": "ALT-84079215", "time": "09:48:52", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\new_attack2.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN"}
+{"id": "ALT-76846440", "time": "09:52:41", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\new_attack3.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN"}
+{"id": "ALT-29144128", "time": "10:49:57", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\new_attack5.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN"}
+{"id": "ALT-58583619", "time": "15:43:18", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\new_attack75.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN"}
+{"id": "ALT-14312682", "time": "15:47:15", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\new_attack100.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN"}
+{"id": "ALT-53595203", "time": "15:55:16", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\new_attack101.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN"}
+{"id": "ALT-31141515", "time": "16:05:41", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\new_attack10.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN"}
+{"id": "ALT-23002585", "time": "16:07:24", "event": "Suspicious PowerShell Detected", "detail": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -Command Invoke-WebRequest test", "user": "NANI123\\katre", "host": "nani123", "severity": "CRITICAL", "status": "OPEN"}
+{"id": "ALT-42301566", "time": "16:12:18", "event": "Suspicious PowerShell Detected", "detail": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -Command Invoke-WebRequest test", "user": "NANI123\\katre", "host": "nani123", "severity": "CRITICAL", "status": "OPEN"}
+{"id": "ALT-29611844", "time": "16:32:45", "event": "Suspicious Network Connection", "detail": "powershell.exe \u2192 8.8.8.8:1337", "user": "NANI123\\katre", "host": "nani123", "severity": "CRITICAL", "status": "OPEN"}
+{"id": "ALT-22492229", "time": "16:35:43", "event": "Suspicious Network Connection", "detail": "powershell.exe \u2192 1.1.1.1:4444", "user": "NANI123\\katre", "host": "nani123", "severity": "CRITICAL", "status": "OPEN"}
+{"id": "ALT-20542236", "time": "16:45:15", "event": "Registry Persistence Detected", "detail": "Software\\Microsoft\\Windows\\CurrentVersion\\Run \u2192 TestMalware = C:\\temp\\malware.exe", "user": "katre", "host": "nani123", "severity": "CRITICAL", "status": "OPEN"}
+{"id": "ALT-91366717", "time": "16:46:38", "event": "Registry Persistence Detected", "detail": "Software\\Microsoft\\Windows\\CurrentVersion\\Run \u2192  = ", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN"}
+{"id": "ALT-62045177", "time": "16:55:08", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\new_attack89.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN", "mitre_id": "T1204.002", "mitre_name": "Malicious File", "mitre_tactic": "Execution", "mitre_url": "https://attack.mitre.org/techniques/T1204/002/"}
+{"id": "ALT-80216443", "time": "16:56:49", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\new_attack86.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN", "mitre_id": "T1204.002", "mitre_name": "Malicious File", "mitre_tactic": "Execution", "mitre_url": "https://attack.mitre.org/techniques/T1204/002/"}
+{"id": "ALT-84140379", "time": "16:58:25", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\new_attack66.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN", "mitre_id": "T1204.002", "mitre_name": "Malicious File", "mitre_tactic": "Execution", "mitre_url": "https://attack.mitre.org/techniques/T1204/002/"}
+{"id": "ALT-10292793", "time": "17:08:03", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\new_attack55.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN", "mitre_id": "T1204.002", "mitre_name": "Malicious File", "mitre_tactic": "Execution", "mitre_url": "https://attack.mitre.org/techniques/T1204/002/"}
+{"id": "ALT-36489160", "time": "17:15:35", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\new_attack59.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN", "mitre_id": "T1204.002", "mitre_name": "Malicious File", "mitre_tactic": "Execution", "mitre_url": "https://attack.mitre.org/techniques/T1204/002/"}
+{"id": "ALT-63400727", "time": "17:20:14", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\new_attack90.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN", "mitre_id": "T1204.002", "mitre_name": "Malicious File", "mitre_tactic": "Execution", "mitre_url": "https://attack.mitre.org/techniques/T1204/002/"}
+{"id": "ALT-24122623", "time": "17:24:43", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\live_attack54.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN", "mitre_id": "T1204.002", "mitre_name": "Malicious File", "mitre_tactic": "Execution", "mitre_url": "https://attack.mitre.org/techniques/T1204/002/"}
+{"id": "ALT-42980678", "time": "17:26:13", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\live_attack11.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN", "mitre_id": "T1204.002", "mitre_name": "Malicious File", "mitre_tactic": "Execution", "mitre_url": "https://attack.mitre.org/techniques/T1204/002/"}
+{"id": "ALT-58875856", "time": "17:28:41", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\instant_attack22.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN", "mitre_id": "T1204.002", "mitre_name": "Malicious File", "mitre_tactic": "Execution", "mitre_url": "https://attack.mitre.org/techniques/T1204/002/"}
+{"id": "ALT-42003413", "time": "17:33:24", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\instant_attack55.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN", "mitre_id": "T1204.002", "mitre_name": "Malicious File", "mitre_tactic": "Execution", "mitre_url": "https://attack.mitre.org/techniques/T1204/002/"}
+{"id": "ALT-92010277", "time": "17:38:19", "event": "Local EXE Created", "detail": "C:\\Users\\katre\\AppData\\Local\\Temp\\attack_exe.exe", "user": "katre", "host": "nani123", "severity": "HIGH", "status": "OPEN", "mitre_id": "T1204.002", "mitre_name": "Malicious File", "mitre_tactic": "Execution", "mitre_url": "https://attack.mitre.org/techniques/T1204/002/"}
+{"id": "ALT-25316864", "time": "17:38:30", "event": "Suspicious PowerShell Detected", "detail": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -Command Invoke-WebRequest test", "user": "NANI123\\katre", "host": "nani123", "severity": "CRITICAL", "status": "OPEN", "mitre_id": "T1059.001", "mitre_name": "PowerShell", "mitre_tactic": "Execution", "mitre_url": "https://attack.mitre.org/techniques/T1059/001/"}
+{"id": "ALT-58081374", "time": "17:38:49", "event": "Registry Persistence Detected", "detail": "Software\\Microsoft\\Windows\\CurrentVersion\\Run \u2192 EvilPersistence = C:\\malware.exe", "user": "katre", "host": "nani123", "severity": "CRITICAL", "status": "OPEN", "mitre_id": "T1547.001", "mitre_name": "Registry Run Keys", "mitre_tactic": "Persistence", "mitre_url": "https://attack.mitre.org/techniques/T1547/001/"}
+{"id": "ALT-86091294", "time": "17:43:58", "event": "Suspicious Network Connection", "detail": "powershell.exe \u2192 1.1.1.1:4444 [SYN_SENT]", "user": "NANI123\\katre", "host": "nani123", "severity": "CRITICAL", "status": "OPEN", "mitre_id": "T1071.001", "mitre_name": "Web Protocols", "mitre_tactic": "Command & Control", "mitre_url": "https://attack.mitre.org/techniques/T1071/001/", "country": "Unknown", "city": "Unknown", "isp": "Unknown"}
+{"id": "ALT-35761777", "time": "17:48:15", "event": "Suspicious Network Connection", "detail": "powershell.exe \u2192 1.1.1.1:4444 [SYN_SENT]", "user": "NANI123\\katre", "host": "nani123", "severity": "CRITICAL", "status": "OPEN", "mitre_id": "T1071.001", "mitre_name": "Web Protocols", "mitre_tactic": "Command & Control", "mitre_url": "https://attack.mitre.org/techniques/T1071/001/", "country": "Australia", "city": "South Brisbane", "isp": "Cloudflare, Inc"}
+{"id": "ALT-28383941", "time": "17:51:15", "event": "Suspicious Network Connection", "detail": "powershell.exe \u2192 1.1.1.1:4444 [SYN_SENT]", "user": "NANI123\\katre", "host": "nani123", "severity": "CRITICAL", "status": "OPEN", "mitre_id": "T1071.001", "mitre_name": "Web Protocols", "mitre_tactic": "Command & Control", "mitre_url": "https://attack.mitre.org/techniques/T1071/001/", "country": "Australia", "city": "South Brisbane", "isp": "Cloudflare, Inc"}
+{"id": "ALT-66188243", "time": "17:56:43", "event": "Suspicious Network Connection", "detail": "powershell.exe \u2192 1.1.1.1:4444 [SYN_SENT]", "user": "NANI123\\katre", "host": "nani123", "severity": "CRITICAL", "status": "OPEN", "mitre_id": "T1071.001", "mitre_name": "Web Protocols", "mitre_tactic": "Command & Control", "mitre_url": "https://attack.mitre.org/techniques/T1071/001/", "country": "Australia", "city": "South Brisbane", "isp": "Cloudflare, Inc"}

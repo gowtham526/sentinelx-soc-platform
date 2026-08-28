@@ -1,0 +1,70 @@
+1501:                  const Expanded(flex: 3, child: Text('9789473ab35...', overflow: TextOverflow.ellipsis, style: TextStyle(color: Color(0xFFFF3B30), fontSize: 9, fontFamily: 'monospace'))),
+1502:                  const Expanded(flex: 1, child: Text('All Traffic', style: TextStyle(color: Color(0xFF32ade6), fontSize: 9))),
+1503:                  Expanded(flex: 1, child: InkWell(
+1504:                     onTap: () { ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Unblocked target successfully!'), backgroundColor: Color(0xFF30d158))); },
+1505:                     child: Container(padding: const EdgeInsets.all(4), decoration: BoxDecoration(border: Border.all(color: const Color(0xFF8b949e))), child: const Center(child: Text('Unblock', style: TextStyle(color: Colors.white, fontSize: 9))))
+1506:                  )),
+1507:                ])
+1508:              )
+1509:           ])),
+1510:           const SizedBox(height: 12),
+1511:           _buildBox('Incident Lifecycle & Remediation', 'CHAIN-810021 - MEDIUM', Column(children: [
+1512:              _buildDetailRow('Host Status', 'nani123 (Monitoring)'),
+1513:              _buildDetailRow('Containment Rules', '1 firewall block'),
+1514:              _buildDetailRow('Open Alerts', '70 detection events'),
+1515:              const SizedBox(height: 12),
+1516:              ElevatedButton(
+1517:                 onPressed: (){ ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Incident closed successfully.'), backgroundColor: Color(0xFF30d158))); }, 
+1518:                 style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF1f242d), foregroundColor: const Color(0xFF30d158), side: const BorderSide(color: Color(0xFF30d158))), 
+1519:                 child: const Text('✓ Resolve & Close Incident')
+1520:              )
+1521:           ])),
+1522:         ]));
+1523: 
+1524:       default: return const Center(child: Text('Data Loading...'));
+1525:     }
+1526:   }
+1527: 
+1528:   Widget _buildFilterChip(String label, Color color, {bool isSelected = false}) {
+1529:     return Container(
+1530:       margin: const EdgeInsets.only(right: 8), padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+1531:       decoration: BoxDecoration(color: isSelected ? const Color(0xFF30363d) : Colors.transparent, border: Border.all(color: color.withOpacity(0.5)), borderRadius: BorderRadius.circular(4)),
+1532:       child: Text(label, style: TextStyle(color: color, fontSize: 10, fontWeight: FontWeight.bold)),
+1533:     );
+1534:   }
+1535:   
+1536:   Widget _buildActionMiniBtn(String label, Color color) {
+1537:     return Container(
+1538:       margin: const EdgeInsets.only(right: 4), padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+1539:       decoration: BoxDecoration(color: color.withOpacity(0.15), border: Border.all(color: color.withOpacity(0.5)), borderRadius: BorderRadius.circular(2)),
+1540:       child: Text(label, style: TextStyle(color: color, fontSize: 8, fontWeight: FontWeight.bold)),
+1541:     );
+1542:   }
+1543: 
+1544:   Widget _buildMapChip(String label) {
+1545:     return Container(
+1546:       margin: const EdgeInsets.only(right: 4), padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+1547:       decoration: BoxDecoration(color: const Color(0xFF1f242d), borderRadius: BorderRadius.circular(4), border: Border.all(color: const Color(0xFF30363d))),
+1548:       child: Text(label, style: const TextStyle(color: Colors.white, fontSize: 9)),
+1549:     );
+1550:   }
+1551:   
+1552:   Widget _buildContinentShape(double w, double h) {
+1553:     return Container(width: w, height: h, child: CustomPaint(painter: PolygonPainter()));
+1554:   }
+1555:   
+1556:   Widget _buildMapPin(String label) {
+1557:     return Row(children: [
+1558:       Container(width: 8, height: 8, decoration: BoxDecoration(color: Colors.red, shape: BoxShape.circle, border: Border.all(color: Colors.redAccent.withOpacity(0.5), width: 2), boxShadow: [BoxShadow(color: Colors.red.withOpacity(0.8), blurRadius: 4, spreadRadius: 2)])),
+1559:       const SizedBox(width: 4),
+1560:       Text(label, style: const TextStyle(color: Colors.white, fontSize: 8, fontWeight: FontWeight.bold))
+1561:     ]);
+1562:   }
+1563:   
+1564:   DataRow _buildCompRow(String comp, String stat, String ver, String det, String up) {
+1565:     return DataRow(cells: [
+1566:       DataCell(Text(comp, style: const TextStyle(fontWeight: FontWeight.bold))),
+1567:       DataCell(Container(padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2), decoration: BoxDecoration(color: const Color(0x3330d158), border: Border.all(color: const Color(0xFF30d158)), borderRadius: BorderRadius.circular(2)), child: Text(stat, style: const TextStyle(color: Color(0xFF30d158), fontSize: 9)))),
+1568:       DataCell(Text(ver)), DataCell(Text(det)), DataCell(Text(up, style: const TextStyle(color: Color(0xFF8b949e)))),
+1569:     ]);
+1570:   }
