@@ -489,15 +489,15 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                       bool registered = await ApiService.register(u, p);
                       if (!registered && mounted) {
                          ScaffoldMessenger.of(context).showSnackBar(
-                           const SnackBar(content: Text('Registration failed (user may exist). Trying login anyway.')),
+                           const SnackBar(content: Text('CRITICAL ERROR: Failed to register account with backend.')),
                          );
+                      } else if (mounted) {
+                         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Account Created! Please log in.')));
+                         setState(() {
+                           _isCreateAccount = false;
+                           _emailController.clear();
+                         });
                       }
-
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Account Created! Please log in.')));
-                      setState(() {
-                        _isCreateAccount = false;
-                        _emailController.clear();
-                      });
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Invalid OTP')));
                     }
