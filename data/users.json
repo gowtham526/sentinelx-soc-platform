@@ -1,6 +1,6 @@
 {
-    "nani": {
-        "role": "admin",
-        "password_hash": "$2b$12$SxVHbQBqaygRvx.wgioCPOPIDfj.lDkvhrj/Hdwjo3PmHch0vdrv."
-    }
+  "nani": {
+    "role": "admin",
+    "password_hash": ".wgioCPOPIDfj.lDkvhrj/Hdwjo3PmHch0vdrv."
+  }
 }
