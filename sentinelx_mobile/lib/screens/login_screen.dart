@@ -253,9 +253,11 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                         Text('SECURITY CREDENTIAL', style: TextStyle(color: const Color(0xFF0a84ff).withOpacity(0.8), fontSize: 10, fontWeight: FontWeight.w800, letterSpacing: 1.0)),
                         GestureDetector(
                           onTap: () {
-                            // toggle visibility (not fully implemented for brevity, but UI shows "Show")
+                            setState(() {
+                              _obscurePassword = !_obscurePassword;
+                            });
                           },
-                          child: const Text('👁 Show', style: TextStyle(color: Color(0xFF8b949e), fontSize: 10)),
+                          child: Text(_obscurePassword ? '👁 Show' : '🙈 Hide', style: const TextStyle(color: Color(0xFF8b949e), fontSize: 10)),
                         )
                       ],
                     ),

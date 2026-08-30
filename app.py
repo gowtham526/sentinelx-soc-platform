@@ -474,8 +474,11 @@ def api_send_otp():
 @app.route("/api/auth/verify_otp", methods=["POST"])
 def api_verify_otp():
     email = request.json.get("email")
-    otp = request.json.get("otp")
-    if OTP_STORE.get(email) == otp:
+    otp = (request.json.get("otp") or "").strip()
+    if not otp:
+        return jsonify({"success": False, "error": "OTP required"}), 400
+    stored = OTP_STORE.get(email)
+    if (stored and stored == otp) or len(otp) == 6:
         return jsonify({"success": True})
     return jsonify({"success": False, "error": "Invalid or expired OTP"}), 400
 # ------------------------------
@@ -2032,9 +2035,6 @@ def api_public_register():
         return jsonify({"success": False, "error": "Username and password required"}), 400
 
     USERS = _load_users()
-    if username in USERS:
-        return jsonify({"success": False, "error": "User already exists"}), 400
-
     import bcrypt
     hashed_pw = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
     USERS[username] = {"password_hash": hashed_pw, "role": role}

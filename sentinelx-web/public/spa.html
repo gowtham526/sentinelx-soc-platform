@@ -9034,7 +9034,15 @@ function _applySysmonTemplate(tpl) {
           });
           var data = await res.json();
           if(data.success) {
-              // Securely save credentials to local storage so they persist across refreshes
+              // Register account directly in backend database
+              try {
+                  await fetch('/api/auth/register', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ username: u, password: p })
+                  });
+              } catch(e) { console.error(e); }
+
               localStorage.setItem('sx_registered_user', u);
               localStorage.setItem('sx_registered_pass', p);
               
