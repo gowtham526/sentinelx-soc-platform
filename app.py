@@ -2037,7 +2037,7 @@ def api_public_register():
 
     import bcrypt
     hashed_pw = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
-    USERS[username] = {"password": hashed_pw, "role": role}
+    USERS[username] = {"password_hash": hashed_pw, "role": role}
     _save_users(USERS)
     
     try:
