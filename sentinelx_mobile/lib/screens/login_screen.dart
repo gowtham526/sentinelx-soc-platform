@@ -483,8 +483,15 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                     setStateDialog(() => verifying = false);
                     if (ok) {
                       Navigator.pop(context);
-                      ApiService.mockRegisteredUser = u;
-                      ApiService.mockRegisteredPass = p;
+                      
+                      // Call backend to actually create user
+                      bool registered = await ApiService.register(u, p);
+                      if (!registered && mounted) {
+                         ScaffoldMessenger.of(context).showSnackBar(
+                           const SnackBar(content: Text('Registration failed (user may exist). Trying login anyway.')),
+                         );
+                      }
+
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Account Created! Please log in.')));
                       setState(() {
                         _isCreateAccount = false;

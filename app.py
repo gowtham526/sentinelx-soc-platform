@@ -2019,6 +2019,34 @@ def api_admin_users():
         })
     return jsonify({"success": True, "users": user_list})
 
+
+@app.route("/api/auth/register", methods=["POST"])
+def api_public_register():
+    global USERS
+    data = request.json or {}
+    username = (data.get("username") or "").strip().lower()
+    password = (data.get("password") or "").strip()
+    role = "analyst"
+
+    if not username or not password:
+        return jsonify({"success": False, "error": "Username and password required"}), 400
+
+    USERS = _load_users()
+    if username in USERS:
+        return jsonify({"success": False, "error": "User already exists"}), 400
+
+    import bcrypt
+    hashed_pw = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+    USERS[username] = {"password": hashed_pw, "role": role}
+    _save_users(USERS)
+    
+    try:
+        from core.audit_log import log_action
+        log_action(username, "USER_REGISTERED", f"Public self-registration for {username}")
+    except: pass
+    
+    return jsonify({"success": True, "message": f"User {username} registered successfully"})
+
 @app.route("/api/admin/create_user", methods=["POST"])
 @require_role("admin")
 def api_admin_create_user():
