@@ -34,7 +34,7 @@ class SentinelXApp extends StatelessWidget {
         ),
         cardColor: const Color(0xFF0A1424),
       ),
-      home: isLoggedIn ? const DashboardScreen() : const LoginScreen(),
+      home: const LoginScreen(),
     );
   }
 }

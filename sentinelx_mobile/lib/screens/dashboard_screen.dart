@@ -145,8 +145,11 @@ Future<void> _pinpointIp(String ipToLookup, String labelPrefix) async {
     super.dispose();
   }
 
-  void _handleLogout() {
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const LoginScreen()));
+  void _handleLogout() async {
+    await ApiService.logout();
+    if (mounted) {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const LoginScreen()));
+    }
   }
 
   void _showWarRoom() {
