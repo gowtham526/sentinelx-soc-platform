@@ -1,6 +1,10 @@
 {
   "nani": {
     "role": "admin",
-    "password_hash": "$2b$12$ZjDyUizyAph3UkoJmVOjtOPgN6EvgMtflwQuzKgN3jJoZv.8Gath."
+    "password_hash": "$2b$12$mRSzB1Zvhsr7pggU83NwHOhAFTd9iqMFgqs39L/3Vay9l48A6iNJ2"
+  },
+  "analyst": {
+    "role": "analyst",
+    "password_hash": "$2b$12$xN2IhNrZTg1PgjbLTXEqGeYn7LV6WXGPs9zRkvtKHz5oMpLHTW2Dq"
   }
 }

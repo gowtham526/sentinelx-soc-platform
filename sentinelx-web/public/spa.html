@@ -4432,7 +4432,7 @@ var pages = window.pages = [
    '<tbody id="AUDIT_LIST"><tr><td colspan="5" style="text-align:center;color:var(--text3);padding:16px">Loading…</td></tr></tbody></table>'
   );
  }},
-{id:'USER_MGMT',label:'User Management',sec:'M8 — Settings',
+{id:'USER_MGMT',label:'User Management',sec:'M8 — Settings',reqRole:'admin',
  title:'User & Access Management',sub:'Enterprise Role-Based Access Control (RBAC)',badges:[['RBAC Active', 'b'], ['Admin Command', 'r']],
  html:()=>{
   setTimeout(function(){ if(typeof _loadUsersManagementUi === 'function') _loadUsersManagementUi(); }, 50);
