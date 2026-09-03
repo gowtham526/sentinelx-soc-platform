@@ -1060,6 +1060,8 @@ def _persist_alert(alert: dict):
         "mitre":     alert.get("mitre_id","-"),
         "tactic":    alert.get("mitre_tactic","-"),
         "alert_id":  alert["id"],
+        "host":      alert.get("host", "-"),
+    })
     _save(TIMELINE_FILE, tl, MAX_TIMELINE)
 
     # Sync to Production SQL Database
