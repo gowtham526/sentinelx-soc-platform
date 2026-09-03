@@ -1,5 +1,32 @@
 [
   {
+    "timestamp": "2026-09-03 11:53:28",
+    "event": "Mimikatz Credential Dumping Detected",
+    "severity": "CRITICAL",
+    "mitre": "T1003.001",
+    "tactic": "Credential Access",
+    "alert_id": "ALT-68269429",
+    "host": "WIN-SRV-TEST"
+  },
+  {
+    "timestamp": "2026-08-30 23:47:23",
+    "event": "Process Ancestry Attack Detected",
+    "severity": "HIGH",
+    "mitre": "T1189",
+    "tactic": "Initial Access",
+    "alert_id": "ALT-68918273",
+    "host": "nani123"
+  },
+  {
+    "timestamp": "2026-08-30 23:31:04",
+    "event": "Process Ancestry Attack Detected",
+    "severity": "HIGH",
+    "mitre": "T1189",
+    "tactic": "Initial Access",
+    "alert_id": "ALT-94524825",
+    "host": "nani123"
+  },
+  {
     "timestamp": "2026-08-28 23:25:59",
     "event": "Suspicious Execution Detected",
     "severity": "LOW",
