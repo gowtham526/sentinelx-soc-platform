@@ -11,7 +11,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 
-class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStateMixin {
+class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   bool _isCreateAccount = false;
 
@@ -22,21 +22,14 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
   bool _obscurePassword = true;
   String? _errorMessage;
 
-  late AnimationController _animController;
-
   @override
   void initState() {
     super.initState();
     _serverUrlController.text = ApiService.baseUrl;
-    _animController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 12),
-    )..repeat();
   }
 
   @override
   void dispose() {
-    _animController.dispose();
     _usernameController.dispose();
     _passwordController.dispose();
     _serverUrlController.dispose();
@@ -168,8 +161,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
         children: [
           Center(
             child: SingleChildScrollView(
-
-          child: Padding(
+              child: Padding(
             padding: const EdgeInsets.all(24.0),
             child: Container(
               constraints: const BoxConstraints(maxWidth: 400),
