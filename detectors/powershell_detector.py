@@ -305,9 +305,9 @@ def monitor_powershell(alert_callback):
                 except Exception:
                     pass
 
-            time.sleep(0.15)
+            time.sleep(0.05)
 
         except KeyboardInterrupt:
             break
         except Exception:
-            time.sleep(0.15)
+            time.sleep(0.05)

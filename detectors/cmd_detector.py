@@ -203,8 +203,9 @@ def _cmdline_hash(cmdline: str) -> str:
 
 def monitor_cmd(alert_callback):
     """
-    Scan running processes every 0.5 seconds.
-    Detect cmd.exe / command.com processes with suspicious TTPs.
+    Scan running processes every 50ms for suspicious command-line TTPs.
+    Scans ALL process types (cmd.exe, powershell.exe, conhost.exe, etc.)
+    to catch attack commands regardless of which shell launched them.
     Deduplicates by cmdline content hash so short-lived commands still fire.
     """
     host = socket.gethostname()
@@ -213,19 +214,25 @@ def monitor_cmd(alert_callback):
     except Exception:
         user = "system"
 
-    print("  CMD detector active (covers cmd.exe TTPs + LOLBins)")
+    # Scan ALL processes, not just cmd.exe — attacks can be launched
+    # from powershell, conhost, wscript, cscript, etc.
+    SCAN_NAMES = {"cmd.exe", "cmd", "powershell.exe", "powershell",
+                  "pwsh.exe", "pwsh", "conhost.exe", "wscript.exe",
+                  "cscript.exe", "mshta.exe", "rundll32.exe",
+                  "regsvr32.exe", "certutil.exe", "bitsadmin.exe"}
+
+    print("  CMD detector active (v2.0 — universal process scanner, 50ms poll)")
 
     while True:
         try:
             for proc in psutil.process_iter(["pid", "name", "cmdline", "username"]):
                 try:
                     name = (proc.info["name"] or "").lower()
-                    if name not in CMD_PROCESS_NAMES:
-                        continue
 
+                    # Scan named shells AND any process with cmdline args
                     cmdline_list = proc.info["cmdline"] or []
                     cmdline = " ".join(cmdline_list).strip()
-                    if not cmdline:
+                    if not cmdline or len(cmdline) < 10:
                         continue
 
                     cmdline_lower = cmdline.lower()
@@ -281,9 +288,10 @@ def monitor_cmd(alert_callback):
                 except Exception:
                     pass
 
-            time.sleep(0.15)
+            time.sleep(0.05)  # 50ms — fast enough to catch 3-second processes
 
         except KeyboardInterrupt:
             break
         except Exception:
-            time.sleep(0.15)
+            time.sleep(0.05)
+

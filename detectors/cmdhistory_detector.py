@@ -255,9 +255,9 @@ def monitor_cmdhistory(alert_callback):
                 except PermissionError:
                     pass
 
-            time.sleep(1)
+            time.sleep(0.5)
 
         except KeyboardInterrupt:
             break
         except Exception:
-            time.sleep(1)
+            time.sleep(0.5)
