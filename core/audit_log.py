@@ -81,11 +81,17 @@ def log_action(username: str, action: str, details: dict = None, ip: str = None)
             record_json = json.dumps(record, ensure_ascii=False)
             chain_hash = _compute_chain_hash(prev, record_json)
             record["prev_hash"] = prev
-            record["chain_hash"] = chain_hash
             with open(_LOG_PATH, "a", encoding="utf-8") as f:
                 f.write(json.dumps(record, ensure_ascii=False) + "\n")
             global _CHAIN_HASH
             _CHAIN_HASH = chain_hash
+            
+            # Sync to Production SQL Database
+            try:
+                from core.database import db
+                db.log_audit_event(username, action, details, ip or "127.0.0.1")
+            except Exception:
+                pass
     except Exception as e:
         print(f"[AuditLog] WARNING: failed to write audit record: {e}")
 

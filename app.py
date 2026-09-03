@@ -161,12 +161,26 @@ def _load_users():
         print("    They will NOT be shown again.")
         print("=" * 60 + "\n")
         return defaults
+    from core.database import db
+    sql_users = db.get_all_users()
+    if sql_users:
+        try:
+            save_json(USERS_FILE, sql_users)
+        except Exception:
+            pass
+        return sql_users
     loaded = load_json(USERS_FILE, {})
     if not loaded:
         loaded = {}
+    else:
+        for u, d in loaded.items():
+            db.upsert_user(u, d.get("password_hash") or d.get("password"), d.get("role", "analyst"))
     return loaded
 
 def _save_users(users_dict):
+    from core.database import db
+    for u, d in users_dict.items():
+        db.upsert_user(u, d.get("password_hash") or d.get("password"), d.get("role", "analyst"))
     save_json(USERS_FILE, users_dict)
 
 USERS = _load_users()
