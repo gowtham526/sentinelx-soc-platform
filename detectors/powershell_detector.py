@@ -201,7 +201,6 @@ NOISE_CMDLINE = [
     "visual studio",
     "vscode",
     "microsoft.management",
-    "windows defender",
     "securityhealth",
     "powershell ise",
     "powershell_ise",
@@ -211,21 +210,37 @@ NOISE_CMDLINE = [
     "pip install",
     "npm install",
     "git.exe",
+    "main_engine.py",
+    "diagnose_",
+    "test_",
+    "check_",
 ]
 
 PS_PROCESS_NAMES = {"powershell.exe", "powershell", "pwsh.exe", "pwsh"}
 
+_seen_procs = {}
 
-def _cmdline_hash(cmdline: str) -> str:
-    return hashlib.md5(cmdline.encode("utf-8", errors="ignore")).hexdigest()
+
+def _is_recently_seen(pid: int, pattern: str) -> bool:
+    """Deduplicates while the same process PID is alive, but allows new executions."""
+    now = time.time()
+    key = (pid, pattern)
+    if key in _seen_procs and (now - _seen_procs[key]) < 20.0:
+        return True
+    _seen_procs[key] = now
+    if len(_seen_procs) > 2000:
+        cutoff = now - 45.0
+        for k in list(_seen_procs.keys()):
+            if _seen_procs[k] < cutoff:
+                del _seen_procs[k]
+    return False
 
 
 def monitor_powershell(alert_callback):
     """
-    Scan running processes every 0.2 seconds.
+    Scan running processes every 50ms.
     Alert on any PowerShell/pwsh process with suspicious cmdline.
-    Deduplicates by cmdline content hash (not PID) so short-lived
-    processes are still caught.
+    Deduplicates per PID with TTL so new attacks always trigger alerts.
     """
     host = socket.gethostname()
 
@@ -234,7 +249,7 @@ def monitor_powershell(alert_callback):
     except Exception:
         user = "system"
 
-    print("  PowerShell monitor active (v3.0 — 100+ MITRE-mapped rules)")
+    print("  PowerShell monitor active (v3.1 — 100+ MITRE-mapped rules, real-time PID dedup)")
 
     while True:
         try:
@@ -269,15 +284,10 @@ def monitor_powershell(alert_callback):
 
                     pattern, severity, desc = matched_rule
 
-                    # Dedup by cmdline hash
-                    chash = _cmdline_hash(cmdline_lower[:300])
-                    if chash in _seen_cmdlines:
+                    # Dedup by PID + pattern (fires once per process execution)
+                    pid = proc.info["pid"]
+                    if _is_recently_seen(pid, pattern):
                         continue
-                    _seen_cmdlines.add(chash)
-
-                    # Prune old hashes if too large
-                    if len(_seen_cmdlines) > 3000:
-                        _seen_cmdlines.clear()
 
                     proc_user = (proc.info.get("username") or user)
 

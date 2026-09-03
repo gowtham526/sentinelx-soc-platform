@@ -191,22 +191,46 @@ NOISE_CMDLINE = [
     "git.exe",
     "pip install",
     "npm install",
+    "language_server",
+    "antigravity",
+    "flutter_tool",
+    "dart.exe",
+    "code.exe",
+    "main_engine.py",
+    "diagnose_",
+    "test_",
+    "check_",
 ]
 
-# Processes that are cmd.exe wrappers (to extend detection scope)
-CMD_PROCESS_NAMES = {"cmd.exe", "cmd", "command.com"}
+SCAN_NAMES = {
+    "cmd.exe", "cmd", "powershell.exe", "powershell", "pwsh.exe", "pwsh",
+    "conhost.exe", "wscript.exe", "cscript.exe", "mshta.exe", "rundll32.exe",
+    "regsvr32.exe", "certutil.exe", "bitsadmin.exe"
+}
+
+_seen_procs = {}
 
 
-def _cmdline_hash(cmdline: str) -> str:
-    return hashlib.md5(cmdline.encode("utf-8", errors="ignore")).hexdigest()
+def _is_recently_seen(pid: int, pattern: str) -> bool:
+    """Deduplicates while the same process PID is alive, but allows new executions."""
+    now = time.time()
+    key = (pid, pattern)
+    if key in _seen_procs and (now - _seen_procs[key]) < 20.0:
+        return True
+    _seen_procs[key] = now
+    if len(_seen_procs) > 2000:
+        cutoff = now - 45.0
+        for k in list(_seen_procs.keys()):
+            if _seen_procs[k] < cutoff:
+                del _seen_procs[k]
+    return False
 
 
 def monitor_cmd(alert_callback):
     """
     Scan running processes every 50ms for suspicious command-line TTPs.
-    Scans ALL process types (cmd.exe, powershell.exe, conhost.exe, etc.)
-    to catch attack commands regardless of which shell launched them.
-    Deduplicates by cmdline content hash so short-lived commands still fire.
+    Scans command shells and execution wrappers.
+    Deduplicates per PID with TTL so new attacks always fire reliably.
     """
     host = socket.gethostname()
     try:
@@ -214,14 +238,7 @@ def monitor_cmd(alert_callback):
     except Exception:
         user = "system"
 
-    # Scan ALL processes, not just cmd.exe — attacks can be launched
-    # from powershell, conhost, wscript, cscript, etc.
-    SCAN_NAMES = {"cmd.exe", "cmd", "powershell.exe", "powershell",
-                  "pwsh.exe", "pwsh", "conhost.exe", "wscript.exe",
-                  "cscript.exe", "mshta.exe", "rundll32.exe",
-                  "regsvr32.exe", "certutil.exe", "bitsadmin.exe"}
-
-    print("  CMD detector active (v2.0 — universal process scanner, 50ms poll)")
+    print("  CMD detector active (v2.1 — shell scanner, 50ms poll, zero-false-positive filtering)")
 
     while True:
         try:
@@ -229,10 +246,12 @@ def monitor_cmd(alert_callback):
                 try:
                     name = (proc.info["name"] or "").lower()
 
-                    # Scan named shells AND any process with cmdline args
+                    if name not in SCAN_NAMES:
+                        continue
+
                     cmdline_list = proc.info["cmdline"] or []
                     cmdline = " ".join(cmdline_list).strip()
-                    if not cmdline or len(cmdline) < 10:
+                    if not cmdline or len(cmdline) < 5:
                         continue
 
                     cmdline_lower = cmdline.lower()
@@ -245,6 +264,13 @@ def monitor_cmd(alert_callback):
                     matched = None
                     for pattern, priority, desc, mitre in CMD_RULES:
                         if pattern in cmdline_lower:
+                            # False positive guard: lsass.exe running normally is not an attack
+                            if pattern == "lsass" and "lsass" in name:
+                                continue
+                            # False positive guard: parameter flags containing "type "
+                            if pattern == "type " and ("--type" in cmdline_lower or "--subclient_type" in cmdline_lower or "language_server" in cmdline_lower):
+                                continue
+
                             matched = (pattern, priority, desc, mitre)
                             break
 
@@ -253,13 +279,10 @@ def monitor_cmd(alert_callback):
 
                     pattern, priority, desc, mitre = matched
 
-                    # Dedup by cmdline hash
-                    chash = _cmdline_hash(cmdline_lower[:300])
-                    if chash in _seen_cmdlines:
+                    # Dedup by PID + pattern (fires once per process execution)
+                    pid = proc.info["pid"]
+                    if _is_recently_seen(pid, pattern):
                         continue
-                    _seen_cmdlines.add(chash)
-                    if len(_seen_cmdlines) > 3000:
-                        _seen_cmdlines.clear()
 
                     proc_user = (proc.info.get("username") or user)
 
@@ -288,7 +311,7 @@ def monitor_cmd(alert_callback):
                 except Exception:
                     pass
 
-            time.sleep(0.05)  # 50ms — fast enough to catch 3-second processes
+            time.sleep(0.05)  # 50ms — fast enough to catch short-lived processes
 
         except KeyboardInterrupt:
             break

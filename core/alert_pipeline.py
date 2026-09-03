@@ -67,7 +67,7 @@ MAX_CASES     = 300
 MAX_INCIDENTS = 300
 MAX_TIMELINE  = 500
 
-DEDUP_TTL     = 120    # seconds before same alert can re-fire
+DEDUP_TTL     = 3      # seconds before same alert can re-fire (3s dedup prevents burst spam while allowing real-time testing)
 CHAIN_WINDOW  = 300    # 5-minute rolling window for correlation
 CHAIN_MIN_SCORE = 130  # minimum chain score to declare attack
 INCIDENT_THRESHOLD = 3 # HIGH/CRITICAL alerts per host → incident
@@ -615,6 +615,16 @@ def calculate_severity(event: str, detail: str,
     text  = (event + " " + detail).lower()
     score = 0
 
+    # Signal 0: Detector Priority Hint
+    # When a detector rule explicitly identifies a CRITICAL or HIGH threat,
+    # respect that domain assessment so verified attacks reliably reach CRITICAL (71+).
+    if "priority : critical" in text or "priority: critical" in text or "priority:critical" in text:
+        score += 50
+    elif "priority : high" in text or "priority: high" in text or "priority:high" in text:
+        score += 30
+    elif "priority : medium" in text or "priority: medium" in text or "priority:medium" in text:
+        score += 15
+
     # Signal 1: Keyword risk table
     for kw, w in RISK_SIGNALS.items():
         if kw in text:
@@ -681,17 +691,19 @@ def calculate_severity(event: str, detail: str,
     # Signal 9: Credential dumping
     if any(c in text for c in ["mimikatz","procdump","comsvcs.dll","hashdump",
                                 "sekurlsa","ntds.dit","lazagne","wce.exe"]):
-        score += 22
+        score += 30
 
     # Signal 10: Process injection
     if any(i in text for i in ["createremotethread","virtualalloc",
                                 "writeprocessmemory","shellcode","reflective"]):
         score += 18
 
-    # Signal 11: AMSI / Defender bypass
+    # Signal 11: AMSI / Defender bypass & tampering
     if any(d in text for d in ["amsibypass","disablerealtimemonitoring",
-                                "set-mppreference","disableantispyware"]):
-        score += 15
+                                "set-mppreference","disableantispyware",
+                                "sc stop windefend","sc delete windefend",
+                                "sc config windefend"]):
+        score += 30
 
     # Signal 12: Known attack frameworks
     if any(f in text for f in ["cobalt strike","meterpreter","covenant","sliver",
