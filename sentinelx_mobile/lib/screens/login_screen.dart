@@ -446,21 +446,134 @@ class _LoginScreenState extends State<LoginScreen> {
       barrierDismissible: false,
       builder: (context) {
         bool verifying = false;
+        bool resending = false;
+        String? errorMsg;
+        int resendCooldown = 30;
+        bool canResend = false;
+
+        // Countdown timer for resend
+        void startCooldown(StateSetter setStateDialog) {
+          resendCooldown = 30;
+          canResend = false;
+          Future.doWhile(() async {
+            await Future.delayed(const Duration(seconds: 1));
+            if (resendCooldown <= 1) {
+              setStateDialog(() { canResend = true; resendCooldown = 0; });
+              return false;
+            }
+            setStateDialog(() => resendCooldown--);
+            return true;
+          });
+        }
+
         return StatefulBuilder(
           builder: (context, setStateDialog) {
+            // Start cooldown on first build
+            if (resendCooldown == 30 && !canResend) {
+              startCooldown(setStateDialog);
+            }
             return AlertDialog(
               backgroundColor: const Color(0xFF161b22),
-              title: const Text('Verify Email', style: TextStyle(color: Colors.white)),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12), side: const BorderSide(color: Color(0xFF1f242d))),
+              title: Row(
+                children: const [
+                  Icon(Icons.verified_user, color: Color(0xFF0a84ff), size: 20),
+                  SizedBox(width: 8),
+                  Text('EMAIL VERIFICATION', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w900, letterSpacing: 1)),
+                ],
+              ),
               content: Column(
                 mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Code sent to $e', style: const TextStyle(color: Color(0xFF8b949e), fontSize: 12)),
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF0d1117),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: const Color(0xFF1f242d)),
+                    ),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.mail_outline, color: Color(0xFF30D158), size: 16),
+                        const SizedBox(width: 8),
+                        Expanded(child: Text('Code sent to $e', style: const TextStyle(color: Color(0xFF8b949e), fontSize: 11))),
+                      ],
+                    ),
+                  ),
                   const SizedBox(height: 16),
                   TextField(
                     controller: otpCtrl,
-                    style: const TextStyle(color: Colors.white, fontSize: 14),
+                    style: const TextStyle(color: Colors.white, fontSize: 22, letterSpacing: 8, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
                     keyboardType: TextInputType.number,
-                    decoration: const InputDecoration(labelText: '6-digit OTP', labelStyle: TextStyle(color: Color(0xFF8b949e))),
+                    maxLength: 6,
+                    autofocus: true,
+                    decoration: InputDecoration(
+                      hintText: '● ● ● ● ● ●',
+                      hintStyle: TextStyle(color: Colors.white.withOpacity(0.15), fontSize: 22, letterSpacing: 8),
+                      counterText: '',
+                      filled: true,
+                      fillColor: const Color(0xFF0d1117),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide(color: errorMsg != null ? const Color(0xFFFF3B30) : const Color(0xFF1f242d)),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide(color: errorMsg != null ? const Color(0xFFFF3B30) : const Color(0xFF1f242d)),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: const BorderSide(color: Color(0xFF0a84ff), width: 2),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                    ),
+                    onChanged: (_) {
+                      if (errorMsg != null) setStateDialog(() => errorMsg = null);
+                    },
+                  ),
+                  if (errorMsg != null) ...[
+                    const SizedBox(height: 8),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFFF3B30).withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.error_outline, color: Color(0xFFFF3B30), size: 14),
+                          const SizedBox(width: 6),
+                          Expanded(child: Text(errorMsg!, style: const TextStyle(color: Color(0xFFFF3B30), fontSize: 11, fontWeight: FontWeight.w600))),
+                        ],
+                      ),
+                    ),
+                  ],
+                  const SizedBox(height: 12),
+                  Center(
+                    child: canResend
+                      ? GestureDetector(
+                          onTap: resending ? null : () async {
+                            setStateDialog(() { resending = true; errorMsg = null; });
+                            await ApiService.sendOtp(e);
+                            setStateDialog(() => resending = false);
+                            startCooldown(setStateDialog);
+                            if (mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text('New code sent to $e'), backgroundColor: const Color(0xFF30D158)),
+                              );
+                            }
+                          },
+                          child: Text(
+                            resending ? 'SENDING...' : 'RESEND CODE',
+                            style: const TextStyle(color: Color(0xFF0a84ff), fontSize: 11, fontWeight: FontWeight.bold, letterSpacing: 0.5),
+                          ),
+                        )
+                      : Text(
+                          'Resend code in ${resendCooldown}s',
+                          style: const TextStyle(color: Color(0xFF8b949e), fontSize: 11),
+                        ),
                   ),
                 ],
               ),
@@ -470,33 +583,46 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: const Text('Cancel', style: TextStyle(color: Color(0xFF8b949e))),
                 ),
                 ElevatedButton(
-                  style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF0a84ff)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF0a84ff),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  ),
                   onPressed: verifying ? null : () async {
-                    if (otpCtrl.text.trim().isEmpty) return;
-                    setStateDialog(() => verifying = true);
-                    bool ok = await ApiService.verifyOtp(e, otpCtrl.text.trim());
+                    final code = otpCtrl.text.trim();
+                    if (code.isEmpty || code.length != 6) {
+                      setStateDialog(() => errorMsg = 'Please enter the full 6-digit code');
+                      return;
+                    }
+                    setStateDialog(() { verifying = true; errorMsg = null; });
+                    final result = await ApiService.verifyOtp(e, code);
                     setStateDialog(() => verifying = false);
-                    if (ok) {
+                    if (result['success'] == true) {
                       Navigator.pop(context);
-                      
+
                       // Call backend to actually create user
                       bool registered = await ApiService.register(u, p);
                       if (!registered && mounted) {
                          ScaffoldMessenger.of(context).showSnackBar(
-                           const SnackBar(content: Text('CRITICAL ERROR: Failed to register account with backend.')),
+                           const SnackBar(content: Text('Registration failed. Username may already exist.')),
                          );
                       } else if (mounted) {
-                         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Account Created! Please log in.')));
+                         ScaffoldMessenger.of(context).showSnackBar(
+                           const SnackBar(content: Text('Account Created! Please log in.'), backgroundColor: Color(0xFF30D158)),
+                         );
                          setState(() {
                            _isCreateAccount = false;
                            _emailController.clear();
                          });
                       }
                     } else {
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Invalid OTP')));
+                      setStateDialog(() => errorMsg = result['error'] ?? 'Invalid code');
+                      otpCtrl.clear();
                     }
                   },
-                  child: verifying ? const SizedBox(width: 16, height: 16, child: CircularProgressIndicator(strokeWidth: 2)) : const Text('Verify & Create'),
+                  child: verifying
+                    ? const SizedBox(width: 16, height: 16, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
+                    : const Text('VERIFY & CREATE', style: TextStyle(fontWeight: FontWeight.bold, letterSpacing: 0.5)),
                 ),
               ],
             );

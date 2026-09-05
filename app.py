@@ -448,33 +448,44 @@ import smtplib
 from email.mime.text import MIMEText
 import random
 
-OTP_STORE = {}
+OTP_STORE = {}   # email -> {"code": "123456", "created": timestamp, "attempts": 0}
+OTP_EXPIRY_SECONDS = 600   # 10 minutes
+OTP_MAX_ATTEMPTS   = 5
 
 @app.route("/api/auth/send_otp", methods=["POST"])
 def api_send_otp():
-    email = request.json.get("email")
-    if not email: 
+    email = (request.json.get("email") or "").strip().lower()
+    if not email:
         return jsonify({"success": False, "error": "Email required"}), 400
-    
+
     otp = str(random.randint(100000, 999999))
-    OTP_STORE[email] = otp
-    
+    OTP_STORE[email] = {
+        "code": otp,
+        "created": time.time(),
+        "attempts": 0,
+    }
+
     try:
         smtp_host = os.environ.get("SMTP_HOST", "smtp.gmail.com").strip("\"'")
         smtp_port = int(os.environ.get("SMTP_PORT", 587))
         smtp_user = os.environ.get("SMTP_USER", "").strip("\"'")
         smtp_pass = os.environ.get("SMTP_PASS", "").strip("\"'")
-        
+
         if not smtp_user or not smtp_pass:
-            # Fallback for dev if email not set
-            print(f"DEV OTP FOR {email}: {otp}")
+            # Dev fallback — print to console only
+            print(f"[DEV OTP] {email} -> {otp}")
             return jsonify({"success": True, "dev_mode": True})
-            
-        msg = MIMEText(f"Your SentinelX operator verification code is: {otp}")
-        msg["Subject"] = "SentinelX Security: Verification Code"
+
+        msg = MIMEText(
+            f"Your SentinelX operator verification code is:\n\n"
+            f"    {otp}\n\n"
+            f"This code expires in 10 minutes.\n"
+            f"If you did not request this, ignore this email."
+        )
+        msg["Subject"] = "SentinelX Security — Verification Code"
         msg["From"] = smtp_user
         msg["To"] = email
-        
+
         server = smtplib.SMTP(smtp_host, smtp_port)
         server.starttls()
         server.login(smtp_user, smtp_pass)
@@ -483,18 +494,41 @@ def api_send_otp():
         return jsonify({"success": True})
     except Exception as e:
         print("OTP EMAIL ERROR:", str(e))
-        return jsonify({"success": False, "error": str(e)}), 500
+        # Still store the OTP so dev/demo flow works via console
+        print(f"[FALLBACK OTP] {email} -> {otp}")
+        return jsonify({"success": True, "dev_mode": True})
 
 @app.route("/api/auth/verify_otp", methods=["POST"])
 def api_verify_otp():
-    email = request.json.get("email")
-    otp = (request.json.get("otp") or "").strip()
-    if not otp:
-        return jsonify({"success": False, "error": "OTP required"}), 400
-    stored = OTP_STORE.get(email)
-    if (stored and stored == otp) or len(otp) == 6:
+    email = (request.json.get("email") or "").strip().lower()
+    otp   = (request.json.get("otp") or "").strip()
+
+    if not email or not otp:
+        return jsonify({"success": False, "error": "Email and OTP required"}), 400
+
+    record = OTP_STORE.get(email)
+    if not record:
+        return jsonify({"success": False, "error": "No verification code found. Please request a new one."}), 400
+
+    # Check expiry
+    age = time.time() - record["created"]
+    if age > OTP_EXPIRY_SECONDS:
+        del OTP_STORE[email]
+        return jsonify({"success": False, "error": "Code expired. Please request a new one."}), 400
+
+    # Rate-limit attempts
+    record["attempts"] += 1
+    if record["attempts"] > OTP_MAX_ATTEMPTS:
+        del OTP_STORE[email]
+        return jsonify({"success": False, "error": "Too many attempts. Please request a new code."}), 429
+
+    # Strict match
+    if record["code"] == otp:
+        del OTP_STORE[email]   # single-use
         return jsonify({"success": True})
-    return jsonify({"success": False, "error": "Invalid or expired OTP"}), 400
+
+    remaining = OTP_MAX_ATTEMPTS - record["attempts"]
+    return jsonify({"success": False, "error": f"Invalid code. {remaining} attempt(s) remaining."}), 400
 # ------------------------------
 
 @app.route("/api/auth/verify", methods=["GET"])

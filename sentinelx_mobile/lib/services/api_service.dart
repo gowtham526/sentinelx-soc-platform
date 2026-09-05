@@ -247,19 +247,21 @@ class ApiService {
     return false;
   }
 
-  static Future<bool> verifyOtp(String email, String otp) async {
+  static Future<Map<String, dynamic>> verifyOtp(String email, String otp) async {
     try {
       final res = await http.post(
         Uri.parse('$_baseUrl/api/auth/verify_otp'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'email': email, 'otp': otp})
       );
-      if (res.statusCode == 200) {
-        return jsonDecode(res.body)['success'] ?? false;
-      }
+      final body = jsonDecode(res.body);
+      return {
+        'success': body['success'] == true,
+        'error': body['error'] ?? '',
+      };
     } catch (e) {
       print('Error verifying OTP: $e');
     }
-    return false;
+    return {'success': false, 'error': 'Connection error'};
   }
 }
