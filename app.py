@@ -409,7 +409,7 @@ def api_login():
         return jsonify({"success": False, "message": "Too many failed attempts. Try again later."}), 429
 
     data = request.json or {}
-    u = data.get("username", "").strip()
+    u = data.get("username", "").strip().lower()
     p = data.get("password", "").strip()
     user = USERS.get(u)
     if user and _check_pw(p, user["password_hash"]):
@@ -441,7 +441,18 @@ def api_login():
     time.sleep(0.3)  # constant-time response to prevent timing oracle
     from core.audit_log import log_action
     log_action(u or "(blank)", "login_failed", {}, ip=request.remote_addr)
-    return jsonify({"success": False, "message": "Invalid credentials"}), 401
+
+    import difflib
+    if not user:
+        matches = difflib.get_close_matches(u, list(USERS.keys()), n=1, cutoff=0.6)
+        if matches:
+            msg = f"Operator '{u}' not found. Did you mean '{matches[0]}'? Or click 'Create an account instead' to register."
+        else:
+            msg = f"Operator '{u}' does not exist. Click 'Create an account instead' to register."
+    else:
+        msg = f"Incorrect password or PIN for operator '{u}'. Please try again or click 'Forgot Password?'."
+
+    return jsonify({"success": False, "message": msg, "error": msg}), 401
 
 # --- OTP VERIFICATION LOGIC ---
 import smtplib
@@ -451,6 +462,7 @@ import random
 OTP_STORE = {}   # email -> {"code": "123456", "created": timestamp, "attempts": 0}
 OTP_EXPIRY_SECONDS = 600   # 10 minutes
 OTP_MAX_ATTEMPTS   = 5
+OTP_VERIFIED_EMAILS = {}  # email -> expiry_timestamp
 
 @app.route("/api/auth/send_otp", methods=["POST"])
 def api_send_otp():
@@ -525,10 +537,61 @@ def api_verify_otp():
     # Strict match
     if record["code"] == otp:
         del OTP_STORE[email]   # single-use
-        return jsonify({"success": True})
+        OTP_VERIFIED_EMAILS[email] = time.time() + 600  # verified for 10 minutes
+        return jsonify({"success": True, "message": "Email verified successfully"})
 
     remaining = OTP_MAX_ATTEMPTS - record["attempts"]
     return jsonify({"success": False, "error": f"Invalid code. {remaining} attempt(s) remaining."}), 400
+
+@app.route("/api/auth/reset_password", methods=["POST"])
+def api_public_reset_password():
+    """Public password / PIN reset after OTP email verification."""
+    global USERS
+    data = request.json or {}
+    email = (data.get("email") or "").strip().lower()
+    otp   = (data.get("otp") or "").strip()
+    username = (data.get("username") or "").strip().lower()
+    new_password = (data.get("new_password") or data.get("password") or "").strip()
+
+    if not username:
+        return jsonify({"success": False, "error": "Username is required"}), 400
+    if not new_password:
+        return jsonify({"success": False, "error": "New password or PIN is required"}), 400
+    if len(new_password) < 4:
+        return jsonify({"success": False, "error": "Password / PIN must be at least 4 characters"}), 400
+
+    # Verification check: either verified recently, or OTP code matches
+    is_verified = False
+    if email and OTP_VERIFIED_EMAILS.get(email, 0) > time.time():
+        is_verified = True
+    elif email and otp and email in OTP_STORE:
+        rec = OTP_STORE[email]
+        if time.time() - rec["created"] <= OTP_EXPIRY_SECONDS and rec["code"] == otp:
+            is_verified = True
+            del OTP_STORE[email]
+
+    if not is_verified:
+        return jsonify({"success": False, "error": "Verification code is missing, invalid, or expired. Please request a new code."}), 400
+
+    USERS = _load_users()
+    if username not in USERS:
+        import difflib
+        matches = difflib.get_close_matches(username, list(USERS.keys()), n=1, cutoff=0.6)
+        hint = f" Did you mean '{matches[0]}'?" if matches else ""
+        return jsonify({"success": False, "error": f"Operator account '{username}' does not exist.{hint}"}), 404
+
+    USERS[username]["password_hash"] = _hash_pw(new_password)
+    _save_users(USERS)
+
+    if email in OTP_VERIFIED_EMAILS:
+        del OTP_VERIFIED_EMAILS[email]
+
+    try:
+        from core.audit_log import log_action
+        log_action(username, "PASSWORD_RESET", f"Operator {username} reset password/PIN via OTP ({email})", ip=request.remote_addr)
+    except: pass
+
+    return jsonify({"success": True, "message": f"Password / PIN for operator '{username}' has been updated successfully. Please log in."})
 # ------------------------------
 
 @app.route("/api/auth/verify", methods=["GET"])
@@ -2083,9 +2146,12 @@ def api_public_register():
         return jsonify({"success": False, "error": "Username and password required"}), 400
 
     USERS = _load_users()
+    if username in USERS:
+        return jsonify({"success": False, "error": f"Operator '{username}' is already registered. Please log in, or use 'Forgot Password?' to reset your PIN/password."}), 400
+
     import bcrypt
     hashed_pw = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
-    USERS[username] = {"password_hash": hashed_pw, "role": role}
+    USERS[username] = {"password_hash": hashed_pw, "role": role, "created_at": time.strftime("%Y-%m-%d %H:%M:%S")}
     _save_users(USERS)
     
     try:

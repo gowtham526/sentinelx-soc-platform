@@ -8849,6 +8849,16 @@ function _applySysmonTemplate(tpl) {
     font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 25px; transition: 0.3s;
   }
   .auth-switch:hover { text-decoration: underline; color: #00ffcc; }
+
+  .auth-status-banner {
+    display: none; padding: 12px 14px; margin-bottom: 16px; border-radius: 8px;
+    font-size: 12px; font-weight: 700; line-height: 1.45; text-align: left;
+    letter-spacing: 0.2px; animation: authFadeIn 0.25s ease-in-out;
+  }
+  @keyframes authFadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+  .auth-status-banner.err { display: block; background: rgba(255, 59, 48, 0.15); border: 1px solid #ff3b30; color: #ff453a; }
+  .auth-status-banner.suc { display: block; background: rgba(48, 209, 88, 0.15); border: 1px solid #30D158; color: #30D158; }
+  .auth-status-banner.wrn { display: block; background: rgba(255, 159, 10, 0.15); border: 1px solid #ff9f0a; color: #ff9f0a; }
 </style>
 
 <div id="CUSTOM_AUTH_FLOW">
@@ -8859,31 +8869,35 @@ function _applySysmonTemplate(tpl) {
     <div class="auth-logo">SX</div>
     <div class="auth-title">CREATE ACCOUNT</div>
     <div class="auth-sub">INITIALIZE OPERATOR PROFILE</div>
+    <div class="auth-status-banner" id="REG_BANNER"></div>
     
-    <div class="auth-input-group">
-      <label class="auth-label">EMAIL ADDRESS</label>
-      <input type="email" id="REG_E" class="auth-input" placeholder="operator@soc.local" />
-    </div>
-    <div class="auth-input-group">
-      <label class="auth-label">USERNAME</label>
-      <input type="text" id="REG_U" class="auth-input" placeholder="e.g., john_doe" />
-    </div>
-    <div class="auth-input-group">
-      <label class="auth-label">PASSWORD</label>
-      <input type="password" id="REG_P" class="auth-input" placeholder="••••••••" />
+    <div id="REG_FIELDS_SECTION">
+      <div class="auth-input-group">
+        <label class="auth-label">OPERATOR USERNAME</label>
+        <input type="text" id="REG_U" class="auth-input" placeholder="e.g. team, analyst, nani" />
+      </div>
+      <div class="auth-input-group">
+        <label class="auth-label">EMAIL ADDRESS</label>
+        <input type="email" id="REG_E" class="auth-input" placeholder="operator@soc.local" />
+      </div>
+      <div class="auth-input-group">
+        <label class="auth-label">SECURITY PIN / PASSWORD</label>
+        <input type="password" id="REG_P" class="auth-input" placeholder="Minimum 4 characters" />
+      </div>
+      <button class="auth-btn" id="BTN_SEND_OTP" onclick="handleRegister()">SEND VERIFICATION CODE</button>
     </div>
     
     <div id="REG_OTP_SECTION" style="display: none; margin-top: 15px;">
       <div class="auth-input-group">
         <label class="auth-label" style="color: #00ffcc;">ENTER 6-DIGIT OTP</label>
-        <input type="text" id="REG_OTP" class="auth-input" placeholder="123456" style="border-color: #00ffcc; text-align: center; font-size: 20px; letter-spacing: 5px;" />
+        <input type="text" id="REG_OTP" class="auth-input" placeholder="● ● ● ● ● ●" maxlength="6" style="border-color: #00ffcc; text-align: center; font-size: 20px; letter-spacing: 6px;" />
       </div>
-      <button class="auth-btn" onclick="handleVerifyOTP()" style="background: linear-gradient(90deg, #00ffcc, #0a84ff); color: #000;">VERIFY & CREATE ACCOUNT</button>
+      <button class="auth-btn" id="BTN_VERIFY_CREATE" onclick="handleVerifyOTP()" style="background: linear-gradient(90deg, #00ffcc, #0a84ff); color: #000;">VERIFY & CREATE ACCOUNT</button>
+      <button class="auth-switch" onclick="handleResendOTP('REG_E')" style="margin-top: 12px; font-size: 11px;">Resend Code</button>
     </div>
 
-    <button class="auth-btn" id="BTN_SEND_OTP" onclick="handleRegister()">SEND VERIFICATION CODE</button>
     <br>
-    <button class="auth-switch" id="BTN_GOTO_LOGIN" onclick="showLogin()">Login here</button>
+    <button class="auth-switch" id="BTN_GOTO_LOGIN" onclick="showLogin()">Already registered? Log in here</button>
   </div>
 
   <!-- PAGE 2: LOGIN PAGE -->
@@ -8891,31 +8905,37 @@ function _applySysmonTemplate(tpl) {
     <div class="auth-logo">SX</div>
     <div class="auth-title">OPERATOR LOGIN</div>
     <div class="auth-sub">AUTHENTICATE TO PROCEED</div>
+    <div class="auth-status-banner" id="LOG_BANNER"></div>
     
     <div class="auth-input-group">
       <label class="auth-label">USERNAME</label>
-      <input type="text" id="LOG_U" class="auth-input" placeholder="Enter username" />
+      <input type="text" id="LOG_U" class="auth-input" placeholder="Enter username (e.g. nani, analyst, team)" />
     </div>
     <div class="auth-input-group">
-      <label class="auth-label">PASSWORD</label>
+      <label class="auth-label">SECURITY PIN / PASSWORD</label>
       <input type="password" id="LOG_P" class="auth-input" placeholder="••••••••" />
     </div>
     
-    <button class="auth-btn" onclick="handleLogin()">LOG IN</button>
+    <button class="auth-btn" id="BTN_LOGIN_SUBMIT" onclick="handleLogin()">LOG IN</button>
     <br>
     
     <button class="auth-switch" onclick="showRegister()">Create an account instead</button>
     <br>
-    <button class="auth-switch" onclick="showForgotPassword()" style="margin-top: 10px; color: #ff3b30;">Forgot Password?</button>
+    <button class="auth-switch" onclick="showForgotPassword()" style="margin-top: 10px; color: #ff453a;">Forgot Password / PIN?</button>
   </div>
 
-  <!-- PAGE 3: FORGOT PASSWORD -->
+  <!-- PAGE 3: FORGOT PASSWORD / PIN -->
   <div class="auth-card" id="PAGE_FORGOT_PASSWORD" style="display: none;">
     <div class="auth-logo">SX</div>
-    <div class="auth-title">RESET PASSWORD</div>
-    <div class="auth-sub">VERIFY IDENTITY TO PROCEED</div>
+    <div class="auth-title">RESET CREDENTIALS</div>
+    <div class="auth-sub">VERIFY EMAIL OTP TO SET NEW PIN / PASSWORD</div>
+    <div class="auth-status-banner" id="RESET_BANNER"></div>
     
     <div id="RESET_EMAIL_SECTION">
+      <div class="auth-input-group">
+        <label class="auth-label">OPERATOR USERNAME</label>
+        <input type="text" id="RESET_U" class="auth-input" placeholder="e.g. team, analyst, nani" />
+      </div>
       <div class="auth-input-group">
         <label class="auth-label">REGISTERED EMAIL</label>
         <input type="email" id="RESET_E" class="auth-input" placeholder="operator@soc.local" />
@@ -8926,13 +8946,13 @@ function _applySysmonTemplate(tpl) {
     <div id="RESET_OTP_SECTION" style="display: none; margin-top: 15px;">
       <div class="auth-input-group">
         <label class="auth-label" style="color: #ff9f0a;">ENTER 6-DIGIT OTP</label>
-        <input type="text" id="RESET_OTP" class="auth-input" placeholder="123456" style="border-color: #ff9f0a; text-align: center; font-size: 20px; letter-spacing: 5px;" />
+        <input type="text" id="RESET_OTP" class="auth-input" placeholder="● ● ● ● ● ●" maxlength="6" style="border-color: #ff9f0a; text-align: center; font-size: 20px; letter-spacing: 6px;" />
       </div>
       <div class="auth-input-group">
-        <label class="auth-label">NEW PASSWORD</label>
-        <input type="password" id="RESET_P" class="auth-input" placeholder="••••••••" />
+        <label class="auth-label">NEW SECURITY PIN / PASSWORD</label>
+        <input type="password" id="RESET_P" class="auth-input" placeholder="Enter new PIN or password" />
       </div>
-      <button class="auth-btn" onclick="handleResetPassword()" style="background: linear-gradient(90deg, #ff9f0a, #ff3b30); color: #000;">RESET PASSWORD</button>
+      <button class="auth-btn" id="BTN_RESET_SUBMIT" onclick="handleResetPassword()" style="background: linear-gradient(90deg, #ff9f0a, #ff3b30); color: #000;">SET NEW PIN & SAVE</button>
     </div>
 
     <br>
@@ -8967,139 +8987,50 @@ function _applySysmonTemplate(tpl) {
       }, 33);
   })();
 
+  function setBanner(id, text, type) {
+      var b = document.getElementById(id);
+      if (!b) return;
+      if (!text) {
+          b.className = 'auth-status-banner';
+          b.style.display = 'none';
+          b.textContent = '';
+          return;
+      }
+      b.className = 'auth-status-banner ' + (type || 'err');
+      b.textContent = text;
+      b.style.display = 'block';
+  }
+
+  function clearBanners() {
+      setBanner('REG_BANNER', '');
+      setBanner('LOG_BANNER', '');
+      setBanner('RESET_BANNER', '');
+  }
+
   function showLogin() {
+      clearBanners();
       document.getElementById('PAGE_REGISTER').style.display = 'none';
       var fp = document.getElementById('PAGE_FORGOT_PASSWORD'); if(fp) fp.style.display = 'none';
       document.getElementById('PAGE_LOGIN').style.display = 'block';
+      setTimeout(function() {
+          var el = document.getElementById('LOG_U');
+          if (el && !el.value) el.focus();
+      }, 50);
   }
 
   function showRegister() {
+      clearBanners();
       document.getElementById('PAGE_LOGIN').style.display = 'none';
       var fp = document.getElementById('PAGE_FORGOT_PASSWORD'); if(fp) fp.style.display = 'none';
       document.getElementById('PAGE_REGISTER').style.display = 'block';
-  }
-
-  async function handleRegister() {
-      var e = document.getElementById('REG_E').value.trim();
-      var u = document.getElementById('REG_U').value.trim();
-      var p = document.getElementById('REG_P').value.trim();
-      if(!e || !u || !p) { alert("Please fill in all fields."); return; }
-      
-      var btn = document.getElementById('BTN_SEND_OTP');
-      btn.innerText = "SENDING...";
-      btn.disabled = true;
-      
-      try {
-          var res = await fetch('/api/auth/send_otp', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ email: e })
-          });
-          var data = await res.json();
-          if(data.success) {
-              alert("Verification code sent to " + e + "! Please check your inbox.");
-              // Hide primary inputs and show OTP section
-              document.getElementById('REG_E').parentElement.style.display = 'none';
-              document.getElementById('REG_U').parentElement.style.display = 'none';
-              document.getElementById('REG_P').parentElement.style.display = 'none';
-              btn.style.display = 'none';
-              document.getElementById('BTN_GOTO_LOGIN').style.display = 'none';
-              
-              document.getElementById('REG_OTP_SECTION').style.display = 'block';
-          } else {
-              alert("Error sending OTP: " + (data.error || "Unknown"));
-              btn.innerText = "SEND VERIFICATION CODE";
-              btn.disabled = false;
-          }
-      } catch(err) {
-          alert("Network error.");
-          btn.innerText = "SEND VERIFICATION CODE";
-          btn.disabled = false;
-      }
-  }
-
-  async function handleVerifyOTP() {
-      var e = document.getElementById('REG_E').value.trim();
-      var u = document.getElementById('REG_U').value.trim();
-      var p = document.getElementById('REG_P').value.trim();
-      var otp = document.getElementById('REG_OTP').value.trim();
-      
-      if(!otp) { alert("Please enter the 6-digit OTP."); return; }
-      
-      try {
-          var res = await fetch('/api/auth/verify_otp', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ email: e, otp: otp })
-          });
-          var data = await res.json();
-          if(data.success) {
-              // Register account directly in backend database
-              try {
-                  await fetch('/api/auth/register', {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify({ username: u, password: p })
-                  });
-              } catch(e) { console.error(e); }
-
-              localStorage.setItem('sx_registered_user', u);
-              localStorage.setItem('sx_registered_pass', p);
-              
-              alert("Email Verified & Account created successfully! Please log in.");
-              
-              // Reset UI state for future visits
-              document.getElementById('REG_E').parentElement.style.display = 'block';
-              document.getElementById('REG_U').parentElement.style.display = 'block';
-              document.getElementById('REG_P').parentElement.style.display = 'block';
-              document.getElementById('BTN_SEND_OTP').style.display = 'block';
-              document.getElementById('BTN_SEND_OTP').innerText = "SEND VERIFICATION CODE";
-              document.getElementById('BTN_SEND_OTP').disabled = false;
-              document.getElementById('BTN_GOTO_LOGIN').style.display = 'inline-block';
-              document.getElementById('REG_OTP_SECTION').style.display = 'none';
-              document.getElementById('REG_OTP').value = '';
-              
-              showLogin();
-              
-              // Auto-fill username in login page for convenience
-              document.getElementById('LOG_U').value = u;
-              document.getElementById('LOG_P').value = ''; // clear password
-          } else {
-              alert("Verification Failed: " + (data.error || "Invalid OTP"));
-          }
-      } catch(err) {
-          alert("Network error.");
-      }
-  }
-
-  function handleLogin() {
-      var u = document.getElementById('LOG_U').value.trim();
-      var p = document.getElementById('LOG_P').value.trim();
-      if(!u || !p) { alert("Please enter both username and password."); return; }
-      
-      // Retrieve registered credentials from persistent storage
-      var regUser = localStorage.getItem('sx_registered_user');
-      var regPass = localStorage.getItem('sx_registered_pass');
-      
-      if (!regUser || !regPass) {
-          alert("ACCESS DENIED: No account found in the system. Please click 'Create an account instead' to register first.");
-          return;
-      }
-      
-      if (u !== regUser || p !== regPass) {
-          alert("ACCESS DENIED: Invalid credentials. Please ensure you are typing the exact Username and Password you just registered.");
-          return;
-      }
-      
-      // SUCCESS! Move to Page 3 (The Admin Button Page)
-      alert("Authentication Successful. Proceeding to Secure Gateway.");
-      
-      // Hide the custom auth flow to reveal the untouched original UI
-      document.getElementById('CUSTOM_AUTH_FLOW').style.display = 'none';
+      setTimeout(function() {
+          var el = document.getElementById('REG_U');
+          if (el) el.focus();
+      }, 50);
   }
 
   function showForgotPassword() {
-      console.log("showForgotPassword triggered");
+      clearBanners();
       var pLogin = document.getElementById('PAGE_LOGIN');
       var pReg = document.getElementById('PAGE_REGISTER');
       var pForgot = document.getElementById('PAGE_FORGOT_PASSWORD');
@@ -9113,19 +9044,27 @@ function _applySysmonTemplate(tpl) {
           pForgot.style.display = 'block';
           rEmail.style.display = 'block';
           rOtp.style.display = 'none';
-          console.log("Forgot password page displayed successfully");
-      } else {
-          console.error("Forgot password elements missing!", pForgot, rEmail, rOtp);
-          alert("Error: Reset page could not be loaded.");
+          // Pre-fill username from login input if present
+          var logU = document.getElementById('LOG_U');
+          if (logU && logU.value) {
+              document.getElementById('RESET_U').value = logU.value.trim();
+          }
       }
   }
 
-  async function handleSendResetOTP() {
-      var e = document.getElementById('RESET_E').value.trim();
-      if(!e) { alert("Please enter your email."); return; }
+  async function handleRegister() {
+      clearBanners();
+      var e = document.getElementById('REG_E').value.trim();
+      var u = document.getElementById('REG_U').value.trim().toLowerCase();
+      var p = document.getElementById('REG_P').value.trim();
+
+      if(!u) { setBanner('REG_BANNER', 'Please enter an operator username.', 'err'); return; }
+      if(!e) { setBanner('REG_BANNER', 'Please enter your email address for OTP verification.', 'err'); return; }
+      if(!p || p.length < 4) { setBanner('REG_BANNER', 'Security PIN/password must be at least 4 characters.', 'err'); return; }
       
-      var btn = document.getElementById('BTN_SEND_RESET');
-      btn.innerText = "SENDING..."; btn.disabled = true;
+      var btn = document.getElementById('BTN_SEND_OTP');
+      btn.innerText = "SENDING CODE...";
+      btn.disabled = true;
       
       try {
           var res = await fetch('/api/auth/send_otp', {
@@ -9135,26 +9074,53 @@ function _applySysmonTemplate(tpl) {
           });
           var data = await res.json();
           if(data.success) {
-              alert("Reset code sent to " + e + "! Check your inbox.");
-              document.getElementById('RESET_EMAIL_SECTION').style.display = 'none';
-              document.getElementById('RESET_OTP_SECTION').style.display = 'block';
+              setBanner('REG_BANNER', 'Verification code sent to ' + e + '. Enter the 6-digit code below.', 'wrn');
+              document.getElementById('REG_FIELDS_SECTION').style.display = 'none';
+              document.getElementById('REG_OTP_SECTION').style.display = 'block';
+              setTimeout(function() { document.getElementById('REG_OTP').focus(); }, 100);
           } else {
-              alert("Error: " + (data.error || "Unknown"));
-              btn.innerText = "SEND RESET CODE"; btn.disabled = false;
+              setBanner('REG_BANNER', data.error || 'Failed to send verification code.', 'err');
           }
       } catch(err) {
-          alert("Network error.");
-          btn.innerText = "SEND RESET CODE"; btn.disabled = false;
+          setBanner('REG_BANNER', 'Cannot connect to SentinelX server. Ensure backend is running.', 'err');
       }
+      btn.innerText = "SEND VERIFICATION CODE";
+      btn.disabled = false;
   }
 
-  async function handleResetPassword() {
-      var e = document.getElementById('RESET_E').value.trim();
-      var otp = document.getElementById('RESET_OTP').value.trim();
-      var p = document.getElementById('RESET_P').value.trim();
+  async function handleResendOTP(inputFieldId) {
+      var emailEl = document.getElementById(inputFieldId);
+      var e = emailEl ? emailEl.value.trim() : '';
+      if (!e) return;
+      try {
+          var res = await fetch('/api/auth/send_otp', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ email: e })
+          });
+          var data = await res.json();
+          if (data.success) {
+              setBanner('REG_BANNER', 'New verification code sent to ' + e, 'suc');
+          }
+      } catch(err) {}
+  }
+
+  async function handleVerifyOTP() {
+      clearBanners();
+      var e = document.getElementById('REG_E').value.trim();
+      var u = document.getElementById('REG_U').value.trim().toLowerCase();
+      var p = document.getElementById('REG_P').value.trim();
+      var otp = document.getElementById('REG_OTP').value.trim();
       
-      if(!otp || !p) { alert("Please enter the OTP and a new password."); return; }
+      if(!otp || otp.length !== 6) {
+          setBanner('REG_BANNER', 'Please enter the complete 6-digit verification code.', 'err');
+          return;
+      }
       
+      var btn = document.getElementById('BTN_VERIFY_CREATE');
+      btn.innerText = "VERIFYING...";
+      btn.disabled = true;
+
       try {
           var res = await fetch('/api/auth/verify_otp', {
               method: 'POST',
@@ -9163,24 +9129,185 @@ function _applySysmonTemplate(tpl) {
           });
           var data = await res.json();
           if(data.success) {
-              // Only update the password, keep the username intact!
-              localStorage.setItem('sx_registered_pass', p);
-              alert("Password reset successfully! You can now log in with your new password.");
-              
-              // Reset UI
-              document.getElementById('RESET_OTP').value = '';
-              document.getElementById('RESET_P').value = '';
-              document.getElementById('BTN_SEND_RESET').innerText = "SEND RESET CODE";
-              document.getElementById('BTN_SEND_RESET').disabled = false;
-              
-              showLogin();
+              // Register account directly in backend database
+              var regRes = await fetch('/api/auth/register', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ username: u, password: p })
+              });
+              var regData = await regRes.json();
+              if (regData.success) {
+                  // Reset registration form
+                  document.getElementById('REG_FIELDS_SECTION').style.display = 'block';
+                  document.getElementById('REG_OTP_SECTION').style.display = 'none';
+                  document.getElementById('REG_OTP').value = '';
+                  document.getElementById('REG_P').value = '';
+                  
+                  // Go to Login with username prefilled
+                  showLogin();
+                  document.getElementById('LOG_U').value = u;
+                  document.getElementById('LOG_P').value = '';
+                  setBanner('LOG_BANNER', 'Account created for operator \'' + u + '\'! Enter your PIN/password to log in.', 'suc');
+                  setTimeout(function() { document.getElementById('LOG_P').focus(); }, 100);
+              } else {
+                  setBanner('REG_BANNER', regData.error || 'Account creation failed.', 'err');
+              }
           } else {
-              alert("Verification Failed: " + (data.error || "Invalid OTP"));
+              setBanner('REG_BANNER', data.error || 'Invalid or expired verification code.', 'err');
           }
       } catch(err) {
-          alert("Network error.");
+          setBanner('REG_BANNER', 'Connection error to SentinelX engine.', 'err');
       }
+      btn.innerText = "VERIFY & CREATE ACCOUNT";
+      btn.disabled = false;
   }
+
+  async function handleLogin() {
+      clearBanners();
+      var u = document.getElementById('LOG_U').value.trim().toLowerCase();
+      var p = document.getElementById('LOG_P').value.trim();
+      if(!u) { setBanner('LOG_BANNER', 'Please enter your username.', 'err'); return; }
+      if(!p) { setBanner('LOG_BANNER', 'Please enter your security PIN / password.', 'err'); return; }
+
+      var btn = document.getElementById('BTN_LOGIN_SUBMIT');
+      if (btn) { btn.innerText = "AUTHENTICATING..."; btn.disabled = true; }
+
+      try {
+          var res = await fetch('/api/auth/login', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ username: u, password: p })
+          });
+          var data = await res.json();
+
+          if (data && data.success && data.token) {
+              // Store auth state
+              sessionStorage.setItem('sx_token', data.token);
+              sessionStorage.setItem('sx_role', data.role || 'analyst');
+              sessionStorage.setItem('sx_user', data.username || u);
+              document.cookie = "sx_token=" + data.token + "; path=/; max-age=28800";
+
+              // Hide the custom auth flow to reveal the main dashboard
+              document.getElementById('CUSTOM_AUTH_FLOW').style.display = 'none';
+
+              // Initialize the main app
+              if (typeof _authToken !== 'undefined') _authToken = data.token;
+              if (typeof _authUser !== 'undefined') _authUser = { username: data.username || u, role: data.role || 'analyst' };
+              if (typeof _updateUserHeader === 'function') _updateUserHeader(data.username || u, data.role || 'analyst');
+              if (typeof _renderNav === 'function') _renderNav();
+              if (typeof go === 'function') go('DASHBOARD');
+              if (typeof _fetchAll === 'function') _fetchAll().catch(function(){});
+              window._appStarted = true;
+          } else {
+              setBanner('LOG_BANNER', data.message || data.error || 'Authentication failed.', 'err');
+          }
+      } catch(err) {
+          // Offline fallback for demo credentials only
+          if ((u === 'admin' && p === 'admin123') || (u === 'analyst' && p === 'analyst123')) {
+              var role = u === 'admin' ? 'admin' : 'analyst';
+              sessionStorage.setItem('sx_token', 'demo-token-' + u);
+              sessionStorage.setItem('sx_role', role);
+              sessionStorage.setItem('sx_user', u);
+              document.getElementById('CUSTOM_AUTH_FLOW').style.display = 'none';
+          } else {
+              setBanner('LOG_BANNER', 'Cannot connect to SentinelX server on port 5000.', 'err');
+          }
+      }
+
+      if (btn) { btn.innerText = "LOG IN"; btn.disabled = false; }
+  }
+
+  async function handleSendResetOTP() {
+      clearBanners();
+      var u = document.getElementById('RESET_U').value.trim().toLowerCase();
+      var e = document.getElementById('RESET_E').value.trim();
+      if(!u) { setBanner('RESET_BANNER', 'Please enter the username you wish to reset.', 'err'); return; }
+      if(!e) { setBanner('RESET_BANNER', 'Please enter the registered email address.', 'err'); return; }
+      
+      var btn = document.getElementById('BTN_SEND_RESET');
+      btn.innerText = "SENDING RESET CODE..."; btn.disabled = true;
+      
+      try {
+          var res = await fetch('/api/auth/send_otp', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ email: e })
+          });
+          var data = await res.json();
+          if(data.success) {
+              setBanner('RESET_BANNER', 'Reset code sent to ' + e + '. Enter the 6-digit code and your new PIN below.', 'wrn');
+              document.getElementById('RESET_EMAIL_SECTION').style.display = 'none';
+              document.getElementById('RESET_OTP_SECTION').style.display = 'block';
+              setTimeout(function() { document.getElementById('RESET_OTP').focus(); }, 100);
+          } else {
+              setBanner('RESET_BANNER', data.error || 'Failed to send reset code.', 'err');
+          }
+      } catch(err) {
+          setBanner('RESET_BANNER', 'Network error connecting to SentinelX server.', 'err');
+      }
+      btn.innerText = "SEND RESET CODE"; btn.disabled = false;
+  }
+
+  async function handleResetPassword() {
+      clearBanners();
+      var u = document.getElementById('RESET_U').value.trim().toLowerCase();
+      var e = document.getElementById('RESET_E').value.trim();
+      var otp = document.getElementById('RESET_OTP').value.trim();
+      var p = document.getElementById('RESET_P').value.trim();
+      
+      if(!u) { setBanner('RESET_BANNER', 'Username is required.', 'err'); return; }
+      if(!otp || otp.length !== 6) { setBanner('RESET_BANNER', 'Please enter the 6-digit OTP code.', 'err'); return; }
+      if(!p || p.length < 4) { setBanner('RESET_BANNER', 'New PIN/password must be at least 4 characters.', 'err'); return; }
+      
+      var btn = document.getElementById('BTN_RESET_SUBMIT');
+      btn.innerText = "UPDATING CREDENTIALS..."; btn.disabled = true;
+
+      try {
+          var res = await fetch('/api/auth/reset_password', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ username: u, email: e, otp: otp, new_password: p })
+          });
+          var data = await res.json();
+          if(data.success) {
+              // Reset state
+              document.getElementById('RESET_OTP').value = '';
+              document.getElementById('RESET_P').value = '';
+              document.getElementById('RESET_EMAIL_SECTION').style.display = 'block';
+              document.getElementById('RESET_OTP_SECTION').style.display = 'none';
+              
+              showLogin();
+              document.getElementById('LOG_U').value = u;
+              document.getElementById('LOG_P').value = '';
+              setBanner('LOG_BANNER', 'Password/PIN for \'' + u + '\' updated successfully! Please log in with your new PIN.', 'suc');
+              setTimeout(function() { document.getElementById('LOG_P').focus(); }, 100);
+          } else {
+              setBanner('RESET_BANNER', data.error || 'Password reset failed.', 'err');
+          }
+      } catch(err) {
+          setBanner('RESET_BANNER', 'Connection error to SentinelX backend.', 'err');
+      }
+      btn.innerText = "SET NEW PIN & SAVE"; btn.disabled = false;
+  }
+
+  // Keyboard shortcut: Press Enter to submit
+  document.addEventListener('keydown', function(e) {
+      if (e.key !== 'Enter') return;
+      var loginCard = document.getElementById('PAGE_LOGIN');
+      var regCard = document.getElementById('PAGE_REGISTER');
+      var resetCard = document.getElementById('PAGE_FORGOT_PASSWORD');
+      if (loginCard && loginCard.style.display !== 'none') {
+          handleLogin();
+      } else if (regCard && regCard.style.display !== 'none') {
+          var otpSec = document.getElementById('REG_OTP_SECTION');
+          if (otpSec && otpSec.style.display !== 'none') handleVerifyOTP();
+          else handleRegister();
+      } else if (resetCard && resetCard.style.display !== 'none') {
+          var resetOtpSec = document.getElementById('RESET_OTP_SECTION');
+          if (resetOtpSec && resetOtpSec.style.display !== 'none') handleResetPassword();
+          else handleSendResetOTP();
+      }
+  });
 </script>
 <!-- END 3-PAGE FLOW INJECTION -->
 
