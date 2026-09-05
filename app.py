@@ -179,6 +179,14 @@ def _load_users():
 
 def _save_users(users_dict):
     from core.database import db
+    try:
+        db_users = db.get_all_users()
+        for existing in db_users:
+            if existing not in users_dict:
+                db.delete_user(existing)
+    except Exception as e:
+        print(f"[DB] Error syncing user deletions: {e}")
+
     for u, d in users_dict.items():
         db.upsert_user(u, d.get("password_hash") or d.get("password"), d.get("role", "analyst"))
     save_json(USERS_FILE, users_dict)
@@ -648,7 +656,11 @@ def api_get_users():
             "created_at": udata.get("created_at", "2026-08-10 10:00:00"),
             "status": "Active"
         })
-    return jsonify({"success": True, "users": user_list, "total": len(user_list)})
+    resp = jsonify({"success": True, "users": user_list, "total": len(user_list)})
+    resp.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, max-age=0"
+    resp.headers["Pragma"] = "no-cache"
+    resp.headers["Expires"] = "0"
+    return resp
 
 
 @app.route("/api/users", methods=["POST"])
@@ -761,12 +773,14 @@ def api_delete_user(username):
     """Admin deletes a user account."""
     global USERS
     current_user = _get_current_user()
+    username = (username or "").strip().lower()
+
     if current_user == username:
         return jsonify({"success": False, "error": "Cannot delete your own active account."}), 400
 
     USERS = _load_users()
     if username not in USERS:
-        return jsonify({"success": False, "error": "User not found."}), 404
+        return jsonify({"success": False, "error": f"User '{username}' not found."}), 404
 
     # Prevent deleting the last admin
     if USERS[username].get("role") == "admin":
@@ -774,13 +788,24 @@ def api_delete_user(username):
         if admin_count <= 1:
             return jsonify({"success": False, "error": "Cannot delete the only remaining Admin account."}), 400
 
-    del USERS[username]
+    # 1. Permanently delete from relational database (SQLite/MySQL)
+    from core.database import db
+    try:
+        db.delete_user(username)
+    except Exception as e:
+        print(f"[DB] Error deleting user {username}: {e}")
+
+    # 2. Permanently delete from in-memory dictionary and JSON file
+    if username in USERS:
+        del USERS[username]
     _save_users(USERS)
 
     from core.audit_log import log_action
     log_action(current_user or "admin", "delete_user", {"deleted_user": username}, ip=request.remote_addr)
 
-    return jsonify({"success": True, "message": f"User '{username}' deleted successfully."})
+    resp = jsonify({"success": True, "message": f"User '{username}' deleted successfully."})
+    resp.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, max-age=0"
+    return resp
 
 # ════════════════════════════════════════════════════════════════
 #  ALERTS  — READ / WRITE / CLEAR

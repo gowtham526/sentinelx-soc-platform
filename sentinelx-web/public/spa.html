@@ -4457,7 +4457,7 @@ var pages = window.pages = [
    )+
 
    card('Active Users Directory',
-    '<div class="btn-row" style="margin:0"><button class="btn btn-gh" onclick="_loadUsersManagementUi()">Refresh</button><button class="btn btn-ac" onclick="_toggleAddUserForm()">➕ Create New User</button></div>',
+    '<div class="btn-row" style="margin:0"><button class="btn btn-gh" id="UM_REFRESH_BTN" onclick="window._manualUserRefresh=true;_loadUsersManagementUi()">🔄 Refresh</button><button class="btn btn-ac" onclick="_toggleAddUserForm()">➕ Create New User</button></div>',
     
     // Add User Form (Collapsible)
     '<div id="UM_ADD_FORM" style="display:none;margin-bottom:16px;background:#0d1420;border:1px solid rgba(10,132,255,0.3);border-radius:10px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,0.5)">' +
@@ -7179,49 +7179,77 @@ function _toggleLoginPwVisibility() {
 // ── USER MANAGEMENT CLIENT CONTROLLER ─────────────────────────
 async function _loadUsersManagementUi() {
   var tbody = document.getElementById('UM_USERS_TBODY');
+  var refreshBtn = document.getElementById('UM_REFRESH_BTN');
   if(!tbody) return;
 
+  if (refreshBtn) {
+    refreshBtn.innerHTML = '🔄 Refreshing…';
+    refreshBtn.disabled = true;
+  }
+
   var users = [];
+  var fetchFailed = false;
   try {
-    var res = await _apiFetch('/api/users');
+    var res = await _apiFetch('/api/users?_=' + Date.now(), { cache: 'no-store' });
     if (res && res.ok) {
       var data = await res.json();
       users = data.users || [];
+    } else {
+      fetchFailed = true;
+      if (res && res.status === 401) {
+        if (typeof _toast === 'function') _toast('Session expired. Please log in again.', 'r');
+      } else if (res && res.status === 403) {
+        if (typeof _toast === 'function') _toast('Admin role required to view User Directory.', 'r');
+      }
     }
   } catch(e) {
-    console.warn('[SentinelX] Users API fallback to local cache:', e);
+    fetchFailed = true;
+    console.warn('[SentinelX] Users API fetch error:', e);
   }
 
-  // Graceful local fallback if offline or initial load
-  if (!users || !users.length) {
+  // Graceful local fallback ONLY if network completely failed AND table is empty
+  if (fetchFailed && (!users || !users.length) && !tbody.innerHTML.trim()) {
     users = [
       { username: 'admin', role: 'admin', created_at: '2026-08-10 10:00:00', status: 'Active' },
-      { username: 'analyst', role: 'analyst', created_at: '2026-08-10 10:00:00', status: 'Active' },
-      { username: 'auditor', role: 'auditor', created_at: '2026-08-10 10:00:00', status: 'Active' }
+      { username: 'analyst', role: 'analyst', created_at: '2026-08-10 10:00:00', status: 'Active' }
     ];
   }
 
-  var currentUname = (_authUser && _authUser.username) || (sessionStorage.getItem('sx_user')) || 'admin';
-  tbody.innerHTML = users.map(function(u) {
-    var isYou = u.username === currentUname;
-    var roleBadge = u.role === 'admin' ? '<span class="bx bx-r">👑 ADMIN</span>' : (u.role === 'auditor' ? '<span class="bx bx-a">👁️ AUDITOR</span>' : '<span class="bx bx-g">🛡️ ANALYST</span>');
-    
-    return (
-      '<tr>' +
-        '<td class="hi" style="font-weight:700">' + u.username + (isYou ? ' <span style="font-size:9.5px;color:var(--accent)">(You)</span>' : '') + '</td>' +
-        '<td>' + roleBadge + '</td>' +
-        '<td><span class="bx bx-g">● ' + (u.status || 'Active') + '</span></td>' +
-        '<td class="mono" style="font-size:10.5px;color:var(--text3)">' + (u.created_at || '2026-08-10') + '</td>' +
-        '<td>' +
-          '<div style="display:flex;gap:6px">' +
-            '<button class="btn btn-gh" style="padding:2px 8px;font-size:9.5px" onclick="_changeUserRole(\'' + u.username + '\',\'' + u.role + '\')">🎭 Role</button>' +
-            '<button class="btn btn-gh" style="padding:2px 8px;font-size:9.5px" onclick="_promptResetPassword(\'' + u.username + '\')">🔑 Reset PW</button>' +
-            (!isYou ? '<button class="btn btn-r" style="padding:2px 8px;font-size:9.5px;background:rgba(255,59,48,0.15);color:#ff453a;border-color:#ff453a" onclick="_deleteUser(\'' + u.username + '\')">🗑️ Delete</button>' : '') +
-          '</div>' +
-        '</td>' +
-      '</tr>'
-    );
-  }).join('');
+  if (!fetchFailed) {
+    var currentUname = (_authUser && _authUser.username) || (sessionStorage.getItem('sx_user')) || 'admin';
+    tbody.innerHTML = users.length ? users.map(function(u) {
+      var isYou = u.username.toLowerCase() === currentUname.toLowerCase();
+      var roleBadge = u.role === 'admin' ? '<span class="bx bx-r">👑 ADMIN</span>' : (u.role === 'auditor' ? '<span class="bx bx-a">👁️ AUDITOR</span>' : '<span class="bx bx-g">🛡️ ANALYST</span>');
+      
+      return (
+        '<tr id="USER_ROW_' + u.username + '">' +
+          '<td class="hi" style="font-weight:700">' + u.username + (isYou ? ' <span style="font-size:9.5px;color:var(--accent)">(You)</span>' : '') + '</td>' +
+          '<td>' + roleBadge + '</td>' +
+          '<td><span class="bx bx-g">● ' + (u.status || 'Active') + '</span></td>' +
+          '<td class="mono" style="font-size:10.5px;color:var(--text3)">' + (u.created_at || '2026-08-10') + '</td>' +
+          '<td>' +
+            '<div style="display:flex;gap:6px">' +
+              '<button class="btn btn-gh" style="padding:2px 8px;font-size:9.5px" onclick="_changeUserRole(\'' + u.username + '\',\'' + u.role + '\')">🎭 Role</button>' +
+              '<button class="btn btn-gh" style="padding:2px 8px;font-size:9.5px" onclick="_promptResetPassword(\'' + u.username + '\')">🔑 Reset PW</button>' +
+              (!isYou ? '<button class="btn btn-r" style="padding:2px 8px;font-size:9.5px;background:rgba(255,59,48,0.15);color:#ff453a;border-color:#ff453a" onclick="_deleteUser(\'' + u.username + '\')">🗑️ Delete</button>' : '') +
+            '</div>' +
+          '</td>' +
+        '</tr>'
+      );
+    }).join('') : '<tr><td colspan="5" style="text-align:center;color:var(--text3);padding:20px">No operators registered yet</td></tr>';
+
+    if (window._manualUserRefresh && typeof _toast === 'function') {
+      _toast('Active Users Directory refreshed (' + users.length + ' operators)', 'g');
+      window._manualUserRefresh = false;
+    }
+  }
+
+  if (refreshBtn) {
+    setTimeout(function() {
+      refreshBtn.innerHTML = '🔄 Refresh';
+      refreshBtn.disabled = false;
+    }, 250);
+  }
 }
 
 function _toggleAddUserForm() {
@@ -7255,7 +7283,7 @@ async function _submitCreateUser() {
       if(uInp) uInp.value = '';
       if(pInp) pInp.value = '';
       _toggleAddUserForm();
-      _loadUsersManagementUi();
+      await _loadUsersManagementUi();
     } else {
       if(typeof _toast === 'function') _toast('Error: ' + (data.error || 'Failed to create user'), 'r');
     }
@@ -7277,7 +7305,7 @@ async function _changeUserRole(username, currentRole) {
     var data = await res.json();
     if(data.success) {
       if(typeof _toast === 'function') _toast('✅ ' + data.message, 'g');
-      _loadUsersManagementUi();
+      await _loadUsersManagementUi();
     } else {
       if(typeof _toast === 'function') _toast('Error: ' + (data.error || 'Failed'), 'r');
     }
@@ -7312,6 +7340,9 @@ async function _promptResetPassword(username) {
 async function _deleteUser(username) {
   if(!confirm('Are you sure you want to permanently delete user "' + username + '"?')) return;
 
+  var row = document.getElementById('USER_ROW_' + username);
+  if (row) row.style.opacity = '0.35';
+
   try {
     var res = await _apiFetch('/api/users/' + encodeURIComponent(username), {
       method: 'DELETE'
@@ -7319,11 +7350,14 @@ async function _deleteUser(username) {
     var data = await res.json();
     if(data.success) {
       if(typeof _toast === 'function') _toast('✅ ' + data.message, 'g');
-      _loadUsersManagementUi();
+      if (row) row.remove();
+      await _loadUsersManagementUi();
     } else {
-      if(typeof _toast === 'function') _toast('Error: ' + (data.error || 'Failed'), 'r');
+      if (row) row.style.opacity = '1';
+      if(typeof _toast === 'function') _toast('Error: ' + (data.error || 'Failed to delete user'), 'r');
     }
   } catch(e) {
+    if (row) row.style.opacity = '1';
     if(typeof _toast === 'function') _toast('Request error: ' + e.message, 'r');
   }
 }
